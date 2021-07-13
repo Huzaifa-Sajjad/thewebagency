@@ -1,0 +1,103 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+* {
+  box-sizing: border-box;
+  font-family: "Jost", sans-serif;
+  -webkit-font-smoothing: auto;
+  -moz-osx-font-smoothing: auto;
+}
+
+label {
+  display: block;
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 30px;
+}
+
+input,
+textarea {
+  display: block;
+  width: 100%;
+  padding: 1em 1.5em;
+  background-color: #f7f7f7;
+  margin-bottom: 2em;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+  transition: all 0.5s ease-in-out;
+  &:focus {
+    outline: none;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  }
+}
+
+.navList {
+  li {
+    margin-right: 1rem;
+    font-size: 18px;
+    font-weight: 500;
+    a {
+      color: black;
+      &:hover {
+        color: black;
+      }
+    }
+    &:last-of-type {
+      margin-right: 0;
+    }
+  }
+}
+
+.parallax-effect-glare-scale {
+  transform-style: preserve-3d;
+  .inner-element {
+    transform: translateZ(60px);
+  }
+}
+
+.clients {
+  margin-top: 2rem;
+  padding: 4rem 0;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  border-bottom: 1px solid rgb(185, 185, 185);
+  li {
+    border-right: 1px solid rgb(185, 185, 185) !important;
+    padding: 0 4rem;
+    img {
+      width: auto;
+      height: 70px;
+    }
+    &:last-of-type {
+      border: none !important;
+    }
+  }
+}
+
+.timelineList {
+  margin: 1em 0 3em;
+  list-style: square;
+  padding-left: 2em;
+  li {
+    font-size: 20px;
+    font-weight: 500;
+  }
+}
+.two-col {
+  columns: 2;
+}
+.img-fluid {
+  width: 100%;
+  height: auto;
+}
+
+@media only screen and (max-width: 992px) {
+  .timelineList {
+    columns: 1;
+    li {
+      font-size: 16px;
+      font-weight: 500;
+    }
+  }
+}
