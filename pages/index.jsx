@@ -1,3 +1,5 @@
+import Prismic from "@prismicio/client";
+import { Client } from "../prismic-config";
 import Layout from "../components/Layout";
 import Card from "../components/Card";
 import ReviewCard from "../components/Review";
@@ -101,4 +103,15 @@ export default function Home() {
       </section>
     </Layout>
   );
+}
+
+export async function getServerSideProps() {
+  const client = Client();
+  const doc = await client.query(
+    Prismic.predicates.at("document.type", "projects")
+  );
+
+  return {
+    props: {},
+  };
 }
