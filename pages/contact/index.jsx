@@ -15,9 +15,8 @@ function Contact() {
                 <h1 className="xs:text-3xl md:text-9xl  font-bold xs:mt-1 md:mt-4 -mb-0">
                   Let's Talk
                 </h1>
-                <p className="xs:text-base md:text-4-xl font-light text-gray md:max-w-45 xs:my-6 md:my-14 border-l-4 pl-4">
-                  Tell us all about project right here, or send us an <br />{" "}
-                  email at{" "}
+                <p className="xs:text-base md:text-3xl font-light text-gray md:max-w-45 xs:my-6 md:my-14 border-l-4 pl-4">
+                  Tell us all about project right here, or send us an email at{" "}
                   <span className="font-medium text-primary cursor-pointer">
                     info@thewebagency.io
                   </span>
