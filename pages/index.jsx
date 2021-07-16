@@ -12,14 +12,12 @@ export default function Home({ projects }) {
     const overlay = document.getElementById("overlay");
     const main = document.getElementById("main");
     const header = document.getElementById("header");
-    const heroHeading1 = document.getElementById("heroHeading1");
-    const heroHeading2 = document.getElementById("heroHeading2");
     gsap.to(main, { visibility: "visible" });
     timeline
       .to(overlay, {
         height: 0,
+        display: "none",
         duration: 1,
-        delay: 0.5,
         ease: Power3.easeInOut,
       })
       .from(header, {
@@ -27,33 +25,31 @@ export default function Home({ projects }) {
         y: 20,
         ease: Power3.easeInOut,
         duration: 1,
+        delay: -0.85,
       })
-      .from([heroHeading1, heroHeading2], {
+      .from("#hero > h1, #hero > button", {
         opacity: 0,
         y: 50,
         ease: Power3.easeInOut,
-        duration: 0.5,
-        stagger: 0.2,
+        duration: 1,
+        stagger: 0.5,
       });
   }, []);
   return (
     <Layout isFooter={true}>
       <section>
-        <div className="lg:container lg:mx-auto px-4">
-          <div className="flex flex-col justify-center py-2 py-20 xs:px-4 md:px-10 lg:px-0">
-            <h1
-              className="xs:text-3xl md:text-9xl leading-tight font-bold mt-4 -mb-0"
-              id="heroHeading1"
-            >
+        <div className="lg:container lg:mx-auto">
+          <div
+            id="hero"
+            className="flex flex-col justify-center py-2 py-20 xs:px-4 md:px-10 lg:px-0"
+          >
+            <h1 className="xs:text-3xl md:text-hero leading-tight font-medium mt-4 -mb-0">
               The Best Digital Products.
             </h1>
-            <h1
-              className="xs:text-3xl md:text-9xl leading-tight font-bold mt-2"
-              id="heroHeading2"
-            >
+            <h1 className="xs:text-3xl md:text-hero leading-tight font-medium mt-2">
               On-Time. On-Budget. On-Point.
             </h1>
-            <button className="border-2 border-black xs:text-xl md:text-3xl font-medium w-max px-9 py-2 mt-7">
+            <button className="border-2 border-primary xs:text-xl w-max px-9 py-2 mt-7 letterspacing">
               Let's Talk
             </button>
           </div>

@@ -30,8 +30,7 @@ module.exports = {
       "6xl": "40px",
       "7-xl": "42px",
       "7xl": "44px",
-      "8xl": "48pc",
-      "9xl": "56px",
+      hero: "48px",
     },
     maxWidth: {
       35: "35ch",
@@ -52,6 +51,16 @@ module.exports = {
       lg: "1024px",
       xl: "1280px",
       "2xl": "1536px",
+    },
+    container: {
+      padding: {
+        DEFAULT: "1rem",
+        sm: "1rem",
+        md: "1.5rem",
+        lg: "3rem",
+        xl: "6rem",
+        "2xl": "10rem",
+      },
     },
     extend: {
       spacing: {

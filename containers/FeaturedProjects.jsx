@@ -1,14 +1,24 @@
 import Card from "../components/Card";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { gsap, Power3 } from "gsap";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { useEffect } from "react";
 
-gsap.registerPlugin(ScrollTrigger);
+if (typeof window !== "undefined") {
+  gsap.registerPlugin(ScrollTrigger);
+}
 
 function FeaturedProjects({ projects }) {
   useEffect(() => {
-    const cards = document.getElementsByClassName("project-card");
-    gsap.from(cards, { opacity: 0, x: 50 });
+    const projectCards = document.querySelectorAll(".project-card");
+    projectCards.forEach((project) => {
+      gsap.from(project, {
+        scrollTrigger: { trigger: project },
+        opacity: 0,
+        y: 100,
+        duration: 1.5,
+        ease: Power3.easeInOut,
+      });
+    });
   }, []);
   return (
     <section>
