@@ -16,46 +16,49 @@ export default function Home({ projects }) {
     timeline
       .to(overlay, {
         height: 0,
-        display: "none",
         duration: 1,
         ease: Power3.easeInOut,
       })
       .from(header, {
         opacity: 0,
-        y: 20,
+        y: 35,
         ease: Power3.easeInOut,
         duration: 1,
-        delay: -0.85,
+        delay: -0.5,
       })
       .from("#hero > h1, #hero > button", {
         opacity: 0,
         y: 50,
         ease: Power3.easeInOut,
         duration: 1,
-        stagger: 0.5,
+        stagger: 0.75,
+      })
+      .from("#featuredProjets", {
+        opacity: 0,
+        ease: Power3.easeInOut,
+        duration: 1,
       });
   }, []);
   return (
     <Layout isFooter={true}>
       <section>
         <div className="lg:container lg:mx-auto">
-          <div
-            id="hero"
-            className="flex flex-col justify-center py-2 py-20 xs:px-4 md:px-10 lg:px-0"
-          >
-            <h1 className="xs:text-3xl md:text-hero leading-tight font-medium mt-4 -mb-0">
+          <div id="hero" className="flex flex-col justify-center pt-40 mb-28">
+            <h1 className="xs:text-3xl md:text-hero leading-tight font-semibold mt-4 -mb-0">
               The Best Digital Products.
             </h1>
-            <h1 className="xs:text-3xl md:text-hero leading-tight font-medium mt-2">
+            <h1 className="xs:text-3xl md:text-hero leading-tight font-semibold mt-2">
               On-Time. On-Budget. On-Point.
             </h1>
-            <button className="border-2 border-primary xs:text-xl w-max px-9 py-2 mt-7 letterspacing">
+            <button className="border-2 border-primary xs:text-xl font-medium w-max px-9 py-2 mt-7 letterspacing">
               Let's Talk
             </button>
           </div>
         </div>
       </section>
-      <FeaturedProjects projects={projects} />
+      <section id="featuredProjets">
+        <FeaturedProjects projects={projects} />
+      </section>
       <section>
         <div className="lg:container lg:mx-auto  py-10 xs:px-4 md:px-2">
           <h1 className="xs:text-2xl md:text-6xl lg:text-7-xl font-bold mb-14">
