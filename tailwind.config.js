@@ -16,6 +16,7 @@ module.exports = {
       lightGray: "#c4c4c4",
     },
     fontSize: {
+      xxs: "10px",
       xs: "12px",
       sm: "14px",
       base: "16px",
@@ -42,7 +43,7 @@ module.exports = {
     },
     maxHeight: {
       100: "20em",
-      120: "22rem",
+      120: "25rem",
     },
     screens: {
       xs: "250px",

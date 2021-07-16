@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@prismicio/client": "^5.1.0",
+    "gsap": "^3.7.1",
     "next": "latest",
     "prismic-reactjs": "^1.3.4",
     "react": "^17.0.2",

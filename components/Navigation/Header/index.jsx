@@ -6,9 +6,9 @@ function Header() {
   const [drawer, setDrawer] = useState(false);
 
   return (
-    <div className="lg:container lg:mx-auto p-4">
+    <div className="lg:container lg:mx-auto pt-12" id="header">
       <div className="flex items-center justify-between">
-        <div className="ld:text-xl md:text-lg text-black font-bold tracking-wider">
+        <div className="ld:text-xl md:text-lg text-black font-bold letterspacing">
           <Link href="/">thewebagency</Link>
         </div>
         <div className="xs:hidden lg:block">
@@ -17,11 +17,11 @@ function Header() {
               <Link href="/about">About</Link>
             </li>
             <li>
-              <Link href="#">Work</Link>
+              <Link href="/work">Work</Link>
             </li>
             <li>
               <Link href="/contact">
-                <button className="bg-primary text-white px-6 py-2">
+                <button className="bg-primary text-white px-6 py-2 letterspacing">
                   Contact
                 </button>
               </Link>

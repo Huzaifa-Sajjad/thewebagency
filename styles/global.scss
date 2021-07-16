@@ -31,13 +31,25 @@ textarea {
   }
 }
 
+#main {
+  visibility: hidden;
+}
+
+.letterspacing {
+  letter-spacing: 1.2px;
+  a {
+    letter-spacing: 1.2px;
+  }
+}
+
 .navList {
   li {
-    margin-right: 1rem;
+    margin-right: 1.5rem;
     font-size: 18px;
     font-weight: 500;
     a {
       color: black;
+      letter-spacing: 1.2px;
       &:hover {
         color: black;
       }
