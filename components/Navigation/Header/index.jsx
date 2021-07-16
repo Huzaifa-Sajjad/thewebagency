@@ -32,7 +32,7 @@ function Header() {
           className="xs:block lg:hidden flex items-center"
           onClick={() => setDrawer(true)}
         >
-          <i class="fi-rr-menu-burger text-2xl"></i>
+          <i className="fi-rr-menu-burger text-2xl"></i>
         </div>
       </div>
       <Drawer isOpen={drawer} onClose={setDrawer} />
