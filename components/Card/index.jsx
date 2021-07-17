@@ -1,6 +1,9 @@
+import { useContext } from "react";
 import Tilt from "react-tilt";
+import { MouseContext } from "@/context/mouseContext";
 
 function Card({ bg, textColor, logo, statement, tags, cover }) {
+  const { setHoverCursor, setNormalCursor } = useContext(MouseContext);
   const hexToRgb = (hex) =>
     hex
       .replace(
@@ -12,7 +15,7 @@ function Card({ bg, textColor, logo, statement, tags, cover }) {
       .map((x) => parseInt(x, 16));
   return (
     <Tilt
-      className="Tilt mt-10 h-full project-card"
+      className="Tilt mt-10 h-full project-card cursor-none"
       options={{
         reverse: true, // reverse the tilt direction
         max: 25, // max tilt rotation (degrees)
@@ -22,6 +25,8 @@ function Card({ bg, textColor, logo, statement, tags, cover }) {
         transition: true, // Set a transition on enter/exit.
         easing: "cubic-bezier(.03,.98,.52,.99)",
       }}
+      onMouseEnter={setHoverCursor}
+      onMouseLeave={setNormalCursor}
     >
       <div
         className="bg-local bg-cover px-6 xs:pt-6 lg:pt-4  grid grid-cols-6 items-center h-full"

@@ -67,6 +67,9 @@ module.exports = {
         "2xl": "10rem",
       },
     },
+    cursor: {
+      none: "none",
+    },
     extend: {
       spacing: {
         8: "4px",

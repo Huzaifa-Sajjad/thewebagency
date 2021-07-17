@@ -1,7 +1,9 @@
+import { useState, useContext } from "react";
 import { gsap, Expo, Power3 } from "gsap";
-import { useState } from "react";
+import { MouseContext } from "@/context/mouseContext";
 
 function Review({ reviews }) {
+  const { setHoverCursor, setNormalCursor } = useContext(MouseContext);
   const [reviewCounter, setReviewCounter] = useState(0);
   const timeline = gsap.timeline({ paused: true });
   if (typeof window !== "undefined") {
@@ -41,7 +43,6 @@ function Review({ reviews }) {
         delay: -0.5,
       });
   }
-
   const handleNext = () => {
     timeline.play();
     setTimeout(() => {
@@ -104,6 +105,8 @@ function Review({ reviews }) {
                   style={{
                     display: `${reviewCounter !== 0 ? "flex" : "none"}`,
                   }}
+                  onMouseEnter={setHoverCursor}
+                  onMouseLeave={setNormalCursor}
                 >
                   <svg
                     version="1.1"
@@ -136,6 +139,8 @@ function Review({ reviews }) {
                       reviewCounter < reviews.length - 1 ? "flex" : "none"
                     }`,
                   }}
+                  onMouseEnter={setHoverCursor}
+                  onMouseLeave={setNormalCursor}
                 >
                   <svg
                     version="1.1"

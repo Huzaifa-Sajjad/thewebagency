@@ -113,3 +113,27 @@ textarea {
     }
   }
 }
+
+.custom-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 8px;
+  height: 8px;
+  background-color: #353b48;
+  border-radius: 100%;
+  transform: translate(-50%, -50%);
+  -webkit-transition-duration: 100ms;
+  transition-duration: 100ms;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+  will-change: width, height, transform, border;
+  z-index: 999;
+  pointer-events: none;
+}
+
+.hovered-cursor {
+  width: 36px;
+  height: 36px;
+  background-color: rgba(#fff, 0.4);
+}

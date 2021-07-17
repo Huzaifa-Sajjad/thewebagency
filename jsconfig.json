@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+      "baseUrl":".",
+      "paths": {
+          "@/components/*":[
+              "components/*"
+          ],
+          "@/containers/*":[
+              "containers/*"
+          ],
+          "@/features/*":[
+              "features/*"
+          ],
+          "@/context/*":[
+              "context/*"
+          ],
+      }
+  }
+}

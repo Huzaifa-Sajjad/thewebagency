@@ -1,12 +1,15 @@
+import { useEffect, useContext } from "react";
 import { Power3, gsap } from "gsap";
-import { useEffect } from "react";
 import Prismic from "@prismicio/client";
 import { Client } from "../prismic-config";
 import Layout from "../components/Layout";
 import FeaturedProjects from "../containers/FeaturedProjects";
 import ReviewCard from "../components/Review";
+import { MouseContext } from "../context/mouseContext";
 
 export default function Home({ projects, reviews }) {
+  const { setHoverCursor, setNormalCursor } = useContext(MouseContext);
+
   useEffect(() => {
     const timeline = gsap.timeline();
     const overlay = document.getElementById("overlay");
@@ -52,7 +55,11 @@ export default function Home({ projects, reviews }) {
             <h1 className="xs:text-30 md:text-36 lg:text-48 xl:text-48 text-primary leading-tight font-semibold mt-2">
               On-Time. On-Budget. On-Point.
             </h1>
-            <button className="border-2 border-primary font-medium xs:text-16 md:text-18 lg:text:20 xl:text-22 w-max px-9 py-2 mt-7 letterspacing">
+            <button
+              onMouseEnter={setHoverCursor}
+              onMouseLeave={setNormalCursor}
+              className="border-2 border-primary font-medium xs:text-16 md:text-18 lg:text:20 xl:text-22 w-max px-9 py-2 mt-7 letterspacing hover:bg-primary hover:text-white transition-all duration-500	cursor-none"
+            >
               Let's Talk
             </button>
           </div>
@@ -110,7 +117,7 @@ export default function Home({ projects, reviews }) {
           </div>
         </div>
       </section>
-      <section>
+      <section className="bg-grayBg">
         <div className="lg:container lg:mx-auto py-10 xs:px-2">
           <h2 className="xs:text-24 md:text-28 lg:text-32 xl:text-36 text-primary font-semibold mb-14">
             Reveiws, Words On The Street

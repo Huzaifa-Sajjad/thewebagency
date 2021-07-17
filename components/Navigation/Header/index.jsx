@@ -1,9 +1,11 @@
+import { useState, useContext } from "react";
 import Drawer from "../../Drawer";
-import { useState } from "react";
 import Link from "next/link";
+import { MouseContext } from "../../../context/mouseContext";
 
 function Header() {
   const [drawer, setDrawer] = useState(false);
+  const { setHoverCursor, setNormalCursor } = useContext(MouseContext);
 
   return (
     <div className="lg:container lg:mx-auto pt-20" id="header">
@@ -21,7 +23,11 @@ function Header() {
             </li>
             <li>
               <Link href="/contact">
-                <button className="bg-primary text-white px-9 py-3 letterspacing">
+                <button
+                  onMouseEnter={setHoverCursor}
+                  onMouseLeave={setNormalCursor}
+                  className="bg-primary text-white px-9 py-3 letterspacing cursor-none"
+                >
                   Contact
                 </button>
               </Link>
