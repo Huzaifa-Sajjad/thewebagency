@@ -5,8 +5,9 @@ import FeaturedProjects from "../containers/FeaturedProjects";
 import ReviewCard from "../components/Review";
 import { Power3, gsap } from "gsap";
 import { useEffect } from "react";
+import Tilt from "react-tilt";
 
-export default function Home({ projects }) {
+export default function Home({ projects, reviews }) {
   useEffect(() => {
     const timeline = gsap.timeline();
     const overlay = document.getElementById("overlay");
@@ -18,6 +19,7 @@ export default function Home({ projects }) {
         height: 0,
         duration: 1,
         ease: Power3.easeInOut,
+        display: "none",
       })
       .from(header, {
         opacity: 0,
@@ -49,7 +51,7 @@ export default function Home({ projects }) {
             </h1>
             <h1 className="xs:text-3xl md:text-hero leading-tight font-semibold mt-2">
               On-Time. On-Budget. On-Point.
-            </h1>
+            </h1>{" "}
             <button className="border-2 border-primary xs:text-xl font-medium w-max px-9 py-2 mt-7 letterspacing">
               Let's Talk
             </button>
@@ -113,7 +115,7 @@ export default function Home({ projects }) {
           <h1 className="xs:text-2xl md:text-6xl lg:text-7-xl font-bold xs:mb-4 md:mb-10">
             Reveiws, Words On The Street
           </h1>
-          <ReviewCard />
+          <ReviewCard reviews={reviews} />
         </div>
       </section>
     </Layout>
@@ -126,9 +128,14 @@ export async function getServerSideProps() {
     Prismic.predicates.at("document.type", "projects")
   );
   const projects = doc.results.filter((item) => item.data.type === "featured");
+  const reviews = await client.query(
+    Prismic.predicates.at("document.type", "reviews"),
+    { orderings: "[document.first_publication_date desc]" }
+  );
   return {
     props: {
       projects,
+      reviews: reviews.results,
     },
   };
 }
