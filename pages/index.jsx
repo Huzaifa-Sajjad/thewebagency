@@ -1,11 +1,10 @@
+import { Power3, gsap } from "gsap";
+import { useEffect } from "react";
 import Prismic from "@prismicio/client";
 import { Client } from "../prismic-config";
 import Layout from "../components/Layout";
 import FeaturedProjects from "../containers/FeaturedProjects";
 import ReviewCard from "../components/Review";
-import { Power3, gsap } from "gsap";
-import { useEffect } from "react";
-import Tilt from "react-tilt";
 
 export default function Home({ projects, reviews }) {
   useEffect(() => {
@@ -37,8 +36,9 @@ export default function Home({ projects, reviews }) {
       })
       .from("#featuredProjets", {
         opacity: 0,
+        y: 100,
         ease: Power3.easeInOut,
-        duration: 1,
+        duration: 0.5,
       });
   }, []);
   return (
@@ -46,13 +46,13 @@ export default function Home({ projects, reviews }) {
       <section>
         <div className="lg:container lg:mx-auto">
           <div id="hero" className="flex flex-col justify-center pt-40 mb-28">
-            <h1 className="xs:text-3xl md:text-hero leading-tight font-semibold mt-4 -mb-0">
+            <h1 className="xs:text-30 md:text-36 lg:text-44 xl:text-48 text-primary leading-tight font-semibold mt-4 -mb-0">
               The Best Digital Products.
             </h1>
-            <h1 className="xs:text-3xl md:text-hero leading-tight font-semibold mt-2">
+            <h1 className="xs:text-30 md:text-36 lg:text-48 xl:text-48 text-primary leading-tight font-semibold mt-2">
               On-Time. On-Budget. On-Point.
-            </h1>{" "}
-            <button className="border-2 border-primary xs:text-xl font-medium w-max px-9 py-2 mt-7 letterspacing">
+            </h1>
+            <button className="border-2 border-primary font-medium xs:text-16 md:text-18 lg:text:20 xl:text-22 w-max px-9 py-2 mt-7 letterspacing">
               Let's Talk
             </button>
           </div>
@@ -63,48 +63,48 @@ export default function Home({ projects, reviews }) {
       </section>
       <section>
         <div className="lg:container lg:mx-auto  py-10 xs:px-4 md:px-2">
-          <h1 className="xs:text-2xl md:text-6xl lg:text-7-xl font-bold mb-14">
+          <h2 className="xs:text-24 md:text-28 lg:text-32 xl:text-36 text-primary font-semibold mb-14">
             Whatever you need, we build
-          </h1>
+          </h2>
           <div className="grid grid-cols-2 xs:gap-4 xs:gap-4 lg:gap-10">
-            <div className="xs:col-span-2 md:col-span-1 shadow-md xs:py-4 xl:py-14 xs:px-6 xl:px-24 transition-all duration-700 ease-in-out hover:bg-primary hover:text-white">
-              <h1 className="xs:text-xl md:text-3xl lg:text-4xl font-medium mb-4">
-                Mobile & Web App
-              </h1>
-              <p className="xs:text-sm md:text-lg lg:text-xl font-light">
+            <div className="xs:col-span-2 md:col-span-1 shadow-md xs:py-4 xl:py-14 xs:px-6 xl:px-14">
+              <h3 className="xs:text-20 md:text-22 lg:text-24 xl:text-26 text-primary font-medium mb-4">
+                Web Applications
+              </h3>
+              <p className="xs:text-14 md:text-14 lg:text-16 xl:text-18 text-gray font-light">
                 From the initial design to the final development stage, your
                 dedicated team of specialists will build your application to
                 reflect your business goals and user needs.
               </p>
             </div>
-            <div className="xs:col-span-2 md:col-span-1 shadow-md xs:py-4 xl:py-14 xs:px-6 xl:px-24 transition-all duration-700 ease-in-out hover:bg-primary hover:text-white">
-              <h1 className="xs:text-xl md:text-3xl lg:text-4xl font-medium mb-4">
-                Responsive Website
-              </h1>
-              <p className="xs:text-sm md:text-lg lg:text-xl font-light">
-                Your website is your digital first impression. That's why you
-                need a responsive and conversion-oriented site, matched with
-                great user experience and world-class design.
+            <div className="xs:col-span-2 md:col-span-1 shadow-md xs:py-4 xl:py-14 xs:px-6 xl:px-14">
+              <h3 className="xs:text-20 md:text-22 lg:text-24 xl:text-26 text-primary font-medium mb-4">
+                UI/UX
+              </h3>
+              <p className="xs:text-14 md:text-14 lg:text-16 xl:text-18 text-gray font-light">
+                From the initial design to the final development stage, your
+                dedicated team of specialists will build your application to
+                reflect your business goals and user needs.
               </p>
             </div>
-            <div className="xs:col-span-2 md:col-span-1 shadow-md xs:py-4 xl:py-14 xs:px-6  xl:px-24 transition-all duration-700 ease-in-out hover:bg-primary hover:text-white">
-              <h1 className="xs:text-xl md:text-3xl lg:text-4xl font-medium mb-4">
-                Custom eCommerce
-              </h1>
-              <p className="xs:text-sm md:text-lg lg:text-xl font-light">
-                When it comes to eCommerce, user experience (UX) is paramount.
-                Let us customize the perfect online store that matches your
-                brand voice and your product
+            <div className="xs:col-span-2 md:col-span-1 shadow-md xs:py-4 xl:py-14 xs:px-6 xl:px-14">
+              <h3 className="xs:text-20 md:text-22 lg:text-24 xl:text-26 text-primary font-medium mb-4">
+                Custom E-Commerce
+              </h3>
+              <p className="xs:text-14 md:text-14 lg:text-16 xl:text-18 text-gray font-light">
+                From the initial design to the final development stage, your
+                dedicated team of specialists will build your application to
+                reflect your business goals and user needs.
               </p>
             </div>
-            <div className="xs:col-span-2 md:col-span-1 shadow-md xs:py-4 xl:py-14 xs:px-6  xl:px-24 transition-all duration-700 ease-in-out hover:bg-primary hover:text-white">
-              <h1 className="xs:text-xl md:text-3xl lg:text-4xl font-medium mb-4">
-                Brand Identity
-              </h1>
-              <p className="xs:text-sm md:text-lg lg:text-xl font-light">
-                Who you are informs what you build. That’s why we thread your
-                digital product and your brand identity together, always
-                instilling product integrity.
+            <div className="xs:col-span-2 md:col-span-1 shadow-md xs:py-4 xl:py-14 xs:px-6 xl:px-14">
+              <h3 className="xs:text-20 md:text-22 lg:text-24 xl:text-26 text-primary font-medium mb-4">
+                Digital Marketing
+              </h3>
+              <p className="xs:text-14 md:text-14 lg:text-16 xl:text-18 text-gray font-light">
+                From the initial design to the final development stage, your
+                dedicated team of specialists will build your application to
+                reflect your business goals and user needs.
               </p>
             </div>
           </div>
@@ -112,9 +112,9 @@ export default function Home({ projects, reviews }) {
       </section>
       <section>
         <div className="lg:container lg:mx-auto py-10 xs:px-2">
-          <h1 className="xs:text-2xl md:text-6xl lg:text-7-xl font-bold xs:mb-4 md:mb-10">
+          <h2 className="xs:text-24 md:text-28 lg:text-32 xl:text-36 text-primary font-semibold mb-14">
             Reveiws, Words On The Street
-          </h1>
+          </h2>
           <ReviewCard reviews={reviews} />
         </div>
       </section>

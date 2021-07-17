@@ -8,7 +8,7 @@ function Header() {
   return (
     <div className="lg:container lg:mx-auto pt-20" id="header">
       <div className="flex items-center justify-between">
-        <div className="ld:text-xl md:text-lg text-black font-bold letterspacing">
+        <div className="text-16 text-primary font-medium letterspacing">
           <Link href="/">thewebagency</Link>
         </div>
         <div className="xs:hidden lg:block">
