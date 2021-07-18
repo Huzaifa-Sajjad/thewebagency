@@ -9,6 +9,18 @@
   -moz-osx-font-smoothing: auto;
 }
 
+#main {
+  visibility: hidden;
+}
+
+#nprogress .bar {
+  background-color: #111 !important;
+}
+
+#nprogress .peg {
+  box-shadow: 0 0 10px #111, 0 0 5px #111 !important;
+}
+
 label {
   display: block;
   font-size: 20px;
@@ -29,10 +41,6 @@ textarea {
     outline: none;
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
   }
-}
-
-#main {
-  visibility: hidden;
 }
 
 .letterspacing {
