@@ -112,6 +112,22 @@ textarea {
   height: auto;
 }
 
+.casestudy-list {
+  columns: 3;
+  li {
+    margin-bottom: 2em;
+    h5 {
+      font-size: 16px;
+      font-weight: 600;
+      color: #707070;
+    }
+    p {
+      font-size: 20px;
+      font-weight: 600;
+    }
+  }
+}
+
 @media only screen and (max-width: 992px) {
   .timelineList {
     columns: 1;
