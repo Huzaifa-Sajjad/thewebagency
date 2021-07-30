@@ -31,9 +31,7 @@ function Card({ bg, textColor, logo, statement, tags, cover }) {
       <div
         className="bg-local bg-cover px-6 xs:pt-6 lg:pt-4  grid grid-cols-6 items-center h-full"
         style={{
-          background: `linear-gradient(to bottom,  rgba(${hexToRgb(
-            bg
-          )}, 0.55), ${bg})`,
+          background: bg,
         }}
       >
         <div className="xs:col-span-6 md:col-span-3 ">
@@ -52,13 +50,13 @@ function Card({ bg, textColor, logo, statement, tags, cover }) {
             {tags.map((item, idx) => (
               <div
                 key={idx}
-                className="xs:px-2 lg:px-4 py-8 text-center mr-4 mb-4 Tilt-inner whitespace-nowrap"
+                className="xs:px-2 lg:px-4 py-8 text-center mr-4 mb-4 Tilt-inner whitespace-nowrap rounded"
                 style={{
-                  backgroundColor: `rgba(${hexToRgb(bg)},0.8)`,
-                  color: textColor,
+                  backgroundColor: `rgba(255,255,255,0.7)`,
+                  color: bg,
                 }}
               >
-                <span className="xs:text-12 lg:text-14">
+                <span className="xs:text-12 lg:text-14 font-regular">
                   {item.tag[0].text}
                 </span>
               </div>

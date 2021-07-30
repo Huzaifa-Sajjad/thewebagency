@@ -38,6 +38,7 @@ module.exports = {
       56: "56px",
     },
     maxWidth: {
+      25: "25ch",
       35: "35ch",
       45: "45ch",
       55: "55ch",

@@ -1,5 +1,5 @@
 import { useEffect, useContext } from "react";
-import { Power3, gsap } from "gsap";
+import { Power3, Expo, gsap } from "gsap";
 import Prismic from "@prismicio/client";
 import { Client } from "../prismic-config";
 import Layout from "@/components/Layout";
@@ -17,12 +17,21 @@ export default function Home({ projects, reviews }) {
     const header = document.getElementById("header");
     gsap.to(main, { visibility: "visible" });
     timeline
-      .to("#app-loader", {
-        height: 0,
-        ease: Power3.easeOut,
-        display: "none",
-        duration: 1.5,
+      .to("#app-loader > h1", {
+        opacity: 0,
+        duration: 0.75,
+        ease: Power3.easeInOut,
       })
+      .to(
+        "#app-loader",
+        {
+          height: 0,
+          ease: Expo.easeInOut,
+          display: "none",
+          duration: 1,
+        },
+        0.4
+      )
       .from(
         header,
         {
@@ -31,7 +40,7 @@ export default function Home({ projects, reviews }) {
           ease: Power3.easeInOut,
           duration: 1,
         },
-        0.2
+        0.8
       )
       .from(
         "#hero > h1",
@@ -42,7 +51,7 @@ export default function Home({ projects, reviews }) {
           duration: 0.7,
           stagger: 0.5,
         },
-        0.6
+        1
       )
       .from("#btnAnimation", {
         opacity: 0,
@@ -64,7 +73,7 @@ export default function Home({ projects, reviews }) {
         <section>
           <div className="lg:container lg:mx-auto">
             <div id="hero" className="flex flex-col justify-center pt-40 mb-28">
-              <h1 className="xs:text-30 md:text-36 lg:text-44 xl:text-48 text-primary leading-tight font-semibold mt-4 -mb-0">
+              <h1 className="xs:text-30 md:text-36 lg:text-44 xl:text-48 text-primary leading-tight  font-semibold mt-4 -mb-0">
                 The Best Digital Products.
               </h1>
               <h1 className="xs:text-30 md:text-36 lg:text-48 xl:text-48 text-primary leading-tight font-semibold mt-2">

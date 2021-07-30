@@ -9,6 +9,10 @@
   -moz-osx-font-smoothing: auto;
 }
 
+body {
+  overflow-x: hidden !important;
+}
+
 #main {
   visibility: hidden;
 }
