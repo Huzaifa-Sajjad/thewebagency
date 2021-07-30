@@ -24,7 +24,7 @@ function FeaturedProjects({ projects }) {
     });
   }, []);
   return (
-    <div className="lg:container lg:mx-auto md:px-20">
+    <div className="lg:container lg:mx-auto  xs:px-4 lg:px-20">
       <h2 className="text-22 leading-none font-medium text-primary text-right pr-4 border-r-4 border-primary">
         Featured Projects
       </h2>

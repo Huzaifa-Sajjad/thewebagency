@@ -47,7 +47,7 @@ export default function CaseStudy({ projects }) {
       </section>
       <section>
         <div className="lg:container lg:mx-auto xs:px-4 ">
-          <div className="grid grid-cols-12 md:gap-4">
+          <div className="grid grid-cols-12 gap-4">
             {projects.map((project, idx) => (
               <div className="xs:col-span-12 xl:col-span-6 h-full" key={idx}>
                 <Card

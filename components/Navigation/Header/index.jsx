@@ -8,7 +8,7 @@ function Header() {
   const { setHoverCursor, setNormalCursor } = useContext(MouseContext);
 
   return (
-    <div className="lg:container lg:mx-auto pt-20" id="header">
+    <div className="lg:container lg:mx-auto xs:pt-4 lg:pt-20 px-4 " id="header">
       <div className="flex items-center justify-between">
         <div className="text-16 text-primary font-medium letterspacing">
           <Link href="/">thewebagency</Link>
@@ -35,7 +35,7 @@ function Header() {
           </ul>
         </div>
         <div
-          className="xs:block lg:hidden flex items-center"
+          className="xs:block lg:hidden flex items-center py-1 px-2 shadow-xl"
           onClick={() => setDrawer(true)}
         >
           <i className="fi-rr-menu-burger text-2xl"></i>

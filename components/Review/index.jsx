@@ -64,7 +64,7 @@ function Review({ reviews }) {
         <div className="xs:col-span-12 md:col-span-4 lg:col-span-3">
           <img
             src={reviews[reviewCounter].data.cover.url}
-            className="w-full xs:h-80 xs:object-cover md:h-full"
+            className="w-full xs:h-80  md:h-full xs:object-contain lg:object-cover"
           />
         </div>
         <div className="xs:col-span-12 md:col-span-8 lg:col-span-9 h-full xs:mt-4 md:mt-0">
@@ -88,8 +88,8 @@ function Review({ reviews }) {
                 {reviews[reviewCounter].data.text[0].text}
               </p>
             </div>
-            <div className="flex justify-between items-center">
-              <div id="review-client">
+            <div className="flex justify-between items-center  xs:flex-col lg:flex-row">
+              <div id="review-client" className="xs:mb-4 lg:mb-0">
                 <h3 className="xs:text-20 md:text-22 lg:text-24 xl:text-26 text-primary font-normal">
                   {reviews[reviewCounter].data.name[0].text}
                 </h3>

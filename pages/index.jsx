@@ -71,8 +71,11 @@ export default function Home({ projects, reviews }) {
       <Loader />
       <Layout isFooter={true}>
         <section>
-          <div className="lg:container lg:mx-auto">
-            <div id="hero" className="flex flex-col justify-center pt-40 mb-28">
+          <div className="lg:container lg:mx-auto  xs:px-4 lg:px-0">
+            <div
+              id="hero"
+              className="flex flex-col justify-center xs:pt-28 lg:pt-40 mb-28"
+            >
               <h1 className="xs:text-30 md:text-36 lg:text-44 xl:text-48 text-primary leading-tight  font-semibold mt-4 -mb-0">
                 The Best Digital Products.
               </h1>
@@ -95,7 +98,7 @@ export default function Home({ projects, reviews }) {
           <FeaturedProjects projects={projects} />
         </section>
         <section>
-          <div className="lg:container lg:mx-auto  py-10 xs:px-4 md:px-2">
+          <div className="lg:container lg:mx-auto  py-10  xs:px-4 lg:px-0">
             <h2 className="xs:text-24 md:text-28 lg:text-32 xl:text-36 text-primary font-semibold mb-14">
               Whatever you need, we build
             </h2>

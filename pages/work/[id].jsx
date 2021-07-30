@@ -29,7 +29,7 @@ function CaseStudy() {
   return (
     <Layout isFooter={true}>
       <section>
-        <div className="lg:container lg:mx-auto">
+        <div className="lg:container lg:mx-auto xs:px-4 lg:px-0">
           <div id="hero" className="flex flex-col justify-center pt-20 mb-28">
             <h1 className="xs:text-30 md:text-36 lg:text-44 xl:text-48 text-primary leading-tight font-semibold mt-4 -mb-0">
               Toronto Fine Jewelry.ca
@@ -44,7 +44,7 @@ function CaseStudy() {
         </div>
       </section>
       <section className="bg-grayBg">
-        <div className="lg:container lg:mx-auto py-10">
+        <div className="lg:container lg:mx-auto py-10 xs:px-4 lg:px-0">
           <ul className="casestudy-list">
             <li>
               <h5>BRAND</h5>
@@ -82,7 +82,7 @@ function CaseStudy() {
         </div>
       </section>
       <section>
-        <div className="lg:container lg:mx-auto pt-28">
+        <div className="lg:container lg:mx-auto pt-28 xs:px-4 lg:px-0">
           <p className="sm:text-20 lg:text-24 font-semibold text-center max-w-35 mx-auto">
             “Get support on a large platform, flesh out your first MVP, go from
             concept to investment, or take your startup to the next level. Our
@@ -96,7 +96,7 @@ function CaseStudy() {
         </div>
       </section>
       <section>
-        <div className="lg:container lg:mx-auto pt-28">
+        <div className="lg:container lg:mx-auto pt-28 xs:px-4 lg:px-0">
           <h4 className="text-12 font-semibold text-gray">VISUAL IDENTITY</h4>
           <h2 className="xs:text-32 lg:text-52 font-semibold">
             Logotype: A single image
