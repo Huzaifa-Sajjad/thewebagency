@@ -1,16 +1,40 @@
 import Layout from "../../components/Layout";
+import { useEffect } from "react";
+import { Power3, gsap } from "gsap";
 
 function About() {
+  useEffect(() => {
+    const timeline = gsap.timeline();
+    const header = document.getElementById("header");
+    gsap.to(main, { visibility: "visible" });
+    timeline
+      .to("#app-loader", {
+        height: 0,
+        ease: Power3.easeOut,
+        display: "none",
+        duration: 1.5,
+      })
+      .from(
+        header,
+        {
+          opacity: 0,
+          y: 35,
+          ease: Power3.easeInOut,
+          duration: 1,
+        },
+        0.2
+      );
+  }, []);
   return (
     <Layout isFooter={true}>
       <section>
         <div className="lg:container lg:mx-auto xs:px-4">
           <div className="flex flex-col justify-center py-2 py-20 xs:px-2 md:px-10 lg:px-0">
             <h3 className="text-base font-light">About Us</h3>
-            <h1 className="xs:text-3xl md:text-9xl leading-none font-bold mt-2 lg:w-3/4">
+            <h1 className="xs:text-30 md:text-36 lg:text-48 leading-none font-bold mt-2 lg:w-3/4">
               Ingenious products driven by transparent relationships
             </h1>
-            <p className="xs:text-base md:text-2xl font-light text-gray md:max-w-45 xs:my-6 md:my-14 border-l-4 pl-4">
+            <p className="xs:text-20 md:text-24 font-light text-gray md:max-w-45 xs:my-6 md:my-14 border-l-4 pl-4">
               Lorem Ipsum is simply dummy text of the printing and typesetting
               industry. Lorem Ipsum has been the industry's standard dummy text
               ever since the 1500s.

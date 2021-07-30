@@ -1,6 +1,31 @@
 import Layout from "../../components/Layout";
+import { useEffect } from "react";
+import { Power3, gsap } from "gsap";
 
 function Contact() {
+  useEffect(() => {
+    const timeline = gsap.timeline();
+    const main = document.getElementById("main");
+    const header = document.getElementById("header");
+    gsap.to(main, { visibility: "visible" });
+    timeline
+      .to("#app-loader", {
+        height: 0,
+        ease: Power3.easeOut,
+        display: "none",
+        duration: 1.5,
+      })
+      .from(
+        header,
+        {
+          opacity: 0,
+          y: 35,
+          ease: Power3.easeInOut,
+          duration: 1,
+        },
+        0.2
+      );
+  }, []);
   return (
     <Layout>
       <section>
@@ -9,13 +34,11 @@ function Contact() {
             <div className="lg:col-span-1"></div>
             <div className="xs:col-span-4 lg:col-span-2">
               <div className="flex flex-col justify-center py-20">
-                <h3 className="xs:text-sm md:text-base font-light">
-                  Contact Us
-                </h3>
-                <h1 className="xs:text-3xl md:text-9xl  font-bold xs:mt-1 md:mt-4 -mb-0">
+                <h3 className="xs:text-12 font-light">Contact Us</h3>
+                <h1 className="xs:text-30 md:text-36 lg:text-48 font-bold xs:mt-1 md:mt-4 -mb-0">
                   Let's Talk
                 </h1>
-                <p className="xs:text-base md:text-3xl font-light text-gray md:max-w-45 xs:my-6 md:my-14 border-l-4 pl-4">
+                <p className="xs:text-20 md:text-24 font-light text-gray md:max-w-45 xs:my-6 md:my-14 border-l-4 pl-4">
                   Tell us all about project right here, or send us an email at{" "}
                   <span className="font-medium text-primary cursor-pointer">
                     info@thewebagency.io
