@@ -9,6 +9,15 @@
   right: 0;
   z-index: 99999;
   display: none;
+  img,
+  button {
+    transform: translate(0, -20px);
+    opacity: 0;
+  }
+  p {
+    transform: translate(0, 20px);
+    opacity: 0;
+  }
 }
 .open {
   overflow: hidden !important;
@@ -31,6 +40,8 @@
 .navLinks {
   text-align: center;
   li {
+    transform: translate(-150px, 0);
+    opacity: 0;
     font-size: 28px;
     font-weight: 500;
     margin-bottom: 0.5em;

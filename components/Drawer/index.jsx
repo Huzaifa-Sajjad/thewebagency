@@ -5,8 +5,8 @@ import { Expo, gsap, Power3 } from "gsap";
 
 function Drawer({ isOpen, onClose }) {
   const timeline = gsap.timeline();
-  isOpen === true &&
-    useEffect(() => {
+  useEffect(() => {
+    if (isOpen === true) {
       timeline
         .to("#drawer", {
           display: "block",
@@ -14,36 +14,35 @@ function Drawer({ isOpen, onClose }) {
           duration: 1,
           ease: Expo.easeInOut,
         })
-        .from(
+        .to(
           "#drawer img, button",
           {
-            opacity: 0,
-            y: -20,
-            display: "none",
+            y: 0,
+            opacity: 1,
             duration: 0.5,
             ease: Expo.easeInOut,
           },
           0.5
         )
-        .from(
+        .to(
           "#drawer li",
           {
-            opacity: 0,
-            x: -150,
-            display: "none",
-            scale: 0.5,
+            opacity: 1,
+            x: 0,
             duration: 1,
             ease: Power3.easeInOut,
+            stagger: 0.4,
           },
           0.6
         )
-        .from("#drawer p", {
-          y: 20,
-          display: "none",
+        .to("#drawer p", {
+          opacity: 1,
+          y: 0,
           duration: 0.5,
           ease: Power3.easeInOut,
         });
-    }, []);
+    }
+  }, [isOpen]);
   const handleDrawerClose = () => {
     timeline.reverse();
     onClose(false);

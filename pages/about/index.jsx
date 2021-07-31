@@ -2,9 +2,15 @@ import Layout from "../../components/Layout";
 import Loader from "@/components/Loader";
 import { useEffect } from "react";
 import { Power3, gsap, Expo } from "gsap";
+import CSSRulePlugin from "gsap/dist/CSSRulePlugin";
+
+if (typeof window !== "undefined") {
+  gsap.registerPlugin(CSSRulePlugin);
+}
 
 function About() {
   useEffect(() => {
+    let imageReveal = CSSRulePlugin.getRule(".image-container:after");
     const timeline = gsap.timeline();
     const header = document.getElementById("header");
     gsap.to(main, { visibility: "visible" });
@@ -33,6 +39,20 @@ function About() {
           duration: 1,
         },
         0.8
+      )
+      .to(imageReveal, {
+        width: "0%",
+        duration: 1.6,
+        ease: Power3.easeInOut,
+      })
+      .from(
+        ".image-container img",
+        {
+          scale: 1.6,
+          duration: 1.4,
+          ease: Expo.easeInOut,
+        },
+        2
       );
   }, []);
   return (
@@ -40,8 +60,8 @@ function About() {
       <Loader />
       <Layout isFooter={true}>
         <section>
-          <div className="lg:container lg:mx-auto xs:px-4">
-            <div className="flex flex-col justify-center py-2 py-20 xs:px-2 md:px-10 lg:px-0">
+          <div className="container lg:container  lg:mx-auto">
+            <div className="flex flex-col justify-center xs:py-2  lg:py-20 xs:px-2 md:px-10 lg:px-0">
               <h1 className="xs:text-24 md:text-28 lg:text-32 xl:text-36 text-primary font-semibold md:max-w-25">
                 Ingenious products driven by transparent relationships
               </h1>
@@ -50,11 +70,9 @@ function About() {
                 industry. Lorem Ipsum has been the industry's standard dummy
                 text ever since the 1500s.
               </p>
-              <img
-                src="/About/hero.png"
-                alt=""
-                className="w-full h-auto my-10"
-              />
+              <div className="image-container">
+                <img src="/About/hero.png" alt="" />
+              </div>
             </div>
           </div>
         </section>
