@@ -3,8 +3,6 @@ import { useEffect } from "react";
 import { Power3, gsap } from "gsap";
 import { H1, Lead } from "@/components/Text";
 
-import { ButtonPrimary } from "@/components/Button";
-
 function Contact() {
   useEffect(() => {
     const timeline = gsap.timeline();
@@ -45,12 +43,10 @@ function Contact() {
                   </span>
                 </Lead>
                 <form>
-                  <label htmlFor="name">Name & Company</label>
-                  <input
-                    type="text"
-                    name="name"
-                    placeholder="Jhon from ABC .inc"
-                  />
+                  <label htmlFor="name">Name</label>
+                  <input type="text" name="name" placeholder="Jhon Doe" />
+                  <label htmlFor="company">Company</label>
+                  <input type="text" name="company" placeholder="ABC inc." />
                   <label htmlFor="email">Email</label>
                   <input
                     type="email"
@@ -60,19 +56,22 @@ function Contact() {
                   <label htmlFor="budget">Project Budget</label>
                   <input
                     type="text"
-                    name="budget"
-                    placeholder="$ xxx xxx xxx"
+                    name="project_budget"
+                    placeholder="$ XXX"
                   />
                   <label htmlFor="description">Project Description</label>
                   <textarea
                     type="text"
-                    name="description"
-                    placeholder="Project Details"
+                    name="project_description"
+                    placeholder="project_details"
                     rows="4"
                   />
-                  <ButtonPrimary className="xs:mx-auto xs:block lg:mx-0">
-                    Send
-                  </ButtonPrimary>
+                  <button
+                    type="submit"
+                    className="xs:text-16 md:text-16 lg:text:20 xl:text-22 bg-primary border-2 border-primary text-white w-max px-9 py-3 cursor-none"
+                  >
+                    Let's Talk
+                  </button>
                 </form>
               </div>
             </div>
