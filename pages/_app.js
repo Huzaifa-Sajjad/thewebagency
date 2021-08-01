@@ -1,6 +1,7 @@
 import Router from "next/router";
 import NProgress from "nprogress";
 import MouseContextProvider from "@/context/mouseContext";
+import DrawerContextProvider from "@/context/drawerContext";
 import "nprogress/nprogress.css";
 import "../styles/global.scss";
 
@@ -17,7 +18,9 @@ function MyApp({ Component, pageProps }) {
 
   return (
     <MouseContextProvider>
-      <Component {...pageProps} />
+      <DrawerContextProvider>
+        <Component {...pageProps} />
+      </DrawerContextProvider>
     </MouseContextProvider>
   );
 }

@@ -1,12 +1,21 @@
-import styles from "./styles.module.scss";
-import Link from "next/link";
-import { useEffect } from "react";
+import { useContext, useEffect } from "react";
+import { useRouter } from "next/router";
+import { DrawerContext } from "@/context/drawerContext";
 import { Expo, gsap, Power3 } from "gsap";
+import styles from "./styles.module.scss";
 
-function Drawer({ isOpen, onClose }) {
+function Drawer() {
+  const { open, closeDrawer, fastClose } = useContext(DrawerContext);
   const timeline = gsap.timeline();
+  const router = useRouter();
+
+  const execLinkPush = (link) => {
+    fastClose();
+    router.push(link);
+  };
+
   useEffect(() => {
-    if (isOpen === true) {
+    if (open === true) {
       timeline
         .to("#drawer", {
           display: "block",
@@ -42,30 +51,20 @@ function Drawer({ isOpen, onClose }) {
           ease: Power3.easeInOut,
         });
     }
-  }, [isOpen]);
-  const handleDrawerClose = () => {
-    timeline.reverse();
-    onClose(false);
-  };
+  }, [open]);
+
   return (
-    <div className={`${styles.root} ${isOpen ? styles.open : ""}`} id="drawer">
-      <Link href="/">
-        <img src="/Home/logo.png" alt="" className={styles.logo} />
-      </Link>
-      <button onClick={handleDrawerClose} className={styles.closeBtn}>
+    <div className={`${styles.root} ${open ? styles.open : ""}`} id="drawer">
+      <img src="/Home/logo.png" alt="" className={styles.logo} />
+
+      <button onClick={() => closeDrawer(timeline)} className={styles.closeBtn}>
         x
       </button>
       <div className="h-2/3 flex items-center justify-center">
         <ul className={styles.navLinks}>
-          <li>
-            <Link href="/about">About</Link>
-          </li>
-          <li>
-            <Link href="/work">Work</Link>
-          </li>
-          <li>
-            <Link href="/contact">Contact</Link>
-          </li>
+          <li onClick={() => execLinkPush("/about")}>About</li>
+          <li onClick={() => execLinkPush("/work")}>Work</li>
+          <li onClick={() => execLinkPush("/contact")}>Contact</li>
         </ul>
       </div>
       <p className="text-lightGray text-center mb-10">
