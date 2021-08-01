@@ -94,7 +94,7 @@ export default function Home({ projects, reviews }) {
         <FeaturedProjects projects={projects} />
       </section>
       <section>
-        <div className="lg:container lg:mx-auto  py-10  xs:px-4 lg:px-0">
+        <div className="lg:container lg:mx-auto py-10">
           <h2 className="xs:text-24 md:text-28 lg:text-32 xl:text-36 text-primary font-semibold mb-14">
             Whatever you need, we build
           </h2>
