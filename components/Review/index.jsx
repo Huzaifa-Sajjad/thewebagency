@@ -90,9 +90,7 @@ function Review({ reviews }) {
             </div>
             <div className="flex justify-between items-center  xs:flex-col lg:flex-row">
               <div id="review-client" className="xs:mb-4 lg:mb-0">
-                <h3 className="xs:text-20 md:text-22 lg:text-24 xl:text-26 text-primary font-normal">
-                  {reviews[reviewCounter].data.name[0].text}
-                </h3>
+                <H3>{reviews[reviewCounter].data.name[0].text}</H3>
                 <h5 className="xs:text-12 md:text-12 lg:text-14 xl:text-16 text-gray">
                   {reviews[reviewCounter].data.post[0].text}
                 </h5>

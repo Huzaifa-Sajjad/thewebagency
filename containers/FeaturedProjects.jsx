@@ -3,6 +3,8 @@ import { gsap, Power3 } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import Card from "@/components/Card";
 import { MouseContext } from "@/context/mouseContext";
+import { ButtonOutline } from "@/components/Buttons";
+import { Title, H2, H3, H4, Lead, Para } from "@/components/Text";
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
@@ -24,10 +26,8 @@ function FeaturedProjects({ projects }) {
     });
   }, []);
   return (
-    <div className="lg:container lg:mx-auto  xs:px-4 lg:px-20">
-      <h2 className="text-22 leading-none font-medium text-primary text-right pr-4 border-r-4 border-primary">
-        Featured Projects
-      </h2>
+    <div className="lg:container lg:mx-auto  spacing">
+      <H2>Featured Projects</H2>
       {projects.map((project, idx) => (
         <Card
           key={idx}
@@ -41,20 +41,8 @@ function FeaturedProjects({ projects }) {
       ))}
 
       <div className="flex justify-center items-center py-14 border-b border-gray border-opacity-10">
-        <button
-          onMouseEnter={setHoverCursor}
-          onMouseLeave={setNormalCursor}
-          className="xs:text-16 md:text-16 lg:text:20 xl:text-22 bg-primary border-2 border-primary text-white w-max px-9 py-3 cursor-none"
-        >
-          Contact Us
-        </button>
-        <button
-          onMouseEnter={setHoverCursor}
-          onMouseLeave={setNormalCursor}
-          className="xs:text-16 md:text-16 lg:text:20 xl:text-22 text-primary border-2 border-primary w-max px-9 py-3 ml-4 hover:bg-primary hover:text-white transition-all duration-500 cursor-none"
-        >
-          View All
-        </button>
+        <ButtonPrimary>Contact Us</ButtonPrimary>
+        <ButtonOutline>View All</ButtonOutline>
       </div>
     </div>
   );

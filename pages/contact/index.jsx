@@ -1,6 +1,9 @@
 import Layout from "../../components/Layout";
 import { useEffect } from "react";
 import { Power3, gsap } from "gsap";
+import { H1, Lead } from "@/components/Text";
+
+import { ButtonPrimary } from "@/components/Buttons";
 
 function Contact() {
   useEffect(() => {
@@ -34,16 +37,13 @@ function Contact() {
             <div className="lg:col-span-1"></div>
             <div className="xs:col-span-4 lg:col-span-2">
               <div className="flex flex-col justify-center py-20">
-                <h3 className="xs:text-12 font-light">Contact Us</h3>
-                <h1 className="xs:text-30 md:text-36 lg:text-48 font-bold xs:mt-1 md:mt-4 -mb-0">
-                  Let's Talk
-                </h1>
-                <p className="xs:text-20 md:text-24 font-light text-gray md:max-w-45 xs:my-6 md:my-14 border-l-4 pl-4">
+                <H1>Let's Talk</H1>
+                <Lead>
                   Tell us all about project right here, or send us an email at{" "}
                   <span className="font-medium text-primary cursor-pointer">
                     info@thewebagency.io
                   </span>
-                </p>
+                </Lead>
                 <form>
                   <label htmlFor="name">Name & Company</label>
                   <input
@@ -70,9 +70,7 @@ function Contact() {
                     placeholder="Project Details"
                     rows="4"
                   />
-                  <button className="bg-primary border-2 border-primary text-lg shadow-lg block mx-auto text-white w-max px-14 py-3">
-                    Send
-                  </button>
+                  <ButtonPrimary>Send</ButtonPrimary>
                 </form>
               </div>
             </div>

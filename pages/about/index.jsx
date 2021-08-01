@@ -3,6 +3,7 @@ import Loader from "@/components/Loader";
 import { useEffect } from "react";
 import { Power3, gsap, Expo } from "gsap";
 import CSSRulePlugin from "gsap/dist/CSSRulePlugin";
+import { H1, H2, H4, Lead, Para } from "@/components/Text";
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(CSSRulePlugin);
@@ -23,7 +24,7 @@ function About() {
       .to(
         "#app-loader",
         {
-          heighst: "0%",
+          height: "0%",
           display: "none",
           ease: Expo.easeInOut,
           duration: 1,
@@ -60,16 +61,14 @@ function About() {
       <Loader />
       <Layout isFooter={true}>
         <section>
-          <div className="lg:container lg:mx-auto">
+          <div className="lg:container lg:mx-auto spacing">
             <div className="flex flex-col justify-center xs:py-2  lg:py-20 xs:px-2 md:px-10 lg:px-0">
-              <h1 className="xs:text-24 md:text-28 lg:text-32 xl:text-36 text-primary font-semibold md:max-w-25">
-                Ingenious products driven by transparent relationships
-              </h1>
-              <p className="xs:text-20 md:text-24 font-light text-gray md:max-w-45 xs:my-6 md:my-14 border-l-4 pl-4">
+              <H1>Ingenious products driven by transparent relationships</H1>
+              <Lead>
                 Lorem Ipsum is simply dummy text of the printing and typesetting
                 industry. Lorem Ipsum has been the industry's standard dummy
                 text ever since the 1500s.
-              </p>
+              </Lead>
               <div className="image-container">
                 <img src="/About/hero.png" alt="" />
               </div>
@@ -77,28 +76,26 @@ function About() {
           </div>
         </section>
         <section>
-          <div className="lg:container lg:mx-auto xs:px-6 xl:px-0">
+          <div className="lg:container lg:mx-auto spacing">
             <div className="grid grid-cols-12 md:gap-10  md:px-6 lg:px-0">
               <div className="xs:col-span-12 lg:col-span-4 xl:col-span-5 lg:pl-14 mb-6 xs:text-center lg:text-left">
-                <h1 className="xs:text-32 lg:text-36 xl:text-48  font-semibold w-max m-auto">
+                <H2>
                   Our
                   <br /> Approach
-                </h1>
+                </H2>
               </div>
               <div className="xs:col-span-12 lg:col-span-8 xl:col-span-6  py-2 pl-9 border-l-2 border-lightGray">
                 <div className="relative">
                   <div className="absolute w-6 h-6 bg-primary rounded-full top-3 -left-12">
                     .
                   </div>
-                  <h3 className="text-12 font-semibold text-gray">PHASE 1</h3>
-                  <h1 className="xs:text-24 md:text-28 xs:mb-2 lg:mb-4 font-semibold">
-                    Discover And Estimate
-                  </h1>
-                  <p className="xs:text-14 md:text-18 font-light  max-w-45">
+                  <H4>PHASE 1</H4>
+                  <H2>Discover And Estimate</H2>
+                  <Para>
                     To produce the best solution possible, we pay close
                     attention to your product vision. We welcome your
                     suggestions.
-                  </p>
+                  </Para>
                   <ul className="timelineList">
                     <li>Project Estimation</li>
                     <li>Development Of Technical Specification</li>
@@ -108,17 +105,15 @@ function About() {
                   <div className="absolute w-6 h-6 bg-primary rounded-full top-3 -left-12">
                     .
                   </div>
-                  <h3 className="text-12 font-semibold text-gray">PHASE 2</h3>
-                  <h1 className="xs:text-24 md:text-28 xs:mb-2 lg:mb-4 font-semibold">
-                    Design
-                  </h1>
-                  <p className="xs:text-14 md:text-18 font-light  max-w-45">
+                  <H4>PHASE 2</H4>
+                  <H2>Design</H2>
+                  <H2>
                     To provide stylish and interaction design we focus on a
                     custom approach. No matter how complex the technological
                     aspect of the product, it will be easy and intuitive to
                     navigate. We are capable of producing clickable prototypes
                     to provide a comprehensive vision of the final result.
-                  </p>
+                  </H2>
                   <ul className="timelineList two-col">
                     <li>Wireframing</li>
                     <li>Invision & Marvel</li>
@@ -129,15 +124,13 @@ function About() {
                   <div className="absolute w-6 h-6 bg-primary rounded-full top-3 -left-12">
                     .
                   </div>
-                  <h3 className="text-12 font-semibold text-gray">PHASE 3</h3>
-                  <h1 className="xs:text-24 md:text-28 xs:mb-2 lg:mb-4 font-semibold">
-                    Develop
-                  </h1>
-                  <p className="xs:text-14 md:text-18 font-light  max-w-45">
+                  <H4>PHASE 3</H4>
+                  <H2>Develop</H2>
+                  <Para>
                     In the process of working toward a result we follow Scrum
                     methodology, assuring a development workflow that is
                     resource-effective and time-sensitive.
-                  </p>
+                  </Para>
                   <ul className="timelineList two-col">
                     <li>Front-end</li>
                     <li>Back-end</li>
@@ -148,16 +141,14 @@ function About() {
                   <div className="absolute w-6 h-6 bg-primary rounded-full top-3 -left-12">
                     .
                   </div>
-                  <h3 className="text-12 font-semibold text-gray">PHASE 4</h3>
-                  <h1 className="xs:text-24 md:text-28 xs:mb-2 lg:mb-4 font-semibold">
-                    QA
-                  </h1>
-                  <p className="xs:text-14 md:text-18 font-light  max-w-45">
+                  <H4>PHASE 4</H4>
+                  <H2>QA</H2>
+                  <Para>
                     To be confident that every individual part complements the
                     unified system and results in consistent, reliable product
                     functionality, exhaustive testing is performed throughout
                     the entire development process.
-                  </p>
+                  </Para>
                   <ul className="timelineList two-col">
                     <li>Manual & Automated Testing</li>
                     <li>Performance Testing</li>
@@ -168,14 +159,12 @@ function About() {
                   <div className="absolute w-6 h-6 bg-primary rounded-full top-3 -left-12">
                     .
                   </div>
-                  <h3 className="text-12 font-semibold text-gray">PHASE 5</h3>
-                  <h1 className="xs:text-24 md:text-28 xs:mb-2 lg:mb-4 font-semibold">
-                    Delivery
-                  </h1>
-                  <p className="xs:text-14 md:text-18 font-light  max-w-45">
+                  <H4>PHASE 5</H4>
+                  <H2>Delivery</H2>
+                  <Para>
                     With the product designed, developed, and tested, it is now
                     ready for launch.
-                  </p>
+                  </Para>
                   <ul className="timelineList two-col">
                     <li>Strategic Plan</li>
                     <li>Customer Analytics</li>

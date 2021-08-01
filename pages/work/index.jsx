@@ -4,6 +4,9 @@ import { Client } from "../../prismic-config";
 import Card from "../../components/Card";
 import { useEffect } from "react";
 import { Power3, gsap } from "gsap";
+import { H1, Lead } from "@/components/Text";
+
+import { ButtonOutline, ButtonPrimary } from "@/components/Buttons";
 
 export default function CaseStudy({ projects }) {
   useEffect(() => {
@@ -33,15 +36,13 @@ export default function CaseStudy({ projects }) {
       <section>
         <div className="lg:container lg:mx-auto xs:px-4">
           <div className="flex flex-col justify-center pt-10 xs:px-2 md:px-10 lg:px-0">
-            <h1 className="xs:text-30 md:text-36 lg:text-48 xl:text-48 leading-none font-bold mt-2 lg:w-3/4 leading-snug">
-              Creating digital experiences our clients fall in love with
-            </h1>
-            <p className="xs:text-20 md:text-24 font-light text-gray md:max-w-45 xs:mt-6 md:mt-14 border-l-4 pl-4">
+            <H1>Creating digital experiences our clients fall in love with</H1>
+            <Lead>
               Tell us all about your project right here, or send us an email at{" "}
               <span className="font-medium text-primary cursor-pointer">
                 info@thewebagency.io
               </span>
-            </p>
+            </Lead>
           </div>
         </div>
       </section>
@@ -62,12 +63,8 @@ export default function CaseStudy({ projects }) {
             ))}
           </div>
           <div className="flex justify-center items-center pt-20">
-            <button className="xs:text-base md:text-xl bg-primary border-2 border-primary text-white w-max xs:px-10 md:px-14 py-3">
-              Back
-            </button>
-            <button className="xs:text-base md:text-xl border-2 border-black w-max px-9 py-3 ml-6">
-              View More
-            </button>
+            <ButtonPrimary>Back</ButtonPrimary>
+            <ButtonOutline>View More</ButtonOutline>
           </div>
         </div>
       </section>

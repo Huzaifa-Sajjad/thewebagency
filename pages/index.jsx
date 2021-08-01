@@ -6,6 +6,8 @@ import Layout from "@/components/Layout";
 import FeaturedProjects from "@/containers/FeaturedProjects";
 import ReviewCard from "@/components/Review";
 import { MouseContext } from "@/context/mouseContext";
+import { ButtonOutline } from "@/components/Buttons";
+import { Title, H2, H3, H4, Lead, Para } from "@/components/Text";
 
 export default function Home({ projects, reviews }) {
   const { setHoverCursor, setNormalCursor } = useContext(MouseContext);
@@ -67,25 +69,15 @@ export default function Home({ projects, reviews }) {
   }, []);
   return (
     <Layout isFooter={true}>
-      <div className="lg:container lg:mx-auto">
+      <div className="lg:container lg:mx-auto spacing">
         <div
           id="hero"
           className="flex flex-col justify-center xs:pt-28 lg:pt-40 mb-28"
         >
-          <h1 className="xs:text-30 md:text-36 lg:text-44 xl:text-48 text-primary leading-tight  font-semibold mt-4 -mb-0">
-            The Best Digital Products.
-          </h1>
-          <h1 className="xs:text-30 md:text-36 lg:text-48 xl:text-48 text-primary leading-tight font-semibold mt-2">
-            On-Time. On-Budget. On-Point.
-          </h1>
+          <Title>The Best Digital Products.</Title>
+          <Title>On-Time. On-Budget. On-Point.</Title>
           <div id="btnAnimation">
-            <button
-              onMouseEnter={setHoverCursor}
-              onMouseLeave={setNormalCursor}
-              className="border-2 border-primary font-medium xs:text-16 md:text-18 lg:text:20 xl:text-22 w-max px-9 py-2 mt-7 letterspacing hover:bg-primary hover:text-white transition-all duration-500	cursor-none"
-            >
-              Let's Talk
-            </button>
+            <ButtonOutline>Let's Talk</ButtonOutline>
           </div>
         </div>
       </div>
@@ -94,59 +86,47 @@ export default function Home({ projects, reviews }) {
         <FeaturedProjects projects={projects} />
       </section>
       <section>
-        <div className="lg:container lg:mx-auto py-10">
-          <h2 className="xs:text-24 md:text-28 lg:text-32 xl:text-36 text-primary font-semibold mb-14">
-            Whatever you need, we build
-          </h2>
-          <div className="grid grid-cols-2 xs:gap-4 xs:gap-4 lg:gap-10">
+        <div className="lg:container lg:mx-auto py-10 spacing">
+          <H2>Whatever you need, we build</H2>
+          <div className="grid grid-cols-2 xs:gap-4 xs:gap-6 lg:gap-10">
             <div className="xs:col-span-2 md:col-span-1 shadow-md xs:py-4 xl:py-14 xs:px-6 xl:px-14">
-              <h3 className="xs:text-20 md:text-22 lg:text-24 xl:text-26 text-primary font-medium mb-4">
-                Web Applications
-              </h3>
-              <p className="xs:text-14 md:text-14 lg:text-16 xl:text-18 text-gray font-light">
+              <H3>Web Applications</H3>
+              <Para>
                 From the initial design to the final development stage, your
                 dedicated team of specialists will build your application to
                 reflect your business goals and user needs.
-              </p>
+              </Para>
             </div>
             <div className="xs:col-span-2 md:col-span-1 shadow-md xs:py-4 xl:py-14 xs:px-6 xl:px-14">
-              <h3 className="xs:text-20 md:text-22 lg:text-24 xl:text-26 text-primary font-medium mb-4">
-                UI/UX
-              </h3>
-              <p className="xs:text-14 md:text-14 lg:text-16 xl:text-18 text-gray font-light">
+              <H3>UI/UX</H3>
+              <Para>
                 From the initial design to the final development stage, your
                 dedicated team of specialists will build your application to
                 reflect your business goals and user needs.
-              </p>
+              </Para>
             </div>
             <div className="xs:col-span-2 md:col-span-1 shadow-md xs:py-4 xl:py-14 xs:px-6 xl:px-14">
-              <h3 className="xs:text-20 md:text-22 lg:text-24 xl:text-26 text-primary font-medium mb-4">
-                Custom E-Commerce
-              </h3>
-              <p className="xs:text-14 md:text-14 lg:text-16 xl:text-18 text-gray font-light">
+              <H3>Custom E-Commerce</H3>
+              <Para>
                 From the initial design to the final development stage, your
                 dedicated team of specialists will build your application to
                 reflect your business goals and user needs.
-              </p>
+              </Para>
             </div>
             <div className="xs:col-span-2 md:col-span-1 shadow-md xs:py-4 xl:py-14 xs:px-6 xl:px-14">
-              <h3 className="xs:text-20 md:text-22 lg:text-24 xl:text-26 text-primary font-medium mb-4">
-                Digital Marketing
-              </h3>
-              <p className="xs:text-14 md:text-14 lg:text-16 xl:text-18 text-gray font-light">
+              <H3>Digital Marketing</H3>
+              <Para>
                 From the initial design to the final development stage, your
                 dedicated team of specialists will build your application to
                 reflect your business goals and user needs.
-              </p>
+              </Para>
             </div>
           </div>
         </div>
       </section>
       <section className="bg-grayBg">
-        <div className="lg:container lg:mx-auto py-10 xs:px-2">
-          <h2 className="xs:text-24 md:text-28 lg:text-32 xl:text-36 text-primary font-semibold mb-14">
-            Reveiws, Words On The Street
-          </h2>
+        <div className="lg:container lg:mx-auto py-10 spacing">
+          <H2>Reveiws, Words On The Street</H2>
           <ReviewCard reviews={reviews} />
         </div>
       </section>
