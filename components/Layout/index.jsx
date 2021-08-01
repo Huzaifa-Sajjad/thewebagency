@@ -1,11 +1,12 @@
 import { Fragment } from "react";
-import Header from "../Navigation/Header";
-import Footer from "../Navigation/Footer";
+import CTA from "../CTA";
 import Cursor from "../Cursor";
 import Drawer from "../Drawer";
 import Loader from "../Loader";
+import Header from "../Navigation/Header";
+import Footer from "../Navigation/Footer";
 
-function Layout({ children, isFooter }) {
+function Layout({ children, hasCTA }) {
   return (
     <Fragment>
       <Drawer />
@@ -14,7 +15,8 @@ function Layout({ children, isFooter }) {
         <Cursor />
         <Header />
         {children}
-        {isFooter && <Footer />}
+        {hasCTA && <CTA />}
+        <Footer />
       </div>
     </Fragment>
   );
