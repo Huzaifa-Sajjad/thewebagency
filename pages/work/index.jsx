@@ -6,7 +6,7 @@ import { useEffect } from "react";
 import { Power3, gsap } from "gsap";
 import { H1, Lead } from "@/components/Text";
 
-import { ButtonOutline, ButtonPrimary } from "@/components/Buttons";
+import { ButtonOutline, ButtonPrimary } from "@/components/Button";
 
 export default function CaseStudy({ projects }) {
   useEffect(() => {

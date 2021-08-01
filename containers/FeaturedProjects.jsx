@@ -3,7 +3,7 @@ import { gsap, Power3 } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import Card from "@/components/Card";
 import { MouseContext } from "@/context/mouseContext";
-import { ButtonOutline } from "@/components/Buttons";
+import { ButtonOutline, ButtonPrimary } from "@/components/Button";
 import { Title, H2, H3, H4, Lead, Para } from "@/components/Text";
 
 if (typeof window !== "undefined") {

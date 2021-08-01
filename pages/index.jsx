@@ -5,13 +5,10 @@ import { Client } from "../prismic-config";
 import Layout from "@/components/Layout";
 import FeaturedProjects from "@/containers/FeaturedProjects";
 import ReviewCard from "@/components/Review";
-import { MouseContext } from "@/context/mouseContext";
-import { ButtonOutline } from "@/components/Buttons";
+import { ButtonOutline, ButtonPrimary } from "@/components/Button";
 import { Title, H2, H3, H4, Lead, Para } from "@/components/Text";
 
 export default function Home({ projects, reviews }) {
-  const { setHoverCursor, setNormalCursor } = useContext(MouseContext);
-
   useEffect(() => {
     const timeline = gsap.timeline();
     const main = document.getElementById("main");

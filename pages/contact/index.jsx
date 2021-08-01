@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import { Power3, gsap } from "gsap";
 import { H1, Lead } from "@/components/Text";
 
-import { ButtonPrimary } from "@/components/Buttons";
+import { ButtonPrimary } from "@/components/Button";
 
 function Contact() {
   useEffect(() => {

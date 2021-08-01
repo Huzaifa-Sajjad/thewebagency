@@ -1,6 +1,7 @@
 import { useState, useContext } from "react";
 import { gsap, Expo, Power3 } from "gsap";
 import { MouseContext } from "@/context/mouseContext";
+import { H3 } from "@/components/Text";
 
 function Review({ reviews }) {
   const { setHoverCursor, setNormalCursor } = useContext(MouseContext);
