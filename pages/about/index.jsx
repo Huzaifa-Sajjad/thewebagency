@@ -60,7 +60,7 @@ function About() {
       <Loader />
       <Layout isFooter={true}>
         <section>
-          <div className="container lg:container  lg:mx-auto">
+          <div className="lg:container lg:mx-auto">
             <div className="flex flex-col justify-center xs:py-2  lg:py-20 xs:px-2 md:px-10 lg:px-0">
               <h1 className="xs:text-24 md:text-28 lg:text-32 xl:text-36 text-primary font-semibold md:max-w-25">
                 Ingenious products driven by transparent relationships

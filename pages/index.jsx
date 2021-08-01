@@ -70,30 +70,29 @@ export default function Home({ projects, reviews }) {
     <>
       <Loader />
       <Layout isFooter={true}>
-        <section>
-          <div className="lg:container lg:mx-auto  xs:px-4 lg:px-0">
-            <div
-              id="hero"
-              className="flex flex-col justify-center xs:pt-28 lg:pt-40 mb-28"
-            >
-              <h1 className="xs:text-30 md:text-36 lg:text-44 xl:text-48 text-primary leading-tight  font-semibold mt-4 -mb-0">
-                The Best Digital Products.
-              </h1>
-              <h1 className="xs:text-30 md:text-36 lg:text-48 xl:text-48 text-primary leading-tight font-semibold mt-2">
-                On-Time. On-Budget. On-Point.
-              </h1>
-              <div id="btnAnimation">
-                <button
-                  onMouseEnter={setHoverCursor}
-                  onMouseLeave={setNormalCursor}
-                  className="border-2 border-primary font-medium xs:text-16 md:text-18 lg:text:20 xl:text-22 w-max px-9 py-2 mt-7 letterspacing hover:bg-primary hover:text-white transition-all duration-500	cursor-none"
-                >
-                  Let's Talk
-                </button>
-              </div>
+        <div className="lg:container lg:mx-auto">
+          <div
+            id="hero"
+            className="flex flex-col justify-center xs:pt-28 lg:pt-40 mb-28"
+          >
+            <h1 className="xs:text-30 md:text-36 lg:text-44 xl:text-48 text-primary leading-tight  font-semibold mt-4 -mb-0">
+              The Best Digital Products.
+            </h1>
+            <h1 className="xs:text-30 md:text-36 lg:text-48 xl:text-48 text-primary leading-tight font-semibold mt-2">
+              On-Time. On-Budget. On-Point.
+            </h1>
+            <div id="btnAnimation">
+              <button
+                onMouseEnter={setHoverCursor}
+                onMouseLeave={setNormalCursor}
+                className="border-2 border-primary font-medium xs:text-16 md:text-18 lg:text:20 xl:text-22 w-max px-9 py-2 mt-7 letterspacing hover:bg-primary hover:text-white transition-all duration-500	cursor-none"
+              >
+                Let's Talk
+              </button>
             </div>
           </div>
-        </section>
+        </div>
+
         <section id="featuredProjets">
           <FeaturedProjects projects={projects} />
         </section>

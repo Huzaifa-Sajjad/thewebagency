@@ -47,7 +47,7 @@ module.exports = {
       85: "85ch",
     },
     maxHeight: {
-      100: "20em",
+      100: "20rem",
       120: "25rem",
     },
     screens: {
@@ -59,7 +59,14 @@ module.exports = {
       "2xl": "1536px",
     },
     container: {
-      padding: "16px",
+      padding: {
+        xs: "1rem",
+        sm: "2rem",
+        md: "2rem",
+        lg: "4rem",
+        xl: "5rem",
+        "2xl": "6rem",
+      },
     },
     cursor: {
       none: "none",
