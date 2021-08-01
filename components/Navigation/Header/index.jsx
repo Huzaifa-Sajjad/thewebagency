@@ -1,11 +1,11 @@
-import { useState, useContext } from "react";
-import Drawer from "../../Drawer";
+import { useContext } from "react";
 import Link from "next/link";
-import { MouseContext } from "../../../context/mouseContext";
+import { MouseContext } from "@/context/mouseContext";
+import { DrawerContext } from "@/context/drawerContext";
 
 function Header() {
-  const [drawer, setDrawer] = useState(false);
   const { setHoverCursor, setNormalCursor } = useContext(MouseContext);
+  const { openDrawer } = useContext(DrawerContext);
 
   return (
     <div className="lg:container lg:mx-auto xs:pt-4 lg:pt-20 px-4 " id="header">
@@ -36,12 +36,11 @@ function Header() {
         </div>
         <div
           className="xs:block lg:hidden flex items-center py-1 px-2 shadow-xl"
-          onClick={() => setDrawer(true)}
+          onClick={openDrawer}
         >
           <i className="fi-rr-menu-burger text-2xl"></i>
         </div>
       </div>
-      <Drawer isOpen={drawer} onClose={setDrawer} />
     </div>
   );
 }
