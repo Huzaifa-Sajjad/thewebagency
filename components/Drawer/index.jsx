@@ -55,7 +55,7 @@ function Drawer() {
 
   return (
     <div className={`${styles.root} ${open ? styles.open : ""}`} id="drawer">
-      <img src="/Home/logo.png" alt="" className={styles.logo} />
+      <img src="/logo.png" alt="" className={styles.logo} />
 
       <button onClick={() => closeDrawer(timeline)} className={styles.closeBtn}>
         x

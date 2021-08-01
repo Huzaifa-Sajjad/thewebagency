@@ -5,8 +5,8 @@ import { Client } from "../prismic-config";
 import Layout from "@/components/Layout";
 import FeaturedProjects from "@/containers/FeaturedProjects";
 import ReviewCard from "@/components/Review";
-import { ButtonOutline, ButtonPrimary } from "@/components/Button";
-import { Title, H2, H3, H4, Lead, Para } from "@/components/Text";
+import { ButtonOutline } from "@/components/Button";
+import { Title, H2, H3, Para } from "@/components/Text";
 
 export default function Home({ projects, reviews }) {
   useEffect(() => {
@@ -69,12 +69,12 @@ export default function Home({ projects, reviews }) {
       <div className="lg:container lg:mx-auto spacing">
         <div
           id="hero"
-          className="flex flex-col justify-center xs:pt-28 lg:pt-40 mb-28"
+          className="flex flex-col justify-center xs:pt-28 lg:pt-40 xs:mb-10 lg:mb-28"
         >
           <Title>The Best Digital Products.</Title>
           <Title>On-Time. On-Budget. On-Point.</Title>
           <div id="btnAnimation">
-            <ButtonOutline>Let's Talk</ButtonOutline>
+            <ButtonOutline className="mt-10">Let's Talk</ButtonOutline>
           </div>
         </div>
       </div>
@@ -84,8 +84,8 @@ export default function Home({ projects, reviews }) {
       </section>
       <section>
         <div className="lg:container lg:mx-auto py-10 spacing">
-          <H2>Whatever you need, we build</H2>
-          <div className="grid grid-cols-2 xs:gap-4 xs:gap-6 lg:gap-10">
+          <H2 className="mb-10">Whatever you need, we build</H2>
+          <div className="grid grid-cols-2   gap-10">
             <div className="xs:col-span-2 md:col-span-1 shadow-md xs:py-4 xl:py-14 xs:px-6 xl:px-14">
               <H3>Web Applications</H3>
               <Para>
@@ -123,7 +123,9 @@ export default function Home({ projects, reviews }) {
       </section>
       <section className="bg-grayBg">
         <div className="lg:container lg:mx-auto py-10 spacing">
-          <H2>Reveiws, Words On The Street</H2>
+          <H2 className="mb-10 xs:text-center lg:text-left">
+            Reveiws, Words On The Street
+          </H2>
           <ReviewCard reviews={reviews} />
         </div>
       </section>

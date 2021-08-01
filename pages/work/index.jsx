@@ -35,8 +35,10 @@ export default function CaseStudy({ projects }) {
     <Layout isFooter={true}>
       <section>
         <div className="lg:container lg:mx-auto xs:px-4">
-          <div className="flex flex-col justify-center pt-10 xs:px-2 md:px-10 lg:px-0">
-            <H1>Creating digital experiences our clients fall in love with</H1>
+          <div className="flex flex-col justify-center pt-24 xs:px-2 md:px-10 lg:px-0">
+            <H1 className="xs:mb-4 lg:mb-14">
+              Creating digital experiences our clients fall in love with
+            </H1>
             <Lead>
               Tell us all about your project right here, or send us an email at{" "}
               <span className="font-medium text-primary cursor-pointer">
@@ -62,9 +64,9 @@ export default function CaseStudy({ projects }) {
               </div>
             ))}
           </div>
-          <div className="flex justify-center items-center pt-20">
+          <div className="flex justify-center items-center py-20">
             <ButtonPrimary>Back</ButtonPrimary>
-            <ButtonOutline>View More</ButtonOutline>
+            <ButtonOutline className="ml-4">View More</ButtonOutline>
           </div>
         </div>
       </section>

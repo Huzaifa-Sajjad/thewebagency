@@ -2,17 +2,14 @@ import { useEffect, useContext } from "react";
 import { gsap, Power3 } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import Card from "@/components/Card";
-import { MouseContext } from "@/context/mouseContext";
 import { ButtonOutline, ButtonPrimary } from "@/components/Button";
-import { Title, H2, H3, H4, Lead, Para } from "@/components/Text";
+import { H2 } from "@/components/Text";
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
 }
 
 function FeaturedProjects({ projects }) {
-  const { setHoverCursor, setNormalCursor } = useContext(MouseContext);
-
   useEffect(() => {
     const projectCards = document.querySelectorAll(".project-card");
     projectCards.forEach((project) => {
@@ -27,7 +24,9 @@ function FeaturedProjects({ projects }) {
   }, []);
   return (
     <div className="lg:container lg:mx-auto  spacing">
-      <H2>Featured Projects</H2>
+      <h2 className="text-24 font-bold text-right border-r-4 pr-4">
+        Featured Projects
+      </h2>
       {projects.map((project, idx) => (
         <Card
           key={idx}
@@ -40,9 +39,9 @@ function FeaturedProjects({ projects }) {
         />
       ))}
 
-      <div className="flex justify-center items-center py-14 border-b border-gray border-opacity-10">
+      <div className="flex flex-wrap justify-center items-center py-14 border-b border-gray border-opacity-10">
         <ButtonPrimary>Contact Us</ButtonPrimary>
-        <ButtonOutline>View All</ButtonOutline>
+        <ButtonOutline className="ml-4">View All</ButtonOutline>
       </div>
     </div>
   );

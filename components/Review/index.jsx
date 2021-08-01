@@ -1,7 +1,7 @@
 import { useState, useContext } from "react";
 import { gsap, Expo, Power3 } from "gsap";
 import { MouseContext } from "@/context/mouseContext";
-import { H3 } from "@/components/Text";
+import { H3, Para } from "@/components/Text";
 
 function Review({ reviews }) {
   const { setHoverCursor, setNormalCursor } = useContext(MouseContext);
@@ -77,6 +77,7 @@ function Review({ reviews }) {
                 viewBox="0 0 76 85"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
+                className="xs:hidden lg:block"
               >
                 <path d="M0 10.625V74.375L28.5 42.5V10.625H0Z" fill="#111111" />
                 <path
@@ -85,7 +86,7 @@ function Review({ reviews }) {
                 />
               </svg>
 
-              <p className="xs:text-18 md:text-18 lg:text-20 xl:text-22 xs:max-w-55 lg:max-w-65 text-primary font-light">
+              <p className="xs:text-18 md:text-18 lg:text-20 xl:text-22 xs:max-w-55 lg:max-w-65 text-primary font-light xs:mt-4 lg:mt-0">
                 {reviews[reviewCounter].data.text[0].text}
               </p>
             </div>

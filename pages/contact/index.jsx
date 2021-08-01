@@ -37,8 +37,8 @@ function Contact() {
             <div className="lg:col-span-1"></div>
             <div className="xs:col-span-4 lg:col-span-2">
               <div className="flex flex-col justify-center py-20">
-                <H1>Let's Talk</H1>
-                <Lead>
+                <H1 className="xs:mb-2 lg:mb-14">Let's Talk</H1>
+                <Lead className="xs:mb-10 ">
                   Tell us all about project right here, or send us an email at{" "}
                   <span className="font-medium text-primary cursor-pointer">
                     info@thewebagency.io
@@ -70,7 +70,9 @@ function Contact() {
                     placeholder="Project Details"
                     rows="4"
                   />
-                  <ButtonPrimary>Send</ButtonPrimary>
+                  <ButtonPrimary className="xs:mx-auto xs:block lg:mx-0">
+                    Send
+                  </ButtonPrimary>
                 </form>
               </div>
             </div>

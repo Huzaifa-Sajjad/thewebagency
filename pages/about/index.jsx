@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import { Power3, gsap, Expo } from "gsap";
 import CSSRulePlugin from "gsap/dist/CSSRulePlugin";
 import { H1, H2, H4, Lead, Para } from "@/components/Text";
+import { Title } from "@/components/Text";
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(CSSRulePlugin);
@@ -63,7 +64,9 @@ function About() {
         <section>
           <div className="lg:container lg:mx-auto spacing">
             <div className="flex flex-col justify-center xs:py-2  lg:py-20 xs:px-2 md:px-10 lg:px-0">
-              <H1>Ingenious products driven by transparent relationships</H1>
+              <H1 className="mt-10">
+                Ingenious products driven by transparent relationships
+              </H1>
               <Lead>
                 Lorem Ipsum is simply dummy text of the printing and typesetting
                 industry. Lorem Ipsum has been the industry's standard dummy
@@ -79,10 +82,10 @@ function About() {
           <div className="lg:container lg:mx-auto spacing">
             <div className="grid grid-cols-12 md:gap-10  md:px-6 lg:px-0">
               <div className="xs:col-span-12 lg:col-span-4 xl:col-span-5 lg:pl-14 mb-6 xs:text-center lg:text-left">
-                <H2>
+                <Title>
                   Our
                   <br /> Approach
-                </H2>
+                </Title>
               </div>
               <div className="xs:col-span-12 lg:col-span-8 xl:col-span-6  py-2 pl-9 border-l-2 border-lightGray">
                 <div className="relative">
@@ -107,13 +110,13 @@ function About() {
                   </div>
                   <H4>PHASE 2</H4>
                   <H2>Design</H2>
-                  <H2>
+                  <Para>
                     To provide stylish and interaction design we focus on a
                     custom approach. No matter how complex the technological
                     aspect of the product, it will be easy and intuitive to
                     navigate. We are capable of producing clickable prototypes
                     to provide a comprehensive vision of the final result.
-                  </H2>
+                  </Para>
                   <ul className="timelineList two-col">
                     <li>Wireframing</li>
                     <li>Invision & Marvel</li>
