@@ -59,7 +59,7 @@ module.exports = {
       "2xl": "1536px",
     },
     container: {
-      padding: "16px",
+      padding: "16pxw",
     },
     cursor: {
       none: "none",
