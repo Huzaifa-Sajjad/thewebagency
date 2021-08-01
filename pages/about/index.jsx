@@ -23,7 +23,7 @@ function About() {
       .to(
         "#app-loader",
         {
-          height: "0%",
+          heighst: "0%",
           display: "none",
           ease: Expo.easeInOut,
           duration: 1,
