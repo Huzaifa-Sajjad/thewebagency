@@ -1,9 +1,51 @@
-import Layout from "../../components/Layout";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import axios from "axios";
 import { Power3, gsap } from "gsap";
+import Layout from "@/components/Layout";
 import { H1, Lead } from "@/components/Text";
+import { ButtonPrimary } from "@/components/Button";
 
 function Contact() {
+  const [formData, setFormData] = useState({
+    name: "",
+    company: "",
+    email: "",
+    project_budget: "",
+    project_description: "",
+  });
+  const [loading, setLoading] = useState(false);
+
+  const handleInputChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleFormSubmit = async (evt) => {
+    evt.preventDefault();
+    const payload = {
+      fields: [
+        { name: "name", value: formData.name },
+        { name: "company", value: formData.company },
+        { name: "email", value: formData.email },
+        { name: "project_budget", value: formData.project_budget },
+        { name: "project_description", value: formData.project_description },
+      ],
+    };
+
+    //make call to hubspot form submission api
+    try {
+      setLoading(true);
+      const response = await axios.post(
+        `https://api.hsforms.com/submissions/v3/integration/submit/${process.env.NEXT_PUBLIC_PORTAL_ID}/${process.env.NEXT_PUBLIC_FORM_ID}`,
+        payload
+      );
+      console.log(response);
+      setLoading(false);
+    } catch (err) {
+      setLoading(false);
+      console.log(err);
+    }
+  };
+
   useEffect(() => {
     const timeline = gsap.timeline();
     const main = document.getElementById("main");
@@ -27,6 +69,7 @@ function Contact() {
         0.2
       );
   }, []);
+
   return (
     <Layout>
       <section>
@@ -42,36 +85,49 @@ function Contact() {
                     info@thewebagency.io
                   </span>
                 </Lead>
-                <form>
+                <form onSubmit={handleFormSubmit}>
                   <label htmlFor="name">Name</label>
-                  <input type="text" name="name" placeholder="Jhon Doe" />
+                  <input
+                    type="text"
+                    name="name"
+                    placeholder="Jhon Doe"
+                    required
+                    onChange={handleInputChange}
+                  />
                   <label htmlFor="company">Company</label>
-                  <input type="text" name="company" placeholder="ABC inc." />
+                  <input
+                    type="text"
+                    name="company"
+                    placeholder="ABC inc."
+                    required
+                    onChange={handleInputChange}
+                  />
                   <label htmlFor="email">Email</label>
                   <input
                     type="email"
                     name="email"
                     placeholder="abc@example.com"
+                    required
+                    onChange={handleInputChange}
                   />
                   <label htmlFor="budget">Project Budget</label>
                   <input
                     type="text"
                     name="project_budget"
                     placeholder="$ XXX"
+                    onChange={handleInputChange}
                   />
                   <label htmlFor="description">Project Description</label>
                   <textarea
                     type="text"
                     name="project_description"
-                    placeholder="project_details"
+                    placeholder="Tell us more about your project."
                     rows="4"
+                    onChange={handleInputChange}
                   />
-                  <button
-                    type="submit"
-                    className="xs:text-16 md:text-16 lg:text:20 xl:text-22 bg-primary border-2 border-primary text-white w-max px-9 py-3 cursor-none"
-                  >
-                    Let's Talk
-                  </button>
+                  <ButtonPrimary type="sumbit" disabled={loading}>
+                    {loading ? "Processing..." : "Let's Talk"}
+                  </ButtonPrimary>
                 </form>
               </div>
             </div>
