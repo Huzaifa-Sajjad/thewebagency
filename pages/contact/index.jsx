@@ -34,11 +34,10 @@ function Contact() {
     //make call to hubspot form submission api
     try {
       setLoading(true);
-      const response = await axios.post(
+      await axios.post(
         `https://api.hsforms.com/submissions/v3/integration/submit/${process.env.NEXT_PUBLIC_PORTAL_ID}/${process.env.NEXT_PUBLIC_FORM_ID}`,
         payload
       );
-      console.log(response);
       setLoading(false);
     } catch (err) {
       setLoading(false);
