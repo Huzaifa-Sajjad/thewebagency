@@ -17,7 +17,6 @@ function Card({ bg, textColor, logo, statement, tags, cover }) {
     <Tilt
       className="Tilt mt-10 h-full project-card cursor-none z-50"
       options={{
-        zIndex: 100,
         reverse: true, // reverse the tilt direction
         max: 25, // max tilt rotation (degrees)
         perspective: 9000, // Transform perspective, the lower the more extreme the tilt gets.
@@ -30,7 +29,7 @@ function Card({ bg, textColor, logo, statement, tags, cover }) {
       onMouseLeave={setNormalCursor}
     >
       <div
-        className="bg-local bg-cover px-6 xs:pt-6 lg:pt-4  grid grid-cols-6 items-center h-full"
+        className="bg-local bg-cover px-6 pt-10 grid grid-cols-6 items-center h-full"
         style={{
           background: bg,
         }}

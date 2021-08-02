@@ -65,7 +65,7 @@ export default function Home({ projects, reviews }) {
       });
   }, []);
   return (
-    <Layout isFooter={true}>
+    <Layout hasCTA={true}>
       <div className="lg:container lg:mx-auto spacing">
         <div
           id="hero"
@@ -122,7 +122,7 @@ export default function Home({ projects, reviews }) {
         </div>
       </section>
       <section className="bg-grayBg">
-        <div className="lg:container lg:mx-auto py-10 spacing">
+        <div className="lg:container lg:mx-auto py-20 spacing">
           <H2 className="mb-10 xs:text-center lg:text-left">
             Reveiws, Words On The Street
           </H2>
