@@ -67,10 +67,7 @@ export default function Home({ projects, reviews }) {
   return (
     <Layout hasCTA={true}>
       <div className="lg:container lg:mx-auto spacing">
-        <div
-          id="hero"
-          className="flex flex-col justify-center xs:pt-28 lg:pt-40 xs:mb-10 lg:mb-28"
-        >
+        <div id="hero" className="flex flex-col justify-center py-20">
           <Title>The Best Digital Products.</Title>
           <Title>On-Time. On-Budget. On-Point.</Title>
           <div id="btnAnimation">
@@ -78,7 +75,6 @@ export default function Home({ projects, reviews }) {
           </div>
         </div>
       </div>
-
       <section id="featuredProjets">
         <FeaturedProjects projects={projects} />
       </section>
