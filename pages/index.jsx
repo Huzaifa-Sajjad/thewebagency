@@ -7,6 +7,7 @@ import FeaturedProjects from "@/containers/FeaturedProjects";
 import ReviewCard from "@/components/Review";
 import { ButtonOutline } from "@/components/Button";
 import { Title, H2, H3, Para } from "@/components/Text";
+import Wrapper from "@/components/Wrapper";
 
 export default function Home({ projects, reviews }) {
   useEffect(() => {
@@ -28,7 +29,7 @@ export default function Home({ projects, reviews }) {
           display: "none",
           duration: 1,
         },
-        0.4
+        0.6
       )
       .from(
         header,
@@ -67,24 +68,35 @@ export default function Home({ projects, reviews }) {
   return (
     <Layout hasCTA={true}>
       <div className="lg:container lg:mx-auto spacing">
-        <div id="hero" className="flex flex-col justify-center py-20">
-          <Title>The Best Digital Products.</Title>
-          <Title>On-Time. On-Budget. On-Point.</Title>
-          <div id="btnAnimation">
-            <ButtonOutline className="mt-10">Let's Talk</ButtonOutline>
+        <Wrapper>
+          <div id="hero">
+            <Title className="font-medium leading-snug">
+              The Best Digital Products.
+            </Title>
+            <Title className="font-medium leading-snug">
+              On-Time. On-Budget. On-Point.
+            </Title>
+            <div id="btnAnimation">
+              <ButtonOutline className="mt-10 xs:w-full lg:w-auto">
+                Let's Talk
+              </ButtonOutline>
+            </div>
           </div>
-        </div>
+        </Wrapper>
       </div>
-      <section id="featuredProjets">
+      <section
+        id="featuredProjets"
+        className="border-b border-gray border-opacity-20"
+      >
         <FeaturedProjects projects={projects} />
       </section>
-      <section>
-        <div className="lg:container lg:mx-auto py-10 spacing">
-          <H2 className="mb-10">Whatever you need, we build</H2>
-          <div className="grid grid-cols-2   gap-10">
+      <section className="xs:py-8 lg:py-20">
+        <div className="lg:container lg:mx-auto spacing">
+          <H2 className="xs:mb-6 lg:mb-10">Whatever you need, we build</H2>
+          <div className="grid grid-cols-2 gap-10">
             <div className="xs:col-span-2 md:col-span-1 shadow-md xs:py-4 xl:py-14 xs:px-6 xl:px-14">
               <H3>Web Applications</H3>
-              <Para>
+              <Para className="my-4">
                 From the initial design to the final development stage, your
                 dedicated team of specialists will build your application to
                 reflect your business goals and user needs.
@@ -92,7 +104,7 @@ export default function Home({ projects, reviews }) {
             </div>
             <div className="xs:col-span-2 md:col-span-1 shadow-md xs:py-4 xl:py-14 xs:px-6 xl:px-14">
               <H3>UI/UX</H3>
-              <Para>
+              <Para className="my-4">
                 From the initial design to the final development stage, your
                 dedicated team of specialists will build your application to
                 reflect your business goals and user needs.
@@ -100,7 +112,7 @@ export default function Home({ projects, reviews }) {
             </div>
             <div className="xs:col-span-2 md:col-span-1 shadow-md xs:py-4 xl:py-14 xs:px-6 xl:px-14">
               <H3>Custom E-Commerce</H3>
-              <Para>
+              <Para className="my-4">
                 From the initial design to the final development stage, your
                 dedicated team of specialists will build your application to
                 reflect your business goals and user needs.
@@ -108,7 +120,7 @@ export default function Home({ projects, reviews }) {
             </div>
             <div className="xs:col-span-2 md:col-span-1 shadow-md xs:py-4 xl:py-14 xs:px-6 xl:px-14">
               <H3>Digital Marketing</H3>
-              <Para>
+              <Para className="my-4">
                 From the initial design to the final development stage, your
                 dedicated team of specialists will build your application to
                 reflect your business goals and user needs.
@@ -117,9 +129,9 @@ export default function Home({ projects, reviews }) {
           </div>
         </div>
       </section>
-      <section className="bg-grayBg">
-        <div className="lg:container lg:mx-auto py-20 spacing">
-          <H2 className="mb-10 xs:text-center lg:text-left">
+      <section className="bg-grayBg xs:py-8 lg:py-20">
+        <div className="lg:container lg:mx-auto spacing">
+          <H2 className="xs:mb-6 lg:mb-10 xs:text-center lg:text-left">
             Reveiws, Words On The Street
           </H2>
           <ReviewCard reviews={reviews} />

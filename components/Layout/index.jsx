@@ -6,7 +6,7 @@ import Loader from "../Loader";
 import Header from "../Navigation/Header";
 import Footer from "../Navigation/Footer";
 
-function Layout({ children, hasCTA }) {
+function Layout({ children, hasCTA, invertCTA }) {
   return (
     <Fragment>
       <Drawer />
@@ -15,7 +15,7 @@ function Layout({ children, hasCTA }) {
         <Cursor />
         <Header />
         {children}
-        {hasCTA && <CTA />}
+        {hasCTA && <CTA hasBg={invertCTA} />}
         <Footer />
       </div>
     </Fragment>

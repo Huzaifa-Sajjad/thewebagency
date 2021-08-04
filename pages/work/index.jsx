@@ -1,12 +1,12 @@
-import Layout from "../../components/Layout";
-import Prismic from "@prismicio/client";
-import { Client } from "../../prismic-config";
-import Card from "../../components/Card";
 import { useEffect } from "react";
 import { Power3, gsap } from "gsap";
-import { H1, Lead } from "@/components/Text";
-
+import Layout from "@/components/Layout";
+import Prismic from "@prismicio/client";
+import Card from "@/components/Card";
+import { Title, H6 } from "@/components/Text";
 import { ButtonOutline, ButtonPrimary } from "@/components/Button";
+import Wrapper from "@/components/Wrapper";
+import { Client } from "../../prismic-config";
 
 export default function CaseStudy({ projects }) {
   useEffect(() => {
@@ -28,28 +28,45 @@ export default function CaseStudy({ projects }) {
           ease: Power3.easeInOut,
           duration: 1,
         },
-        0.2
-      );
+        0.6
+      )
+      .from(
+        "#work-hero h6",
+        {
+          opacity: 0,
+          y: 20,
+          ease: Power3.easeInOut,
+          duration: 0.5,
+        },
+        0.9
+      )
+      .from("#work-hero h1", {
+        opacity: 0,
+        y: 50,
+        ease: Power3.easeInOut,
+        duration: 1,
+      })
+      .from("#work-cards", {
+        opacity: 0,
+        ease: Power3.easeInOut,
+        duration: 0.5,
+      });
   }, []);
   return (
-    <Layout isFooter={true}>
+    <Layout hasCTA invertCTA>
       <section>
-        <div className="lg:container lg:mx-auto xs:px-4">
-          <div className="flex flex-col justify-center pt-24 xs:px-2 md:px-10 lg:px-0">
-            <H1 className="xs:mb-4 lg:mb-14">
-              Creating digital experiences our clients fall in love with
-            </H1>
-            <Lead>
-              Tell us all about your project right here, or send us an email at{" "}
-              <span className="font-medium text-primary cursor-pointer">
-                info@thewebagency.io
-              </span>
-            </Lead>
-          </div>
+        <div className="lg:container lg:mx-auto spacing" id="work-hero">
+          <Wrapper>
+            <H6 className="mb-4">OUR PORTFOLIO</H6>
+            <Title className="font-medium max-w-28 leading-tight">
+              Crafting such digital products which gurantee customer
+              satisfaction, intutive user experiences and maximum results.
+            </Title>
+          </Wrapper>
         </div>
       </section>
-      <section>
-        <div className="lg:container lg:mx-auto xs:px-4 ">
+      <section className="xs:py-8 lg:py-20" id="work-cards">
+        <div className="lg:container lg:mx-auto spacing ">
           <div className="grid grid-cols-12 gap-4">
             {projects.map((project, idx) => (
               <div className="xs:col-span-12 xl:col-span-6 h-full" key={idx}>
@@ -64,9 +81,10 @@ export default function CaseStudy({ projects }) {
               </div>
             ))}
           </div>
-          <div className="flex justify-center items-center py-20">
-            <ButtonPrimary>Back</ButtonPrimary>
-            <ButtonOutline className="ml-4">View More</ButtonOutline>
+          <div className="flex justify-center items-center border-t border-gray border-opacity-20 xs:mt-8 lg:mt-20 xs:py-8 lg:py-10">
+            <ButtonPrimary className="xs:mr-0 lg:mr-4 xs:w-full lg:w-auto">
+              View More
+            </ButtonPrimary>
           </div>
         </div>
       </section>

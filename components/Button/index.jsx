@@ -7,7 +7,7 @@ export const ButtonPrimary = ({ className, children, type, disabled }) => {
     <button
       onMouseEnter={setHoverCursor}
       onMouseLeave={setNormalCursor}
-      className={`xs:text-16 md:text-16 lg:text:20 xl:text-22 bg-primary border-2 border-primary text-white w-max px-9 py-3 cursor-none ${className}`}
+      className={`xs:text-16 md:text-16 lg:text:20 xl:text-22 bg-primary border-2 border-primary text-white w-max px-9 py-3 cursor-none hover:bg-white hover:text-black transition-all duration-500 ${className}`}
       type={type}
       disabled={disabled}
     >

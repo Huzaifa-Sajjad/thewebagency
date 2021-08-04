@@ -10,6 +10,7 @@ module.exports = {
   theme: {
     colors: {
       primary: "#111111",
+      black: "#111111",
       white: "#fff",
       purple: "#543162",
       grayBg: "#F7F7F7",
@@ -39,6 +40,7 @@ module.exports = {
     },
     maxWidth: {
       25: "25ch",
+      28: "28ch",
       35: "35ch",
       45: "45ch",
       55: "55ch",
@@ -47,6 +49,7 @@ module.exports = {
       85: "85ch",
       "1/2": "50%",
       "3/4": "75%",
+      "4/4": "85%",
     },
     maxHeight: {
       100: "20rem",
@@ -58,7 +61,7 @@ module.exports = {
       md: "768px",
       lg: "1024px",
       xl: "1280px",
-      "2xl": "1536px",
+      "2xl": "1336px",
     },
     container: {
       padding: {
@@ -72,18 +75,6 @@ module.exports = {
     },
     cursor: {
       none: "none",
-    },
-    extend: {
-      spacing: {
-        8: "4px",
-        16: "8px",
-        32: "16px",
-        64: "32px",
-      },
-      borderRadius: {
-        sm: "10px",
-        md: "20px",
-      },
     },
   },
   variants: {},

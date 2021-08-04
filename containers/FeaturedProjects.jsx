@@ -34,9 +34,13 @@ function FeaturedProjects({ projects }) {
           />
         ))}
       </div>
-      <div className="flex flex-wrap justify-center items-center py-14 border-b border-gray border-opacity-10">
-        <ButtonPrimary>Contact Us</ButtonPrimary>
-        <ButtonOutline className="ml-4">View All</ButtonOutline>
+      <div className="flex flex-wrap justify-center items-center xs:py-8 lg:py-14">
+        <ButtonPrimary className="xs:w-full lg:w-auto">
+          Contact Us
+        </ButtonPrimary>
+        <ButtonOutline className="xs:w-full lg:w-auto xs:mt-4 lg:mt-0 xs:ml-0 lg:ml-4">
+          View All
+        </ButtonOutline>
       </div>
     </div>
   );

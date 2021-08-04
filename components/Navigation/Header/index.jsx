@@ -8,7 +8,10 @@ function Header() {
   const { openDrawer } = useContext(DrawerContext);
 
   return (
-    <div className="lg:container lg:mx-auto xs:pt-7 lg:pt-20 px-4 " id="header">
+    <div
+      className="lg:container lg:mx-auto xs:pt-7 lg:pt-20 spacing"
+      id="header"
+    >
       <div className="flex items-center justify-between">
         <div className="text-16 text-primary font-medium letterspacing">
           <Link href="/">thewebagency</Link>
