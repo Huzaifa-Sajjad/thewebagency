@@ -60,6 +60,7 @@ export default function CaseStudy({ projects }) {
                   statement={project.data.statement}
                   tags={project.data.tags}
                   cover={project.data.cover}
+                  isPortfolio={true}
                 />
               </div>
             ))}
