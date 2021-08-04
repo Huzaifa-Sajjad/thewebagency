@@ -98,7 +98,6 @@ export async function getServerSideProps() {
   const doc = await client.query(
     Prismic.predicates.at("document.type", "projects")
   );
-  console.log(doc);
   return {
     props: {
       projects: doc.results,
