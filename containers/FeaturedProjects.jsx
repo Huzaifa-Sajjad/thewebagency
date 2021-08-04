@@ -24,7 +24,7 @@ function FeaturedProjects({ projects }) {
   }, []);
   return (
     <div className="lg:container lg:mx-auto spacing">
-      <div className="flex justify-between overflow-scroll">
+      <div className="flex justify-between overflow-x-scroll card-wrapper pb-4">
         {projects.map((project, idx) => (
           <Card
             key={idx}
