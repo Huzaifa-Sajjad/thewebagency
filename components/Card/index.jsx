@@ -1,7 +1,9 @@
 import { H3, Para } from "@/components/Text";
 import { ButtonPrimary } from "@/components/Button";
+import { useRouter } from "next/router";
 
-function Card({ logo, statement, cover, isPortfolio }) {
+function Card({ logo, statement, cover, isPortfolio, id }) {
+  const router = useRouter();
   return (
     <div
       className={`py-20 px-10 mr-4 relative overflow-hidden bg-cover bg-center ${
@@ -19,7 +21,12 @@ function Card({ logo, statement, cover, isPortfolio }) {
           <Para className="text-white mx-auto">
             Lorem ipsum dolor, sit amet consectetur adipisicing elit.
           </Para>
-          <ButtonPrimary className="mx-auto">View Case</ButtonPrimary>
+          <ButtonPrimary
+            handleClick={() => router.push(`/work/${id}`)}
+            className="mx-auto"
+          >
+            View Case
+          </ButtonPrimary>
         </div>
         <img
           src={logo.url}

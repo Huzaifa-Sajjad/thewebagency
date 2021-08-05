@@ -150,6 +150,25 @@ textarea {
     object-position: center;
   }
 }
+.image-wrapper {
+  width: 100%;
+  height: 25rem;
+  overflow: hidden !important;
+  position: relative;
+  &::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: black;
+  }
+  img {
+    object-fit: cover;
+    object-position: center;
+  }
+}
 
 .card-content {
   transition: all 1s ease-in-out;

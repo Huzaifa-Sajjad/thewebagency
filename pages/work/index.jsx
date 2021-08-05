@@ -78,6 +78,7 @@ export default function CaseStudy({ projects }) {
                   tags={project.data.tags}
                   cover={project.data.cover}
                   isPortfolio={true}
+                  id={project.uid}
                 />
               </div>
             ))}
