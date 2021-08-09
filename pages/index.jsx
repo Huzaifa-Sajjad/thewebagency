@@ -1,4 +1,5 @@
-import { useEffect, useContext } from "react";
+import Link from "next/link";
+import { useEffect } from "react";
 import { Power3, Expo, gsap } from "gsap";
 import Prismic from "@prismicio/client";
 import { Client } from "../prismic-config";
@@ -6,8 +7,9 @@ import Layout from "@/components/Layout";
 import FeaturedProjects from "@/containers/FeaturedProjects";
 import ReviewCard from "@/components/Review";
 import { ButtonOutline } from "@/components/Button";
-import { Title, H2, H3, Para } from "@/components/Text";
+import { Title, H2, H6 } from "@/components/Text";
 import Wrapper from "@/components/Wrapper";
+import Services from "@/containers/Services";
 
 export default function Home({ projects, reviews }) {
   useEffect(() => {
@@ -42,16 +44,16 @@ export default function Home({ projects, reviews }) {
         0.8
       )
       .from(
-        "#hero > h1",
-        {
-          opacity: 0,
-          y: 50,
-          ease: Power3.easeInOut,
-          duration: 0.7,
-          stagger: 0.5,
-        },
+        "#hero > h6",
+        { opacity: 0, y: 50, ease: Power3.easeInOut, duration: 0.75 },
         1
       )
+      .from("#hero > h1", {
+        opacity: 0,
+        y: 50,
+        ease: Power3.easeInOut,
+        duration: 1,
+      })
       .from("#btnAnimation", {
         opacity: 0,
         y: 50,
@@ -66,20 +68,21 @@ export default function Home({ projects, reviews }) {
       });
   }, []);
   return (
-    <Layout hasCTA={true}>
+    <Layout hasCTA={true} title={"The Web Agency: Your Development Partner"}>
       <div className="lg:container lg:mx-auto spacing">
         <Wrapper>
           <div id="hero">
+            <H6 className="mb-4">WELCOME</H6>
             <Title className="font-medium leading-snug">
-              The Best Digital Products.
-            </Title>
-            <Title className="font-medium leading-snug">
-              On-Time. On-Budget. On-Point.
+              We offer the best digital services at an affordable rate, to help
+              you craft your digital identity.
             </Title>
             <div id="btnAnimation">
-              <ButtonOutline className="mt-10 xs:w-full lg:w-auto">
-                Let's Talk
-              </ButtonOutline>
+              <Link href="/contact">
+                <ButtonOutline className="mt-10 xs:w-full lg:w-auto">
+                  Let's Talk
+                </ButtonOutline>
+              </Link>
             </div>
           </div>
         </Wrapper>
@@ -90,45 +93,7 @@ export default function Home({ projects, reviews }) {
       >
         <FeaturedProjects projects={projects} />
       </section>
-      <section className="xs:py-8 lg:py-20">
-        <div className="lg:container lg:mx-auto spacing">
-          <H2 className="xs:mb-6 lg:mb-10">Whatever you need, we build</H2>
-          <div className="grid grid-cols-2 gap-10">
-            <div className="xs:col-span-2 md:col-span-1 shadow-md xs:py-4 xl:py-14 xs:px-6 xl:px-14">
-              <H3>Web Applications</H3>
-              <Para className="my-4">
-                From the initial design to the final development stage, your
-                dedicated team of specialists will build your application to
-                reflect your business goals and user needs.
-              </Para>
-            </div>
-            <div className="xs:col-span-2 md:col-span-1 shadow-md xs:py-4 xl:py-14 xs:px-6 xl:px-14">
-              <H3>UI/UX</H3>
-              <Para className="my-4">
-                From the initial design to the final development stage, your
-                dedicated team of specialists will build your application to
-                reflect your business goals and user needs.
-              </Para>
-            </div>
-            <div className="xs:col-span-2 md:col-span-1 shadow-md xs:py-4 xl:py-14 xs:px-6 xl:px-14">
-              <H3>Custom E-Commerce</H3>
-              <Para className="my-4">
-                From the initial design to the final development stage, your
-                dedicated team of specialists will build your application to
-                reflect your business goals and user needs.
-              </Para>
-            </div>
-            <div className="xs:col-span-2 md:col-span-1 shadow-md xs:py-4 xl:py-14 xs:px-6 xl:px-14">
-              <H3>Digital Marketing</H3>
-              <Para className="my-4">
-                From the initial design to the final development stage, your
-                dedicated team of specialists will build your application to
-                reflect your business goals and user needs.
-              </Para>
-            </div>
-          </div>
-        </div>
-      </section>
+      <Services />
       <section className="bg-grayBg xs:py-8 lg:py-20">
         <div className="lg:container lg:mx-auto spacing">
           <H2 className="xs:mb-6 lg:mb-10 xs:text-center lg:text-left">

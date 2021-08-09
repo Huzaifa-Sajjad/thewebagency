@@ -1,16 +1,10 @@
 import Layout from "@/components/Layout";
 import { useEffect } from "react";
 import { Power3, gsap, Expo } from "gsap";
-import CSSRulePlugin from "gsap/dist/CSSRulePlugin";
 import { Title, H2, H4, H6, Para } from "@/components/Text";
-
-if (typeof window !== "undefined") {
-  gsap.registerPlugin(CSSRulePlugin);
-}
 
 function About() {
   useEffect(() => {
-    let imageReveal = CSSRulePlugin.getRule(".image-container:after");
     const timeline = gsap.timeline();
     const header = document.getElementById("header");
     gsap.to(main, { visibility: "visible" });
@@ -51,23 +45,23 @@ function About() {
         ease: Power3.easeInOut,
         duration: 1,
       })
-      .to(imageReveal, {
-        width: "0%",
+      .to(".image-container > div", {
+        width: 0,
         duration: 1.6,
         ease: Power3.easeInOut,
       })
       .from(
-        ".image-container img",
+        ".image-container > img",
         {
           scale: 1.6,
           duration: 1.4,
           ease: Expo.easeInOut,
         },
-        3.1
+        3.2
       );
   }, []);
   return (
-    <Layout hasCTA>
+    <Layout hasCTA title={"About TWA: The Best At Work"}>
       <section>
         <div className="lg:container lg:mx-auto">
           <div className="xs:max-w-full lg:max-w-4/4 lg:mx-auto xs:py-14 lg:pt-40 lg:pb-20">
@@ -80,6 +74,7 @@ function About() {
             </div>
           </div>
           <div className="image-container">
+            <div className="image-mask"></div>
             <img src="/About/hero.jpg" alt="" />
           </div>
         </div>
