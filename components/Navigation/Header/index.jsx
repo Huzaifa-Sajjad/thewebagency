@@ -2,6 +2,7 @@ import { useContext } from "react";
 import Link from "next/link";
 import { MouseContext } from "@/context/mouseContext";
 import { DrawerContext } from "@/context/drawerContext";
+import { ButtonPrimary } from "@/components/Button";
 
 function Header() {
   const { setHoverCursor, setNormalCursor } = useContext(MouseContext);
@@ -16,7 +17,7 @@ function Header() {
         <div className="text-16 text-primary font-medium letterspacing">
           <Link href="/">thewebagency</Link>
         </div>
-        <div className="xs:hidden lg:block">
+        <div className="xs:hidden lg:block stroke">
           <ul className="flex items-center navList">
             <li>
               <Link href="/about">About</Link>
@@ -26,13 +27,7 @@ function Header() {
             </li>
             <li>
               <Link href="/contact">
-                <button
-                  onMouseEnter={setHoverCursor}
-                  onMouseLeave={setNormalCursor}
-                  className="bg-primary text-white px-9 py-3 letterspacing cursor-none"
-                >
-                  Contact
-                </button>
+                <ButtonPrimary>Contact</ButtonPrimary>
               </Link>
             </li>
           </ul>

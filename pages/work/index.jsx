@@ -67,20 +67,20 @@ export default function CaseStudy({ projects }) {
       </section>
       <section className="xs:py-8 lg:py-20" id="work-cards">
         <div className="lg:container lg:mx-auto spacing ">
-          <div className="grid grid-cols-12 gap-4">
+          <div className="flex flex-wrap ">
             {projects.map((project, idx) => (
-              <div className="xs:col-span-12 xl:col-span-6 h-full" key={idx}>
-                <Card
-                  bg={project.data.bgcolor}
-                  textColor={project.data.textcolor}
-                  logo={project.data.logo}
-                  statement={project.data.statement}
-                  tags={project.data.tags}
-                  cover={project.data.cover}
-                  isPortfolio={true}
-                  id={project.uid}
-                />
-              </div>
+              <Card
+                bg={project.data.bgcolor}
+                textColor={project.data.textcolor}
+                logo={project.data.logo}
+                statement={project.data.statement}
+                tags={project.data.tags}
+                cover={project.data.cover}
+                id={project.uid}
+                bg={project.data.bg}
+                name={project.data.name[0].text}
+                key={idx}
+              />
             ))}
           </div>
           <div className="flex justify-center items-center border-t border-gray border-opacity-20 xs:mt-8 lg:mt-20 xs:py-8 lg:py-10">

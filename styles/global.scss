@@ -163,30 +163,6 @@ textarea {
 
 .card-content {
   transition: all 1s ease-in-out;
-  div {
-    opacity: 0;
-    p,
-    h3,
-    button {
-      opacity: 0;
-      transition-delay: 500ms;
-      transition: all 1s ease-in-out;
-    }
-  }
-  &:hover {
-    div {
-      transition: all 1s ease-in-out;
-      opacity: 1;
-      p,
-      h3,
-      button {
-        opacity: 1 !important;
-      }
-    }
-    img {
-      opacity: 0;
-    }
-  }
 }
 
 .card-wrapper {
@@ -203,7 +179,43 @@ textarea {
 }
 
 .sm-card {
-  width: 33%;
+  width: 31%;
+}
+.casestudy-card {
+  height: 600px;
+}
+
+.content-wrapper {
+  transform: translate(0, 64px);
+}
+
+.stroke ul li a,
+.stroke ul li a:after,
+.stroke ul li a:before {
+  transition: all 0.3s;
+}
+.stroke ul li a:hover {
+  color: black;
+}
+
+/* stroke */
+.stroke ul li a {
+  position: relative;
+}
+.stroke ul li a:after {
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 0%;
+  content: ".";
+  color: transparent;
+  background: black;
+  height: 2px;
+}
+.stroke ul li a:hover:after {
+  width: 100%;
 }
 
 @media only screen and (max-width: 1024px) {
@@ -225,7 +237,7 @@ textarea {
     columns: 2;
   }
   .image-container {
-    height: 150px;
+    height: 300px;
   }
   .sm-card {
     width: 50%;
@@ -235,6 +247,9 @@ textarea {
 @media only screen and (max-width: 768px) {
   .sm-card {
     width: 100%;
+  }
+  .casestudy-card {
+    height: 500px;
   }
 }
 

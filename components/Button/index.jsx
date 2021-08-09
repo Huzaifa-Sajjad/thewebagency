@@ -46,3 +46,25 @@ export const ButtonOutline = ({ className, children, type, handleClick }) => {
 ButtonOutline.defaultProps = {
   type: "button",
 };
+
+export const CardButton = ({
+  className,
+  children,
+  type,
+  disabled,
+  handleClick,
+}) => {
+  const { setHoverCursor, setNormalCursor } = useContext(MouseContext);
+  return (
+    <button
+      onMouseEnter={setHoverCursor}
+      onMouseLeave={setNormalCursor}
+      className={`bg-primary text-white py-2 px-4 w-full hover:bg-white hover:text-black hover:border-2 transition-all duration-500 ${className}`}
+      type={type}
+      disabled={disabled}
+      onClick={handleClick}
+    >
+      {children}
+    </button>
+  );
+};
