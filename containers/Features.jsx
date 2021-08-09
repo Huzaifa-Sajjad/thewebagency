@@ -41,7 +41,7 @@ function Features({ features }) {
         >
           <H4 className="uppercase">{feature.hint[0].text}</H4>
           <H2>{feature.heading[0].text}</H2>
-          <p className="xs:text-16 lg:text-22 font-light mt-4 max-w-65 mb-4 leading-loose">
+          <p className="xs:text-14 md:text-16 lg:text-18 xl:text-20 font-light mt-4 max-w-65 mb-4 leading-relaxed">
             {feature.text[0].text}
           </p>
           {feature.gallery.length > 0 ? (

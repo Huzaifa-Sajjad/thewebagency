@@ -7,7 +7,7 @@ function Footer() {
   return (
     <section className="xs:py-10 lg:py-20 bg-primary">
       <div className="lg:container mx-auto spacing">
-        <div className="grid grid-cols-12 gap-y-7">
+        <div className="grid grid-cols-12 gap-y-7 items-center">
           <div className="xs:col-span-12 lg:col-span-6">
             <div className="flex items-center xs:justify-center lg:justify-start">
               <img
@@ -106,7 +106,7 @@ function Footer() {
             </div>
           </div>
         </div>
-        <div className="grid grid-cols-12 gap-y-7 xs:mt-8 lg:mt-12">
+        <div className="grid grid-cols-12 gap-y-7 items-center xs:mt-8 lg:mt-12">
           <div className="xs:col-span-12 lg:col-span-6">
             <div className="flex flex-wrap items-center xs:justify-center lg:justify-start">
               <Link href="/">

@@ -1,14 +1,16 @@
 import { Fragment } from "react";
-import CTA from "../CTA";
 import Cursor from "../Cursor";
 import Drawer from "../Drawer";
 import Loader from "../Loader";
 import Header from "../Navigation/Header";
 import Footer from "../Navigation/Footer";
+import SEO from "../SEO";
+import CTA from "../CTA";
 
-function Layout({ children, hasCTA, invertCTA }) {
+function Layout({ hasCTA, invertCTA, title, description, image, children }) {
   return (
     <Fragment>
+      <SEO title={title} description={description} image={image} />
       <Drawer />
       <Loader />
       <div id="main">
