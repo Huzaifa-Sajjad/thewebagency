@@ -118,15 +118,6 @@ textarea {
   columns: 3;
   li {
     margin-bottom: 2em;
-    h5 {
-      font-size: 14px;
-      font-weight: 500;
-      color: #c4c4c4;
-    }
-    p {
-      font-size: 20px;
-      font-weight: 500;
-    }
   }
 }
 .image-container {
@@ -155,14 +146,14 @@ textarea {
   height: 25rem;
   overflow: hidden !important;
   position: relative;
-  &::after {
+  .image-mask {
     content: "";
     width: 100%;
     height: 100%;
     position: absolute;
     top: 0;
     right: 0;
-    background-color: black;
+    background-color: white;
   }
   img {
     object-fit: cover;
@@ -226,7 +217,7 @@ textarea {
   .timelineList {
     columns: 1;
     li {
-      font-size: 16px;
+      font-size: 14px;
       font-weight: 500;
     }
   }

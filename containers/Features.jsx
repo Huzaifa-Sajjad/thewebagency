@@ -1,5 +1,5 @@
 import { H2, H4 } from "@/components/Text";
-import { gsap, Expo, Power3 } from "gsap";
+import { gsap, Expo } from "gsap";
 import { CSSRulePlugin } from "gsap/dist/CSSRulePlugin";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { useEffect } from "react";
@@ -13,14 +13,30 @@ function Features({ features }) {
   useEffect(() => {
     const featureContainers = document.querySelectorAll("#feature-container");
     featureContainers.forEach((feature) => {
-      console.log(feature);
+      if (feature.children[3].className === "image-wrapper") {
+        const imageContainer = feature.children[3];
+        const image = imageContainer.children[0];
+        const timeline = gsap.timeline({
+          scrollTrigger: {
+            trigger: feature,
+            start: "top center",
+          },
+        });
+        timeline.from(image, {
+          scale: 0.6,
+          opacity: 0,
+          y: 100,
+          duration: 1,
+          ease: Expo.easeIn,
+        });
+      }
     });
   }, []);
   return (
     <section>
       {features.map((feature) => (
         <div
-          className="lg:container lg:mx-auto spacing pt-28 "
+          className="lg:container lg:mx-auto spacing xs:py-8 lg:py-20"
           id="feature-container"
         >
           <H4 className="uppercase">{feature.hint[0].text}</H4>

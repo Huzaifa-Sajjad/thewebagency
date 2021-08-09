@@ -76,6 +76,11 @@ module.exports = {
     cursor: {
       none: "none",
     },
+    extend: {
+      width: {
+        "1/1": "48%",
+      },
+    },
   },
   variants: {},
   plugins: [],

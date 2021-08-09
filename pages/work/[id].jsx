@@ -1,8 +1,8 @@
 import Layout from "@/components/Layout";
 import { useEffect } from "react";
-import { Power3, gsap, Expo } from "gsap";
-import { H1, H2, H4, Lead } from "@/components/Text";
-import Prismic from "@prismicio/client";
+import { Power3, gsap } from "gsap";
+import { Title, Lead } from "@/components/Text";
+import Wrapper from "@/components/Wrapper";
 import { Client } from "../../prismic-config";
 import Features from "@/containers/Features";
 
@@ -31,15 +31,17 @@ function CaseStudy({ post }) {
       );
   }, []);
   return (
-    <Layout isFooter={true}>
+    <Layout hasCTA invertCTA>
       <section>
         <div className="lg:container lg:mx-auto spacing">
-          <div id="hero" className="flex flex-col justify-center pt-20 mb-28">
-            <H1 className="mb-4">{post.name[0].text}</H1>
-            <div className="flex my-6 flex-wrap">
+          <Wrapper>
+            <Title className="font-medium leading-snug mb-4">
+              {post.name[0].text}
+            </Title>
+            <div className="flex xs:py-4 lg:py-12 flex-wrap xs:justify-between lg:justify-start">
               {post.tags.map((tag) => (
                 <div
-                  className="xs:text-12 lg:text-14 px-6 py-2 rounded text-white mr-4 xs:mb-2 lg:mb-0"
+                  className="xs:text-12 lg:text-14 xs:px-4 lg:px-6 py-2 rounded text-white text-center xs:mr-0 lg:mr-4 xs:mb-3 lg:mb-0 xs:w-1/1 lg:w-max"
                   style={{ backgroundColor: post.bg }}
                   key={tag.tag_name[0].text}
                 >
@@ -48,7 +50,7 @@ function CaseStudy({ post }) {
               ))}
             </div>
             <Lead></Lead>
-          </div>
+          </Wrapper>
         </div>
       </section>
       <section className="bg-grayBg">
@@ -56,16 +58,20 @@ function CaseStudy({ post }) {
           <ul className="casestudy-list">
             {post.points.map((point) => (
               <li key={point.label[0].text}>
-                <h5>{point.label[0].text}</h5>
-                <p>{point.field[0].text}</p>
+                <h5 className="text-lightGray xs:text-12 md:text-14 font-medium">
+                  {point.label[0].text}
+                </h5>
+                <p className="xs:text-16 md:text-18 lg:text-20 font-regular">
+                  {point.field[0].text}
+                </p>
               </li>
             ))}
           </ul>
         </div>
       </section>
-      <section>
-        <div className="lg:container lg:mx-auto spacing pt-28">
-          <p className="sm:text-20 lg:text-24 font-semibold text-center max-w-35 mx-auto">
+      <section className="xs:py-8 lg:py-20">
+        <div className="lg:container lg:mx-auto spacing">
+          <p className="sm:text-20 lg:text-24 font-medium text-center max-w-55 mx-auto">
             {post.lead[0].text}
           </p>
           <img
