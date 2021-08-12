@@ -12,7 +12,7 @@ function Services() {
         </H2>
         <div className="grid grid-cols-2 gap-10">
           <div
-            className="xs:col-span-2 md:col-span-1 shadow-md xs:py-4 xl:py-14 xs:px-6 xl:px-14 cursor-none service-card"
+            className="xs:col-span-2 md:col-span-1 shadow-md xs:py-4 lg:py-14 xs:px-6 lg:px-14 cursor-none service-card"
             onMouseEnter={setHoverCursor}
             onMouseLeave={setNormalCursor}
           >
@@ -24,7 +24,7 @@ function Services() {
             </Para>
           </div>
           <div
-            className="xs:col-span-2 md:col-span-1 shadow-md xs:py-4 xl:py-14 xs:px-6 xl:px-14 cursor-none service-card"
+            className="xs:col-span-2 md:col-span-1 shadow-md xs:py-4 lg:py-14 xs:px-6 lg:px-14 cursor-none service-card"
             onMouseEnter={setHoverCursor}
             onMouseLeave={setNormalCursor}
           >
@@ -36,7 +36,7 @@ function Services() {
             </Para>
           </div>
           <div
-            className="xs:col-span-2 md:col-span-1 shadow-md xs:py-4 xl:py-14 xs:px-6 xl:px-14 cursor-none service-card"
+            className="xs:col-span-2 md:col-span-1 shadow-md xs:py-4 lg:py-14 xs:px-6 lg:px-14 cursor-none service-card"
             onMouseEnter={setHoverCursor}
             onMouseLeave={setNormalCursor}
           >
@@ -48,7 +48,7 @@ function Services() {
             </Para>
           </div>
           <div
-            className="xs:col-span-2 md:col-span-1 shadow-md xs:py-4 xl:py-14 xs:px-6 xl:px-14 cursor-none service-card"
+            className="xs:col-span-2 md:col-span-1 shadow-md xs:py-4 lg:py-14 xs:px-6 lg:px-14 cursor-none service-card"
             onMouseEnter={setHoverCursor}
             onMouseLeave={setNormalCursor}
           >

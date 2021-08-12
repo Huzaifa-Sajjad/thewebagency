@@ -77,7 +77,7 @@ function Review({ reviews }) {
                 viewBox="0 0 76 85"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
-                className="xs:hidden lg:block"
+                className="xs:hidden md:block"
               >
                 <path d="M0 10.625V74.375L28.5 42.5V10.625H0Z" fill="#111111" />
                 <path
@@ -90,7 +90,7 @@ function Review({ reviews }) {
                 {reviews[reviewCounter].data.text[0].text}
               </p>
             </div>
-            <div className="flex justify-between items-center  xs:flex-col lg:flex-row">
+            <div className="flex justify-between items-center  xs:flex-col md:flex-row">
               <div id="review-client" className="xs:mb-4 lg:mb-0">
                 <H3>{reviews[reviewCounter].data.name[0].text}</H3>
                 <h5 className="xs:text-12 md:text-12 lg:text-14 xl:text-16 text-gray">

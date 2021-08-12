@@ -1,4 +1,4 @@
-import Link from "next/link";
+import router, { useRouter } from "next/router";
 import { useEffect } from "react";
 import { Power3, Expo, gsap } from "gsap";
 import Prismic from "@prismicio/client";
@@ -7,9 +7,10 @@ import Layout from "@/components/Layout";
 import FeaturedProjects from "@/containers/FeaturedProjects";
 import ReviewCard from "@/components/Review";
 import { ButtonOutline } from "@/components/Button";
-import { Title, H2, H6 } from "@/components/Text";
+import { Title, H2, H6, Para } from "@/components/Text";
 import Wrapper from "@/components/Wrapper";
 import Services from "@/containers/Services";
+import Stars from "@/containers/Stars";
 
 export default function Home({ projects, reviews }) {
   useEffect(() => {
@@ -18,7 +19,7 @@ export default function Home({ projects, reviews }) {
     const header = document.getElementById("header");
     gsap.to(main, { visibility: "visible" });
     timeline
-      .to("#app-loader > h1", {
+      .to("#app-loader > img", {
         opacity: 0,
         duration: 0.75,
         ease: Power3.easeInOut,
@@ -29,7 +30,7 @@ export default function Home({ projects, reviews }) {
           height: 0,
           ease: Expo.easeInOut,
           display: "none",
-          duration: 1,
+          duration: 1.5,
         },
         0.6
       )
@@ -41,12 +42,17 @@ export default function Home({ projects, reviews }) {
           ease: Power3.easeInOut,
           duration: 1,
         },
-        0.8
+        1.5
       )
       .from(
         "#hero > h6",
-        { opacity: 0, y: 50, ease: Power3.easeInOut, duration: 0.75 },
-        1
+        {
+          opacity: 0,
+          y: 50,
+          ease: Power3.easeInOut,
+          duration: 0.75,
+        },
+        1.8
       )
       .from("#hero > h1", {
         opacity: 0,
@@ -54,35 +60,46 @@ export default function Home({ projects, reviews }) {
         ease: Power3.easeInOut,
         duration: 1,
       })
-      .from("#btnAnimation", {
+      .from("#hero > p", {
         opacity: 0,
         y: 50,
         ease: Power3.easeInOut,
+        duration: 0.5,
+      })
+      .from("#hero > .btnContainer", {
+        opacity: 0,
+        y: 50,
+        ease: Power3.easeInOut,
+        duration: 0.5,
       })
       .from("#featuredProjets", {
         opacity: 0,
-        y: 100,
-        ease: Power3.easeInOut,
-        duration: 0.5,
-        delay: 0.2,
+        ease: Expo.easeInOut,
+        duration: 1,
       });
   }, []);
+
+  const handleRouterClick = () => {
+    router.push("/contact");
+  };
+
   return (
     <Layout hasCTA={true} title={"The Web Agency: Your Development Partner"}>
       <div className="lg:container lg:mx-auto spacing">
         <Wrapper>
           <div id="hero">
             <H6 className="mb-4">WELCOME</H6>
-            <Title className="font-medium leading-snug">
+            <Title className="font-medium leading-snug xs:max-w-25 lg:max-w-28">
               We offer the best digital services at an affordable rate, to help
               you craft your digital identity.
             </Title>
-            <div id="btnAnimation">
-              <Link href="/contact">
-                <ButtonOutline className="mt-10 xs:w-full lg:w-auto">
-                  Let's Talk
-                </ButtonOutline>
-              </Link>
+            <Para className="flex items-center text-gray mt-8">
+              We are the best at work <Stars /> 12 reviews.
+            </Para>
+            <div className="btnContainer">
+              <ButtonOutline className="mt-8" handleClick={handleRouterClick}>
+                Let's Talk
+              </ButtonOutline>
             </div>
           </div>
         </Wrapper>

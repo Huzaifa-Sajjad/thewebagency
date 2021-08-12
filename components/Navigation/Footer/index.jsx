@@ -1,4 +1,5 @@
 import Link from "next/link";
+import NavLink from "@/components/NavLink";
 
 function Footer() {
   const date = new Date();
@@ -24,7 +25,7 @@ function Footer() {
             <div className="flex flex-wrap items-center xs:justify-center lg:justify-end">
               <svg
                 id="Bold"
-                enable-background="new 0 0 24 24"
+                enableBackground="new 0 0 24 24"
                 height="512"
                 viewBox="0 0 24 24"
                 width="512"
@@ -38,7 +39,7 @@ function Footer() {
               </svg>
               <svg
                 id="Bold"
-                enable-background="new 0 0 24 24"
+                enableBackground="new 0 0 24 24"
                 height="512"
                 viewBox="0 0 24 24"
                 width="512"
@@ -109,26 +110,29 @@ function Footer() {
         <div className="grid grid-cols-12 gap-y-7 items-center xs:mt-8 lg:mt-12">
           <div className="xs:col-span-12 lg:col-span-6">
             <div className="flex flex-wrap items-center xs:justify-center lg:justify-start">
-              <Link href="/">
-                <span className="text-white xs:text-14 md:text-16 lg:text-18 xs:mr-4 lg:mr-10">
+              <span className="text-white xs:text-14 md:text-16 lg:text-18 xs:mr-4 lg:mr-10">
+                <NavLink target="/" isWhite>
                   Home
-                </span>
-              </Link>
-              <Link href="/about">
-                <span className="text-white xs:text-14 md:text-16 lg:text-18 xs:mr-4 lg:mr-10">
+                </NavLink>
+              </span>
+
+              <span className="text-white xs:text-14 md:text-16 lg:text-18 xs:mr-4 lg:mr-10">
+                <NavLink target="/about" isWhite>
                   About
-                </span>
-              </Link>
-              <Link href="/work">
-                <span className="text-white xs:text-14 md:text-16 lg:text-18 xs:mr-4 lg:mr-10">
+                </NavLink>
+              </span>
+
+              <span className="text-white xs:text-14 md:text-16 lg:text-18 xs:mr-4 lg:mr-10">
+                <NavLink target="/work" isWhite>
                   Work
-                </span>
-              </Link>
-              <Link href="/contact">
-                <span className="text-white xs:text-14 md:text-16 lg:text-18 xs:mr-4 lg:mr-10">
+                </NavLink>
+              </span>
+
+              <span className="text-white xs:text-14 md:text-16 lg:text-18 xs:mr-4 lg:mr-10">
+                <NavLink target="/work" isWhite>
                   Contact us
-                </span>
-              </Link>
+                </NavLink>
+              </span>
             </div>
           </div>
           <div className="xs:col-span-12 lg:col-span-6">

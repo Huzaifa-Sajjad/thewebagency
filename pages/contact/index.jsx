@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
-import axios from "axios";
 import { Power3, gsap } from "gsap";
+import axios from "axios";
 import Layout from "@/components/Layout";
 import { Title, Lead } from "@/components/Text";
 import { ButtonPrimary } from "@/components/Button";
 import Wrapper from "@/components/Wrapper";
+import { SchedulerLink } from "@/components/Scheduler";
 
 function Contact() {
   const [formData, setFormData] = useState({
@@ -102,7 +103,8 @@ function Contact() {
                 target="_blank"
               >
                 hello@thewebagency.io
-              </a>
+              </a>{" "}
+              or <SchedulerLink className="font-medium line" />
             </Lead>
             <div className="grid grid-cols-4">
               <div className="xs:col-span-4 lg:col-span-3">
@@ -150,9 +152,18 @@ function Contact() {
                     <ButtonPrimary
                       type="sumbit"
                       disabled={loading}
-                      className="xs:w-full lg:w-auto"
+                      className="xs:w-full lg:w-auto disabled:bg-opacity-70 disabled:border-opacity-70"
                     >
-                      {loading ? "Processing..." : "Let's Talk"}
+                      {loading ? (
+                        <lord-icon
+                          src="https://cdn.lordicon.com/ymrqtsej.json"
+                          trigger="loop"
+                          colors="primary:#ffffff,secondary:#ffffff"
+                          style={{ height: "48px", width: "auto" }}
+                        />
+                      ) : (
+                        "Let's Talk"
+                      )}
                     </ButtonPrimary>
                   </form>
                 </div>

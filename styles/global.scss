@@ -188,32 +188,65 @@ textarea {
   transform: translate(0, 64px);
 }
 
-.stroke ul li a,
-.stroke ul li a:after,
-.stroke ul li a:before {
+.stroke a,
+.stroke a:after {
   transition: all 0.3s;
 }
-.stroke ul li a:hover {
-  color: black;
+.stroke a:hover {
+  color: #111;
+  cursor: none;
 }
 
-/* stroke */
-.stroke ul li a {
+.stroke a {
   position: relative;
 }
-.stroke ul li a:after {
+.stroke a:after {
   position: absolute;
-  bottom: -3px;
+  bottom: -10px;
   left: 0;
   right: 0;
   margin: auto;
   width: 0%;
   content: ".";
   color: transparent;
-  background: black;
+  background: #111;
   height: 2px;
 }
-.stroke ul li a:hover:after {
+.stroke a:hover:after {
+  width: 100%;
+}
+
+.strokeWhite a:after {
+  background: white;
+}
+
+.strokeWhite a:hover {
+  color: white;
+}
+
+.line,
+.line:after {
+  transition: all 0.3s;
+}
+
+.line {
+  position: relative;
+}
+
+.line:after {
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 0%;
+  content: "";
+  color: transparent;
+  background: #111;
+  height: 2px;
+}
+
+.line:hover:after {
   width: 100%;
 }
 
@@ -229,10 +262,19 @@ textarea {
   }
 }
 
+@media only screen and (max-width: 1280px) {
+  .sm-card {
+    width: 50%;
+  }
+}
+
 @media only screen and (max-width: 1024px) {
   .spacing {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
+  }
+  .sm-card {
+    width: 50%;
   }
 }
 
@@ -257,10 +299,16 @@ textarea {
 
 @media only screen and (max-width: 768px) {
   .sm-card {
-    width: 100%;
+    width: 50%;
   }
   .casestudy-card {
     height: 500px;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .sm-card {
+    width: 100%;
   }
 }
 

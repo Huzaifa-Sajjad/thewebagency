@@ -39,12 +39,12 @@ function FeaturedProjects({ projects }) {
       </div>
       <div className="flex flex-wrap justify-center items-center xs:py-8 lg:py-14">
         <Link href="/contact">
-          <ButtonPrimary className="xs:w-full lg:w-auto">
+          <ButtonPrimary className="xs:w-full md:w-auto">
             Contact Us
           </ButtonPrimary>
         </Link>
         <Link href="/work">
-          <ButtonOutline className="xs:w-full lg:w-auto xs:mt-4 lg:mt-0 xs:ml-0 lg:ml-4">
+          <ButtonOutline className="xs:w-full md:w-auto xs:ml-0 md:ml-4">
             View All
           </ButtonOutline>
         </Link>

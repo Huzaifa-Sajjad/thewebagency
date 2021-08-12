@@ -1,12 +1,16 @@
 import { useContext } from "react";
-import Link from "next/link";
-import { MouseContext } from "@/context/mouseContext";
+import { useRouter } from "next/router";
 import { DrawerContext } from "@/context/drawerContext";
-import { ButtonPrimary } from "@/components/Button";
+import { HeaderButton } from "@/components/Button";
+import NavLink from "@/components/NavLink";
 
 function Header() {
-  const { setHoverCursor, setNormalCursor } = useContext(MouseContext);
+  const router = useRouter();
   const { openDrawer } = useContext(DrawerContext);
+
+  const handleLinkClick = () => {
+    router.push("/contact");
+  };
 
   return (
     <div
@@ -15,20 +19,18 @@ function Header() {
     >
       <div className="flex items-center justify-between">
         <div className="text-16 text-primary font-medium letterspacing">
-          <Link href="/">thewebagency</Link>
+          <NavLink target="/">The Web Agency</NavLink>
         </div>
-        <div className="xs:hidden lg:block stroke">
+        <div className="xs:hidden lg:block">
           <ul className="flex items-center navList">
             <li>
-              <Link href="/about">About</Link>
+              <NavLink target="/about">About</NavLink>
             </li>
             <li>
-              <Link href="/work">Work</Link>
+              <NavLink target="/work">Work</NavLink>
             </li>
             <li>
-              <Link href="/contact">
-                <ButtonPrimary>Contact</ButtonPrimary>
-              </Link>
+              <HeaderButton handleClick={handleLinkClick}>Contact</HeaderButton>
             </li>
           </ul>
         </div>

@@ -9,7 +9,7 @@ function About() {
     const header = document.getElementById("header");
     gsap.to(main, { visibility: "visible" });
     timeline
-      .to("#app-loader > h1", {
+      .to("#app-loader > img", {
         opacity: 0,
         duration: 0.75,
         ease: Power3.easeInOut,
@@ -20,7 +20,7 @@ function About() {
           height: 0,
           ease: Expo.easeInOut,
           display: "none",
-          duration: 1,
+          duration: 1.5,
         },
         0.6
       )
@@ -32,13 +32,17 @@ function About() {
           ease: Power3.easeInOut,
           duration: 1,
         },
-        0.8
+        1.5
       )
-      .from("#about-heading > h6", {
-        opacity: 0,
-        ease: Power3.easeInOut,
-        duration: 0.25,
-      })
+      .from(
+        "#about-heading > h6",
+        {
+          opacity: 0,
+          ease: Power3.easeInOut,
+          duration: 0.75,
+        },
+        1.8
+      )
       .from("#about-heading > h1", {
         opacity: 0,
         y: 50,

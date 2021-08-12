@@ -53,7 +53,9 @@ export function H4({ className, children }) {
 
 export function H6({ className, children }) {
   return (
-    <h6 className={`text-14 font-regular text-gray ${className}`}>
+    <h6
+      className={`text-12 font-regular text-gray tracking-widest ${className}`}
+    >
       {children}
     </h6>
   );
@@ -71,7 +73,9 @@ export function Lead({ className, children }) {
 
 export function Para({ className, children }) {
   return (
-    <p className={`xs:text-14 md:text-18 font-light max-w-55 ${className}`}>
+    <p
+      className={`xs:text-14 md:text-16 lg:text-16 xl:text-18 font-light max-w-55 ${className}`}
+    >
       {children}
     </p>
   );

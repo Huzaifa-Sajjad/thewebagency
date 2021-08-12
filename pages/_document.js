@@ -20,10 +20,7 @@ class MyDocument extends Document {
             href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700&display=swap"
             rel="stylesheet"
           />
-          <link
-            rel="stylesheet"
-            href="https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css"
-          />
+          <script src="https://cdn.lordicon.com/libs/frhvbuzj/lord-icon-2.0.2.js" />
         </Head>
         <body>
           <Main />

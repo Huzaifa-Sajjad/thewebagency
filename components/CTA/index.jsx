@@ -1,7 +1,8 @@
 import { Fragment } from "react";
-import Link from "next/link";
 import { H3 } from "@/components/Text";
-import { ButtonPrimary, ButtonOutline } from "@/components/Button";
+import { ButtonPrimary } from "@/components/Button";
+import { SchedulerButton } from "@/components/Scheduler";
+import NavLink from "@/components/NavLink";
 
 function CTA({ hasBg }) {
   return (
@@ -26,23 +27,19 @@ function CTA({ hasBg }) {
             <ButtonPrimary className="xs:mr-0 lg:mr-4 xs:w-full lg:w-auto">
               Contact Us
             </ButtonPrimary>
-            <ButtonOutline className="xs:mt-4 lg:mt-0 xs:w-full lg:w-auto">
-              Schedule a Call
-            </ButtonOutline>
+            <SchedulerButton className="xs:mt-4 lg:mt-0 xs:w-full lg:w-auto" />
           </div>
         </div>
       </section>
       <section className="border-t border-gray border-opacity-20 xs:py-8 lg:py-20">
         <div className="lg:container mx-auto spacing">
-          <div className="flex flex-wrap xs:justify-center lg:justify-between items-center">
+          <div className="flex flex-wrap xs:flex-col lg:flex-row xs:items-center lg:justify-between">
             <H3 className="xs:text-center lg:text-left">
               Still have a doubt? See how we have helped others.
             </H3>
-            <Link href="/work">
-              <span className="xs:text-16 md:text-18 lg:text-20 xl:text-22 text-black font-regular cursor-none xs:mt-4 lg:mt-0">
-                Check Our Work
-              </span>
-            </Link>
+            <span className="xs:text-16 md:text-18 lg:text-20 xl:text-22 text-black font-regular cursor-none xs:mt-4 lg:mt-0">
+              <NavLink target="/work">Check our work</NavLink>
+            </span>
           </div>
         </div>
       </section>
