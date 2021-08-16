@@ -1,6 +1,7 @@
 import { useContext, useEffect } from "react";
 import { useRouter } from "next/router";
 import { DrawerContext } from "@/context/drawerContext";
+import { SchedulerLink } from "@/components/Scheduler";
 import { Expo, gsap, Power3 } from "gsap";
 import styles from "./styles.module.scss";
 
@@ -55,7 +56,11 @@ function Drawer() {
 
   return (
     <div className={`${styles.root} ${open ? styles.open : ""}`} id="drawer">
-      <img src="/logo.png" alt="" className={styles.logo} />
+      <img
+        src="https://images.prismic.io/thewebagency/3fbe043f-332e-4849-b707-8c03c2b2b119_TWA+logo3.png?auto=compress,format"
+        alt=""
+        className={styles.logo}
+      />
 
       <button onClick={() => closeDrawer(timeline)} className={styles.closeBtn}>
         x
@@ -69,12 +74,9 @@ function Drawer() {
       </div>
       <p className="text-lightGray text-center mb-10">
         Drop a line at <br />
-        <span className="text-white font-medium">info@thewebagency.io</span>
-      </p>
-      <p className="text-lightGray text-center mb-10">
-        or <span className="text-white font-medium">schedule a call</span> and
-        <br />
-        share your story with us
+        <a href="mailto:hello@thewebagency.io" target="_blank">
+          <span className="text-white font-medium">hello@thewebagency.io</span>
+        </a>
       </p>
     </div>
   );

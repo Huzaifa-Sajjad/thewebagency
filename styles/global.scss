@@ -143,7 +143,7 @@ textarea {
 }
 .image-wrapper {
   width: 100%;
-  height: 25rem;
+  height: fit-content;
   overflow: hidden !important;
   position: relative;
   .image-mask {
@@ -318,7 +318,7 @@ textarea {
   left: 0;
   width: 8px;
   height: 8px;
-  background-color: #fd9644; //#353b48
+  background-color: #fd9644;
   border-radius: 100%;
   transform: translate(-50%, -50%);
   -webkit-transition-duration: 100ms;

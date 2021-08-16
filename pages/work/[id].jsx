@@ -1,6 +1,6 @@
 import Layout from "@/components/Layout";
 import { useEffect } from "react";
-import { Power3, gsap } from "gsap";
+import { Power3, Expo, gsap } from "gsap";
 import { Title, Lead } from "@/components/Text";
 import Wrapper from "@/components/Wrapper";
 import { Client } from "../../prismic-config";
@@ -13,12 +13,21 @@ function CaseStudy({ post }) {
     const header = document.getElementById("header");
     gsap.to(main, { visibility: "visible" });
     timeline
-      .to("#app-loader", {
-        height: 0,
-        ease: Power3.easeOut,
-        display: "none",
-        duration: 1.5,
+      .to("#app-loader > img", {
+        opacity: 0,
+        duration: 0.75,
+        ease: Power3.easeInOut,
       })
+      .to(
+        "#app-loader",
+        {
+          height: 0,
+          ease: Expo.easeInOut,
+          display: "none",
+          duration: 1.5,
+        },
+        0.6
+      )
       .from(
         header,
         {
@@ -27,11 +36,18 @@ function CaseStudy({ post }) {
           ease: Power3.easeInOut,
           duration: 1,
         },
-        0.2
+        1.5
       );
   }, []);
   return (
-    <Layout hasCTA invertCTA>
+    <Layout
+      hasCTA
+      invertCTA
+      layoutBg={post.bg}
+      title={`Case Study | ${post.name[0].text}`}
+      description={post.lead[0].text}
+      image={post.features[0].image.url}
+    >
       <section>
         <div className="lg:container lg:mx-auto spacing">
           <Wrapper>
@@ -41,7 +57,7 @@ function CaseStudy({ post }) {
             <div className="flex xs:py-4 lg:py-12 flex-wrap xs:justify-between lg:justify-start">
               {post.tags.map((tag) => (
                 <div
-                  className="xs:text-12 lg:text-14 xs:px-4 lg:px-6 py-2 rounded text-white text-center xs:mr-0 lg:mr-4 xs:mb-3 lg:mb-0 xs:w-1/1 lg:w-max"
+                  className="xs:text-12 lg:text-14 xs:px-4 lg:px-6 py-2 rounded text-white text-center xs:mr-0 lg:mr-4 xs:mb-3 lg:mb-4 xs:w-1/1 lg:w-max"
                   style={{ backgroundColor: post.bg }}
                   key={tag.tag_name[0].text}
                 >
@@ -81,7 +97,7 @@ function CaseStudy({ post }) {
           />
         </div>
       </section>
-      <Features features={post.features} />
+      <Features features={post.features} bg={post.bg} />
     </Layout>
   );
 }

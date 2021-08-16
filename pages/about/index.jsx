@@ -79,7 +79,10 @@ function About() {
           </div>
           <div className="image-container">
             <div className="image-mask"></div>
-            <img src="/About/hero.jpg" alt="" />
+            <img
+              src="https://images.prismic.io/thewebagency/71f7a74a-0ede-48d2-834c-b981b6f47b4c_hero.jpg?auto=compress,format"
+              alt="About TWA"
+            />
           </div>
         </div>
       </section>

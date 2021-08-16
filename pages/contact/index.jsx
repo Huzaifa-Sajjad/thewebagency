@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Power3, gsap } from "gsap";
+import { Power3, Expo, gsap } from "gsap";
 import axios from "axios";
 import Layout from "@/components/Layout";
 import { Title, Lead } from "@/components/Text";
@@ -53,12 +53,21 @@ function Contact() {
     const header = document.getElementById("header");
     gsap.to(main, { visibility: "visible" });
     timeline
-      .to("#app-loader", {
-        height: 0,
-        ease: Power3.easeOut,
-        display: "none",
-        duration: 1,
+      .to("#app-loader > img", {
+        opacity: 0,
+        duration: 0.75,
+        ease: Power3.easeInOut,
       })
+      .to(
+        "#app-loader",
+        {
+          height: 0,
+          ease: Expo.easeInOut,
+          display: "none",
+          duration: 1.5,
+        },
+        0.6
+      )
       .from(
         header,
         {
@@ -67,7 +76,7 @@ function Contact() {
           ease: Power3.easeInOut,
           duration: 1,
         },
-        0.6
+        1.5
       )
       .from(
         "#contact-hero h1",
@@ -77,18 +86,26 @@ function Contact() {
           ease: Power3.easeInOut,
           duration: 1,
         },
-        0.8
+        1.8
       )
       .from("#contact-hero p", {
         opacity: 0,
         y: 50,
         ease: Power3.easeInOut,
         duration: 0.5,
+      })
+      .from("#formWrapper", {
+        opacity: 0,
+        ease: Expo.easeInOut,
+        duration: 0.5,
       });
   }, []);
 
   return (
-    <Layout>
+    <Layout
+      title="Contact | Let's discuss your project"
+      description="Are you planning to launch your start-up, develop an MVP to go from concept to investment or take your business to next level? Don't worry we have your back. Our process wraps around your unique business needs. Schedule a call or reach us to us via email or filling our form."
+    >
       <section>
         <div className="lg:container lg:mx-auto spacing" id="contact-hero">
           <Wrapper>
@@ -106,7 +123,7 @@ function Contact() {
               </a>{" "}
               or <SchedulerLink className="font-medium line" />
             </Lead>
-            <div className="grid grid-cols-4">
+            <div className="grid grid-cols-4" id="formWrapper">
               <div className="xs:col-span-4 lg:col-span-3">
                 <div className="flex flex-col">
                   <form onSubmit={handleFormSubmit}>

@@ -1,10 +1,10 @@
 import { useEffect } from "react";
-import { Power3, gsap } from "gsap";
+import { Power3, Expo, gsap } from "gsap";
 import Layout from "@/components/Layout";
 import Prismic from "@prismicio/client";
 import Card from "@/components/Card";
 import { Title, H6 } from "@/components/Text";
-import { ButtonOutline, ButtonPrimary } from "@/components/Button";
+import { ButtonPrimary } from "@/components/Button";
 import Wrapper from "@/components/Wrapper";
 import { Client } from "../../prismic-config";
 
@@ -14,12 +14,21 @@ export default function CaseStudy({ projects }) {
     const header = document.getElementById("header");
     gsap.to(main, { visibility: "visible" });
     timeline
-      .to("#app-loader", {
-        height: 0,
-        ease: Power3.easeOut,
-        display: "none",
-        duration: 1.5,
+      .to("#app-loader > img", {
+        opacity: 0,
+        duration: 0.75,
+        ease: Power3.easeInOut,
       })
+      .to(
+        "#app-loader",
+        {
+          height: 0,
+          ease: Expo.easeInOut,
+          display: "none",
+          duration: 1.5,
+        },
+        0.6
+      )
       .from(
         header,
         {
@@ -28,7 +37,7 @@ export default function CaseStudy({ projects }) {
           ease: Power3.easeInOut,
           duration: 1,
         },
-        0.6
+        1.5
       )
       .from(
         "#work-hero h6",
@@ -38,7 +47,7 @@ export default function CaseStudy({ projects }) {
           ease: Power3.easeInOut,
           duration: 0.5,
         },
-        0.9
+        1.8
       )
       .from("#work-hero h1", {
         opacity: 0,
@@ -53,7 +62,12 @@ export default function CaseStudy({ projects }) {
       });
   }, []);
   return (
-    <Layout hasCTA invertCTA>
+    <Layout
+      hasCTA
+      invertCTA
+      title="Work | Review our Portfolio"
+      description="Review our portfolio by going through various busines case studies. See how we have helped others grow and then decide if we are a good fit for you."
+    >
       <section>
         <div className="lg:container lg:mx-auto spacing" id="work-hero">
           <Wrapper>

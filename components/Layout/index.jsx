@@ -7,12 +7,20 @@ import Footer from "../Navigation/Footer";
 import SEO from "../SEO";
 import CTA from "../CTA";
 
-function Layout({ hasCTA, invertCTA, title, description, image, children }) {
+function Layout({
+  hasCTA,
+  invertCTA,
+  layoutBg,
+  title,
+  description,
+  image,
+  children,
+}) {
   return (
     <Fragment>
       <SEO title={title} description={description} image={image} />
       <Drawer />
-      <Loader />
+      <Loader bg={layoutBg} />
       <div id="main">
         <Cursor />
         <Header />

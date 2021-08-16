@@ -36,7 +36,13 @@ function SEO({ title, description, image }) {
           "We craft web applications, responsive websites, product design & UI/UX design along with digital marketing to establish your brand. Let's work together to built your digital identity."
         }
       />
-      <meta property="og:image" content={image || "link"} />
+      <meta
+        property="og:image"
+        content={
+          image ||
+          "https://images.prismic.io/thewebagency/223862ce-3f1f-449f-a343-43fba4b9c1ad_233074831_100924008977044_225133372451371060_n.png?auto=compress,format"
+        }
+      />
       <meta name="robots" content="index, archive" />
       <link
         rel="apple-touch-icon"

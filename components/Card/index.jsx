@@ -1,23 +1,23 @@
 import { useRef } from "react";
 import { useRouter } from "next/router";
-import { gsap, Bounce } from "gsap";
+import { gsap, Power3 } from "gsap";
 import { CardButton } from "@/components/Button";
 
-function Card({ uid, logo, bg, cover, name }) {
+function Card({ uid, logo, bg, cover, name, statement }) {
   let container = useRef(null);
   const timeline = new gsap.timeline();
   const handleMouseEnter = () => {
     timeline.to(container, {
       y: 0,
       duration: 1,
-      ease: Bounce.easeInOut,
+      ease: Power3.easeInOut,
     });
   };
   const handleMouseLeave = () => {
     timeline.to(container, {
       y: 70,
       duration: 1,
-      ease: Bounce.easeInOut,
+      ease: Power3.easeInOut,
     });
   };
   const hexToRgb = (hex) =>
@@ -57,9 +57,7 @@ function Card({ uid, logo, bg, cover, name }) {
             <h2 className="text-white text-18 font-medium uppercase mb-2">
               {name}
             </h2>
-            <p className="text-16 text-white mb-5">
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-            </p>
+            <p className="text-16 text-white mb-5">{statement}</p>
           </div>
           <CardButton handleClick={() => router.push(`/work/${uid}`)}>
             View Case

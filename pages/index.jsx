@@ -45,28 +45,22 @@ export default function Home({ projects, reviews }) {
         1.5
       )
       .from(
-        "#hero > h6",
+        "#hero > h1",
         {
           opacity: 0,
           y: 50,
           ease: Power3.easeInOut,
-          duration: 0.75,
+          duration: 1,
         },
-        1.8
+        1.9
       )
-      .from("#hero > h1", {
-        opacity: 0,
-        y: 50,
-        ease: Power3.easeInOut,
-        duration: 1,
-      })
       .from("#hero > p", {
         opacity: 0,
         y: 50,
         ease: Power3.easeInOut,
         duration: 0.5,
       })
-      .from("#hero > .btnContainer", {
+      .from("#hero > .btnWrapper", {
         opacity: 0,
         y: 50,
         ease: Power3.easeInOut,
@@ -88,7 +82,6 @@ export default function Home({ projects, reviews }) {
       <div className="lg:container lg:mx-auto spacing">
         <Wrapper>
           <div id="hero">
-            <H6 className="mb-4">WELCOME</H6>
             <Title className="font-medium leading-snug xs:max-w-25 lg:max-w-28">
               We offer the best digital services at an affordable rate, to help
               you craft your digital identity.
@@ -96,11 +89,11 @@ export default function Home({ projects, reviews }) {
             <Para className="flex items-center text-gray mt-8">
               We are the best at work <Stars /> 12 reviews.
             </Para>
-            <div className="btnContainer">
+            <article className="btnWrapper">
               <ButtonOutline className="mt-8" handleClick={handleRouterClick}>
                 Let's Talk
               </ButtonOutline>
-            </div>
+            </article>
           </div>
         </Wrapper>
       </div>

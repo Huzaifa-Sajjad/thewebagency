@@ -1,35 +1,16 @@
-import { useEffect } from "react";
-import { gsap, Power3 } from "gsap";
-import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import Link from "next/link";
 import Card from "@/components/Card";
 import { ButtonOutline, ButtonPrimary } from "@/components/Button";
-import Link from "next/link";
-
-if (typeof window !== "undefined") {
-  gsap.registerPlugin(ScrollTrigger);
-}
 
 function FeaturedProjects({ projects }) {
-  useEffect(() => {
-    const projectCards = document.querySelectorAll(".project-card");
-    projectCards.forEach((project, idx) => {
-      gsap.from(project, {
-        scrollTrigger: { trigger: project },
-        opacity: 0,
-        y: 100,
-        duration: 1.5,
-        ease: Power3.easeInOut,
-      });
-    });
-  }, []);
   return (
     <div className="lg:container lg:mx-auto spacing">
       <div className="flex justify-between overflow-x-scroll card-wrapper pb-4">
         {projects.map((project, idx) => (
           <Card
             key={idx}
-            logo={project.data.logo}
-            statement={project.data.statement}
+            logo={project.data.logo_small}
+            statement={project.data.statement[0].text}
             cover={project.data.cover}
             bg={project.data.bg}
             uid={project.uid}
