@@ -288,6 +288,9 @@ textarea {
   }
   .casestudy-list {
     columns: 2;
+    li {
+      line-break: unset;
+    }
   }
   .image-container {
     height: 300px;

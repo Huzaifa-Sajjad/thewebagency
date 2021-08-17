@@ -36,7 +36,7 @@ export function H2({ className, children }) {
 export function H3({ className, children }) {
   return (
     <h3
-      className={`xs:text-20 md:text-22 lg:text-24 xl:text-26 text-primary font-medium ${className}`}
+      className={`xs:text-20 md:text-22 lg:text-24 xl:text-26 font-medium ${className}`}
     >
       {children}
     </h3>

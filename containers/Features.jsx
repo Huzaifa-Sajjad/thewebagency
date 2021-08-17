@@ -29,7 +29,11 @@ function Features({ features, bg }) {
                 <img
                   src={item.url}
                   alt=""
-                  className="xs:w-4/5 lg:w-1/4 mx-auto  xs:mr-4 lg:mx-auto"
+                  className={`${
+                    feature.heading[0].text === "Mobile First Approach"
+                      ? " xs:w-4/5 lg:w-1/4   xs:mr-4"
+                      : "max-h-100 w-auto mx-auto mt-4"
+                  }`}
                 />
               ))}
             </div>

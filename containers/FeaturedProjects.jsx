@@ -33,7 +33,7 @@ function FeaturedProjects({ projects }) {
         </Link>
         <Link href="/work">
           <ButtonOutline
-            className="xs:w-full md:w-auto xs:ml-0 md:ml-4"
+            className="xs:w-full md:w-auto xs:ml-0 md:ml-4 xs:mt-4 lg:mt-0"
             handleClick={handleLinkClick}
           >
             View All
