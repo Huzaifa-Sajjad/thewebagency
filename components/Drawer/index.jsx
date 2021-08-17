@@ -44,13 +44,7 @@ function Drawer() {
             stagger: 0.4,
           },
           0.6
-        )
-        .to("#drawer p", {
-          opacity: 1,
-          y: 0,
-          duration: 0.5,
-          ease: Power3.easeInOut,
-        });
+        );
     }
   }, [open]);
 

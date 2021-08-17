@@ -1,4 +1,4 @@
-import router, { useRouter } from "next/router";
+import router from "next/router";
 import { useEffect } from "react";
 import { Power3, Expo, gsap } from "gsap";
 import Prismic from "@prismicio/client";
@@ -7,7 +7,7 @@ import Layout from "@/components/Layout";
 import FeaturedProjects from "@/containers/FeaturedProjects";
 import ReviewCard from "@/components/Review";
 import { ButtonOutline } from "@/components/Button";
-import { Title, H2, H6, Para } from "@/components/Text";
+import { Title, H2, Para } from "@/components/Text";
 import Wrapper from "@/components/Wrapper";
 import Services from "@/containers/Services";
 import Stars from "@/containers/Stars";

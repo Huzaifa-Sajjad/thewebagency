@@ -121,7 +121,9 @@ function Contact() {
               >
                 hello@thewebagency.io
               </a>{" "}
-              or <SchedulerLink className="font-medium line" />
+              or
+              <br />
+              <SchedulerLink className="font-medium line" />
             </Lead>
             <div className="grid grid-cols-4" id="formWrapper">
               <div className="xs:col-span-4 lg:col-span-3">

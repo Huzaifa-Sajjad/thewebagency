@@ -15,6 +15,7 @@ function Services() {
             className="xs:col-span-2 md:col-span-1 shadow-md xs:py-4 lg:py-14 xs:px-6 lg:px-14 cursor-none service-card"
             onMouseEnter={setHoverCursor}
             onMouseLeave={setNormalCursor}
+            id="webDevelopment"
           >
             <H3>Web Applications/Sites</H3>
             <Para className="my-4">
@@ -27,6 +28,7 @@ function Services() {
             className="xs:col-span-2 md:col-span-1 shadow-md xs:py-4 lg:py-14 xs:px-6 lg:px-14 cursor-none service-card"
             onMouseEnter={setHoverCursor}
             onMouseLeave={setNormalCursor}
+            id="eCom"
           >
             <H3>Custom E-Commerce</H3>
             <Para className="my-4">
@@ -39,6 +41,7 @@ function Services() {
             className="xs:col-span-2 md:col-span-1 shadow-md xs:py-4 lg:py-14 xs:px-6 lg:px-14 cursor-none service-card"
             onMouseEnter={setHoverCursor}
             onMouseLeave={setNormalCursor}
+            id="productDesign"
           >
             <H3>Product Design</H3>
             <Para className="my-4">
@@ -51,6 +54,7 @@ function Services() {
             className="xs:col-span-2 md:col-span-1 shadow-md xs:py-4 lg:py-14 xs:px-6 lg:px-14 cursor-none service-card"
             onMouseEnter={setHoverCursor}
             onMouseLeave={setNormalCursor}
+            id="digitalMarketing"
           >
             <H3>Digital Marketing</H3>
             <Para className="my-4">

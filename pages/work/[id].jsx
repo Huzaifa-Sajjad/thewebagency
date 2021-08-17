@@ -54,10 +54,10 @@ function CaseStudy({ post }) {
             <Title className="font-medium leading-snug mb-4">
               {post.name[0].text}
             </Title>
-            <div className="flex xs:py-4 lg:py-12 flex-wrap xs:justify-between lg:justify-start">
+            <div className="flex xs:py-4 lg:py-12 flex-wrap">
               {post.tags.map((tag) => (
                 <div
-                  className="xs:text-12 lg:text-14 xs:px-4 lg:px-6 py-2 rounded text-white text-center xs:mr-0 lg:mr-4 xs:mb-3 lg:mb-4 xs:w-1/1 lg:w-max"
+                  className="xs:text-12 lg:text-14 xs:px-4 lg:px-6 py-2 rounded text-white text-center mr-3 xs:mb-3 lg:mb-4 w-max"
                   style={{ backgroundColor: post.bg }}
                   key={tag.tag_name[0].text}
                 >
@@ -65,7 +65,6 @@ function CaseStudy({ post }) {
                 </div>
               ))}
             </div>
-            <Lead></Lead>
           </Wrapper>
         </div>
       </section>
