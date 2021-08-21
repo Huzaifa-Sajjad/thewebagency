@@ -20,10 +20,13 @@ class MyDocument extends Document {
             href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700&display=swap"
             rel="stylesheet"
           />
-          <script src="https://cdn.lordicon.com/libs/frhvbuzj/lord-icon-2.0.2.js" />
           <script
             async
-            src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_ID}`}
+            src="https://cdn.lordicon.com/libs/frhvbuzj/lord-icon-2.0.2.js"
+          />
+          <script
+            async
+            src="https://www.googletagmanager.com/gtag/js?id=G-68J159M8T7"
           />
         </Head>
         <body>

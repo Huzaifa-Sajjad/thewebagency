@@ -4,8 +4,8 @@ function SEO({ title, description, image }) {
   return (
     <Head>
       <title>{title}</title>
-      <meta charset="utf-8"></meta>
-      <meta http-equiv="x-ua-compatible" content="ie=edge" />
+      <meta charSet="utf-8"></meta>
+      <meta httpEquiv="x-ua-compatible" content="ie=edge" />
       <meta
         name="viewport"
         content="width=device-width, initial-scale=1, shrink-to-fit=no"

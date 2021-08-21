@@ -12,7 +12,7 @@ export const getServerSideProps = async (ctx) => {
 
   //Add all the projects to a fields array
   const fields = projects.map((project) => ({
-    loc: `${process.env.NEXT_PUBLIC_SITE_URL}/work/${project.uid}`,
+    loc: `https://www.thewebagency.io/work/${project.uid}`,
     changefreq: "daily",
     priority: 0.7,
     lastmod: new Date().toISOString(),
@@ -21,4 +21,4 @@ export const getServerSideProps = async (ctx) => {
   getServerSideSitemap(ctx, fields);
 };
 
-export default function Sitemap() {}
+export default () => {};

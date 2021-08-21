@@ -13,7 +13,10 @@
           ],
           "@/context/*":[
               "context/*"
-          ]
+          ],
+          "@/hooks/*":[
+            "hooks/*"
+        ]
       }
   }
 }
