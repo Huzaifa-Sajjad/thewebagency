@@ -21,7 +21,7 @@ function Drawer() {
         .to("#drawer", {
           display: "block",
           width: "100%",
-          duration: 1,
+          duration: 0.75,
           ease: Expo.easeInOut,
         })
         .to(
@@ -39,7 +39,7 @@ function Drawer() {
           {
             opacity: 1,
             x: 0,
-            duration: 1,
+            duration: 0.5,
             ease: Power3.easeInOut,
             stagger: 0.4,
           },
@@ -66,12 +66,6 @@ function Drawer() {
           <li onClick={() => execLinkPush("/contact")}>Contact</li>
         </ul>
       </div>
-      <p className="text-lightGray text-center mb-10">
-        Drop a line at <br />
-        <a href="mailto:hello@thewebagency.io" target="_blank">
-          <span className="text-white font-medium">hello@thewebagency.io</span>
-        </a>
-      </p>
     </div>
   );
 }

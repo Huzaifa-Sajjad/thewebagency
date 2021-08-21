@@ -4,7 +4,12 @@ function SEO({ title, description, image }) {
   return (
     <Head>
       <title>{title}</title>
-      <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      <meta charset="utf-8"></meta>
+      <meta http-equiv="x-ua-compatible" content="ie=edge" />
+      <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1, shrink-to-fit=no"
+      />
       <meta
         name="description"
         content={
@@ -67,6 +72,7 @@ function SEO({ title, description, image }) {
         href="/favicon/safari-pinned-tab.svg"
         color="#111111"
       />
+      <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
       <meta name="msapplication-TileColor" content="#111111" />
       <meta name="theme-color" content="#111111" />
     </Head>

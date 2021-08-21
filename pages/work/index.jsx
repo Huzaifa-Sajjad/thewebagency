@@ -1,12 +1,11 @@
 import { useEffect } from "react";
+import Prismic from "@prismicio/client";
+import { Client } from "../../prismic-config";
 import { Power3, Expo, gsap } from "gsap";
 import Layout from "@/components/Layout";
-import Prismic from "@prismicio/client";
 import Card from "@/components/Card";
 import { Title, H6 } from "@/components/Text";
-import { ButtonPrimary } from "@/components/Button";
 import Wrapper from "@/components/Wrapper";
-import { Client } from "../../prismic-config";
 
 export default function CaseStudy({ projects }) {
   useEffect(() => {
