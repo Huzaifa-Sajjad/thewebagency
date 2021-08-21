@@ -1,10 +1,17 @@
 import { Fragment } from "react";
+import { useRouter } from "next/router";
 import { H3 } from "@/components/Text";
 import { ButtonPrimary } from "@/components/Button";
 import { SchedulerButton } from "@/components/Scheduler";
 import NavLink from "@/components/NavLink";
 
 function CTA({ hasBg }) {
+  const router = useRouter();
+
+  const changeRoute = () => {
+    router.push("/contact");
+  };
+
   return (
     <Fragment>
       <section
@@ -24,7 +31,10 @@ function CTA({ hasBg }) {
             business needs.
           </p>
           <div className="flex flex-wrap justify-center items-center">
-            <ButtonPrimary className="xs:mr-0 lg:mr-4 xs:w-full lg:w-auto">
+            <ButtonPrimary
+              className="xs:mr-0 lg:mr-4 xs:w-full lg:w-auto"
+              handleClick={changeRoute}
+            >
               Contact Us
             </ButtonPrimary>
             <SchedulerButton className="xs:mt-4 lg:mt-0 xs:w-full lg:w-auto" />

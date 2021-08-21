@@ -79,28 +79,22 @@ export default function CaseStudy({ projects }) {
           </Wrapper>
         </div>
       </section>
-      <section className="xs:py-8 lg:py-20" id="work-cards">
+      <section className="xs:py-8 lg:pt-12 lg-pb-20" id="work-cards">
         <div className="lg:container lg:mx-auto spacing ">
-          <div className="flex flex-wrap ">
-            {projects.map((project, idx) => (
-              <Card
-                bg={project.data.bgcolor}
-                textColor={project.data.textcolor}
-                logo={project.data.logo}
-                statement={project.data.statement}
-                tags={project.data.tags}
-                cover={project.data.cover}
-                id={project.uid}
-                bg={project.data.bg}
-                name={project.data.name[0].text}
-                key={idx}
-              />
+          <div className="grid grid-cols-2 gap-4">
+            {projects.map((project) => (
+              <div className="xs:col-span-2 md:col-span-1" key={project.uid}>
+                <Card
+                  logo={project.data.logo_small}
+                  statement={project.data.statement[0].text}
+                  cover={project.data.cover}
+                  bg={project.data.bg}
+                  uid={project.uid}
+                  name={project.data.name[0].text}
+                  workPage={true}
+                />
+              </div>
             ))}
-          </div>
-          <div className="flex justify-center items-center border-t border-gray border-opacity-20 xs:mt-8 lg:mt-20 xs:py-8 lg:py-10">
-            <ButtonPrimary className="xs:mr-0 lg:mr-4 xs:w-full lg:w-auto">
-              View More
-            </ButtonPrimary>
           </div>
         </div>
       </section>

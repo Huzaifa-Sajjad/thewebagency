@@ -3,10 +3,11 @@ import { H2 } from "@/components/Text";
 function Features({ features, bg }) {
   return (
     <section>
-      {features.map((feature) => (
+      {features.map((feature, idx) => (
         <div
           className="lg:container lg:mx-auto spacing xs:py-8 lg:py-20"
           id="feature-container"
+          key={idx}
         >
           <lord-icon
             src={`https://cdn.lordicon.com/${feature.icon[0].text}.json`}

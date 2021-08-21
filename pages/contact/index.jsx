@@ -113,7 +113,7 @@ function Contact() {
               Let us help you craft your next digital product.
             </Title>
             <Lead className="xs:my-8 lg:my-12">
-              Tell us all about project right here, or send us an email at{" "}
+              Tell us all about project right here, or send us an email at or{" "}
               <a
                 className="font-medium text-primary cursor-pointer"
                 href="mailto:hello@thewebagency.io"
@@ -121,9 +121,7 @@ function Contact() {
               >
                 hello@thewebagency.io
               </a>{" "}
-              or
-              <br />
-              <SchedulerLink className="font-medium line" />
+              or <SchedulerLink className="font-medium line" />
             </Lead>
             <div className="grid grid-cols-4" id="formWrapper">
               <div className="xs:col-span-4 lg:col-span-3">

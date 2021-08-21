@@ -159,7 +159,7 @@ function Footer() {
               </span>
 
               <span className="text-white xs:text-14 md:text-16 lg:text-18 xs:mr-4 lg:mr-10">
-                <NavLink target="/work" isWhite>
+                <NavLink target="/contact" isWhite>
                   Contact us
                 </NavLink>
               </span>

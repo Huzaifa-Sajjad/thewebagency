@@ -7,7 +7,7 @@ import Layout from "@/components/Layout";
 import FeaturedProjects from "@/containers/FeaturedProjects";
 import ReviewCard from "@/components/Review";
 import { ButtonOutline } from "@/components/Button";
-import { Title, H2, Para } from "@/components/Text";
+import { Title, H2 } from "@/components/Text";
 import Wrapper from "@/components/Wrapper";
 import Services from "@/containers/Services";
 import Stars from "@/containers/Stars";
@@ -54,7 +54,7 @@ export default function Home({ projects, reviews }) {
         },
         1.9
       )
-      .from("#hero > p", {
+      .from("#hero > #socialProof", {
         opacity: 0,
         y: 50,
         ease: Power3.easeInOut,
@@ -86,9 +86,12 @@ export default function Home({ projects, reviews }) {
               We offer the best digital services at an affordable rate, to help
               you craft your digital identity.
             </Title>
-            <Para className="flex items-center text-gray mt-8">
+            <div
+              id="socialProof"
+              className="xs:text-14 md:text-16 lg:text-16 xl:text-18 font-light max-w-55 flex items-center text-gray mt-8"
+            >
               We are the best at work <Stars /> 12 reviews.
-            </Para>
+            </div>
             <article className="btnWrapper">
               <ButtonOutline className="mt-8" handleClick={handleRouterClick}>
                 Let's Talk

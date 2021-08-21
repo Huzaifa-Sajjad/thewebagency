@@ -1,25 +1,38 @@
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import { gsap, Power3 } from "gsap";
 import { CardButton } from "@/components/Button";
 
-function Card({ uid, logo, bg, cover, name, statement }) {
+function Card({ uid, logo, bg, cover, name, statement, workPage }) {
+  const router = useRouter();
   let container = useRef(null);
+  const [screenWidth, setScreenWidth] = useState(false);
   const timeline = new gsap.timeline();
+
+  useEffect(() => {
+    setScreenWidth(window.innerWidth);
+  }, []);
+
   const handleMouseEnter = () => {
-    timeline.to(container, {
-      y: 0,
-      duration: 1,
-      ease: Power3.easeInOut,
-    });
+    if (screenWidth >= 1200) {
+      timeline.to(container, {
+        y: 0,
+        duration: 1,
+        ease: Power3.easeInOut,
+      });
+    }
   };
+
   const handleMouseLeave = () => {
-    timeline.to(container, {
-      y: 70,
-      duration: 1,
-      ease: Power3.easeInOut,
-    });
+    if (screenWidth >= 1200) {
+      timeline.to(container, {
+        y: 70,
+        duration: 1,
+        ease: Power3.easeInOut,
+      });
+    }
   };
+
   const hexToRgb = (hex) =>
     hex
       .replace(
@@ -30,10 +43,11 @@ function Card({ uid, logo, bg, cover, name, statement }) {
       .match(/.{2}/g)
       .map((x) => parseInt(x, 16));
 
-  const router = useRouter();
   return (
     <div
-      className={`py-20 px-10 mr-4 relative overflow-hidden bg-cover bg-center rounded casestudy-card sm-card`}
+      className={`py-20 px-10 mr-4 relative overflow-hidden bg-cover bg-center rounded ${
+        workPage ? "work-card" : "sm-card"
+      }`}
       style={{
         backgroundImage: `url(${cover.url})`,
         flexShrink: 0,
@@ -42,18 +56,22 @@ function Card({ uid, logo, bg, cover, name, statement }) {
       onMouseLeave={handleMouseLeave}
     >
       <div
-        className="absolute top-0 left-0 h-full w-full  flex  flex-col justify-between  items-start card-content py-6 px-8"
+        className="absolute top-0 left-0 h-full w-full flex flex-col justify-end items-start card-content py-6 px-8"
         style={{
           backgroundImage: `linear-gradient(rgba(${hexToRgb(
             bg
           )},0) 60%,  rgba(${hexToRgb(bg)},0)60%,   rgba(${hexToRgb(
             bg
-          )},0.75)80%,  rgba(${hexToRgb(bg)},1)100% )`,
+          )},0.75)75%,  rgba(${hexToRgb(bg)},1)100% )`,
         }}
       >
-        <img src={logo.url} alt="" className="h-16 w-auto drop-shadow-xl " />
         <div ref={(el) => (container = el)} className="content-wrapper">
           <div>
+            <img
+              src={logo.url}
+              alt=""
+              className="xs:h-12 lg:h-14 w-auto drop-shadow-xl mb-4"
+            />
             <h2 className="text-white text-18 font-medium uppercase mb-2">
               {name}
             </h2>

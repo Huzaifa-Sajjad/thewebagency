@@ -54,7 +54,7 @@ function CaseStudy({ post }) {
             <Title className="font-medium leading-snug mb-4">
               {post.name[0].text}
             </Title>
-            <div className="flex xs:py-4 lg:py-12 flex-wrap">
+            <div className="flex xs:py-4 lg:py-12 flex-wrap xs:max-w-full lg:max-w-3/4">
               {post.tags.map((tag) => (
                 <div
                   className="xs:text-12 lg:text-14 xs:px-4 lg:px-6 py-2 rounded text-white text-center mr-3 xs:mb-3 lg:mb-4 w-max"
