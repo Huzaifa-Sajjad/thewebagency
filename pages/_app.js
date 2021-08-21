@@ -1,9 +1,7 @@
-import { useEffect } from "react";
 import Router from "next/router";
 import NProgress from "nprogress";
 import MouseContextProvider from "@/context/mouseContext";
 import DrawerContextProvider from "@/context/drawerContext";
-import { initGA, logPageView } from "../analytics";
 import "nprogress/nprogress.css";
 import "../styles/global.scss";
 
@@ -16,13 +14,7 @@ function MyApp({ Component, pageProps }) {
 
   Router.events.on("routeChangeComplete", () => {
     NProgress.done();
-    logPageView();
   });
-
-  useEffect(() => {
-    initGA();
-    logPageView();
-  }, []);
 
   return (
     <MouseContextProvider>
