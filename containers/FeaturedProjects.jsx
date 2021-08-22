@@ -9,12 +9,13 @@ function FeaturedProjects({ projects }) {
   };
   const options = {
     alwaysShowTracks: true,
+    renderByPixels: true,
   };
   Scrollbar.initAll(options);
   return (
     <div className="lg:container lg:mx-auto spacing">
-      <div data-scrollbar>
-        <div className="flex pb-4">
+      <div data-scrollbar className="pb-8">
+        <div className="flex">
           {projects.map((project, idx) => (
             <Card
               key={idx}
@@ -38,7 +39,7 @@ function FeaturedProjects({ projects }) {
         </ButtonPrimary>
 
         <ButtonOutline
-          className="xs:w-full md:w-auto xs:ml-0 md:ml-4 xs:mt-4 lg:mt-0"
+          className="xs:w-full md:w-auto xs:ml-0 md:ml-4 xs:mt-4 md:mt-0"
           handleClick={handleLinkClick}
         >
           View All
