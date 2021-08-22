@@ -1,14 +1,16 @@
 import Card from "@/components/Card";
 import { ButtonOutline, ButtonPrimary } from "@/components/Button";
 import router from "next/router";
+import Scrollbar from "smooth-scrollbar";
 
 function FeaturedProjects({ projects }) {
   const handleLinkClick = () => {
     router.push("/work");
   };
+
   return (
     <div className="lg:container lg:mx-auto spacing">
-      <div className="flex overflow-x-scroll card-wrapper pb-4">
+      <div className="flex overflow-x-scroll pb-4 cardWrapper" id=" ">
         {projects.map((project, idx) => (
           <Card
             key={idx}

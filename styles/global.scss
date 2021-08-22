@@ -164,19 +164,6 @@ textarea {
   transition: all 1s ease-in-out;
 }
 
-.card-wrapper {
-  &::-webkit-scrollbar {
-    height: 4px;
-  }
-  &::-webkit-scrollbar-track {
-    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-  }
-  &::-webkit-scrollbar-thumb {
-    background-color: black;
-    width: 80px !important;
-  }
-}
-
 .sm-card {
   width: 31%;
   height: 600px;
