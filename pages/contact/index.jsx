@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useRouter } from "next/router";
 import { Power3, Expo, gsap } from "gsap";
 import axios from "axios";
 import Layout from "@/components/Layout";
@@ -8,6 +9,7 @@ import Wrapper from "@/components/Wrapper";
 import { SchedulerLink } from "@/components/Scheduler";
 
 function Contact() {
+  const router = useRouter();
   const [formData, setFormData] = useState({
     name: "",
     company: "",
@@ -41,6 +43,7 @@ function Contact() {
         payload
       );
       setLoading(false);
+      router.push("/thankyou");
     } catch (err) {
       setLoading(false);
       console.log(err);

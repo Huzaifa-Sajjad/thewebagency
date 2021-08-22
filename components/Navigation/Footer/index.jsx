@@ -8,7 +8,7 @@ function Footer() {
   const { setHoverCursor, setNormalCursor } = useContext(MouseContext);
 
   return (
-    <section className="xs:py-10 lg:py-20 bg-primary">
+    <section className="xs:py-10 lg:py-20 bg-primary" id="footer">
       <div className="lg:container mx-auto spacing">
         <div className="grid grid-cols-12 gap-y-7 items-center">
           <div className="xs:col-span-12 lg:col-span-6">

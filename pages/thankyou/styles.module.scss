@@ -1,0 +1,19 @@
+.card {
+  position: relative;
+
+  lord-icon {
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    height: 96px;
+    width: auto;
+    transform: translate(-50%, -30px);
+
+    @media only screen and (max-width: 576px) {
+      height: 72px;
+      top: -22px;
+      left: 52%;
+      transform: translate(-52%, -22px);
+    }
+  }
+}
