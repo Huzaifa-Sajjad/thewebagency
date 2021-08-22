@@ -23,13 +23,4 @@ function useProjects() {
   };
 }
 
-export const getProjects = async () => {
-  const client = Client();
-  const doc = await client.query(
-    Prismic.predicates.at("document.type", "projects"),
-    { orderings: "[document.first_publication_date desc]" }
-  );
-  return doc.results;
-};
-
 export default useProjects;
