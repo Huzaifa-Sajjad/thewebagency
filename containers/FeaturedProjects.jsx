@@ -7,22 +7,28 @@ function FeaturedProjects({ projects }) {
   const handleLinkClick = () => {
     router.push("/work");
   };
-
+  const options = {
+    alwaysShowTracks: true,
+  };
+  Scrollbar.initAll(options);
   return (
     <div className="lg:container lg:mx-auto spacing">
-      <div className="flex overflow-x-scroll pb-4 cardWrapper" id=" ">
-        {projects.map((project, idx) => (
-          <Card
-            key={idx}
-            logo={project.data.logo_small}
-            statement={project.data.statement[0].text}
-            cover={project.data.cover}
-            bg={project.data.bg}
-            uid={project.uid}
-            name={project.data.name[0].text}
-          />
-        ))}
+      <div data-scrollbar>
+        <div className="flex pb-4">
+          {projects.map((project, idx) => (
+            <Card
+              key={idx}
+              logo={project.data.logo_small}
+              statement={project.data.statement[0].text}
+              cover={project.data.cover}
+              bg={project.data.bg}
+              uid={project.uid}
+              name={project.data.name[0].text}
+            />
+          ))}
+        </div>
       </div>
+
       <div className="flex flex-wrap justify-center items-center xs:py-8 lg:py-14">
         <ButtonPrimary
           className="xs:w-full md:w-auto"

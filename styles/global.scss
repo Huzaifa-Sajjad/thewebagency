@@ -159,6 +159,13 @@ textarea {
     object-position: center;
   }
 }
+#cardWrapper {
+  width: 100% !important;
+  height: fit-content;
+  overflow-x: auto;
+  overflow-y: hidden;
+  position: relative;
+}
 
 .card-content {
   transition: all 1s ease-in-out;

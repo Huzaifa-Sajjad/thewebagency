@@ -20,6 +20,8 @@ class MyDocument extends Document {
             href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700&display=swap"
             rel="stylesheet"
           />
+          {/* Scrollbar css link */}
+          <link rel="stylesheet" href="css/perfect-scrollbar.css"></link>
           <script
             async
             src="https://cdn.lordicon.com/libs/frhvbuzj/lord-icon-2.0.2.js"
