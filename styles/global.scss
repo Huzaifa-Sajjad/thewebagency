@@ -21,7 +21,6 @@
 #nprogress .peg {
   box-shadow: 0 0 10px #111, 0 0 5px #111 !important;
 }
-
 label {
   display: block;
   font-size: 20px;
@@ -160,13 +159,6 @@ textarea {
     object-position: center;
   }
 }
-#cardWrapper {
-  width: 100% !important;
-  height: fit-content;
-  overflow-x: auto;
-  overflow-y: hidden;
-  position: relative;
-}
 
 .card-content {
   transition: all 1s ease-in-out;
@@ -284,10 +276,18 @@ textarea {
   background-color: rgba(#fd9644, 0.5);
 }
 
-.scrollbar-thumb {
+.os-scrollbar-handle {
   background: #111 !important;
   border-radius: 0 !important;
+  height: 4px !important;
 }
+
+.os-scrollbar-track {
+  background-color: rgb(218, 218, 218) !important;
+  border-radius: 0 !important;
+  height: 4px !important;
+}
+
 @media only screen and (max-width: 1280px) {
   .sm-card {
     width: 50%;

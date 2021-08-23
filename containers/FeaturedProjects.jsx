@@ -1,21 +1,17 @@
 import Card from "@/components/Card";
 import { ButtonOutline, ButtonPrimary } from "@/components/Button";
 import router from "next/router";
-import Scrollbar from "smooth-scrollbar";
+import { OverlayScrollbarsComponent } from "overlayscrollbars-react";
 
 function FeaturedProjects({ projects }) {
   const handleLinkClick = () => {
     router.push("/work");
   };
-  const options = {
-    alwaysShowTracks: true,
-    renderByPixels: true,
-  };
-  Scrollbar.initAll(options);
+
   return (
     <div className="lg:container lg:mx-auto spacing">
-      <div data-scrollbar className="pb-8">
-        <div className="flex">
+      <OverlayScrollbarsComponent>
+        <div className="flex pb-8">
           {projects.map((project, idx) => (
             <Card
               key={idx}
@@ -28,8 +24,7 @@ function FeaturedProjects({ projects }) {
             />
           ))}
         </div>
-      </div>
-
+      </OverlayScrollbarsComponent>
       <div className="flex flex-wrap justify-center items-center xs:py-8 lg:py-14">
         <ButtonPrimary
           className="xs:w-full md:w-auto"
