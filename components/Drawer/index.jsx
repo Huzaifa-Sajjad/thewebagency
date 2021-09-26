@@ -1,9 +1,9 @@
-import { useContext, useEffect } from "react";
-import { useRouter } from "next/router";
-import { DrawerContext } from "@/context/drawerContext";
-import { SchedulerLink } from "@/components/Scheduler";
-import { Expo, gsap, Power3 } from "gsap";
-import styles from "./styles.module.scss";
+import { useContext, useEffect } from 'react';
+import { useRouter } from 'next/router';
+import { DrawerContext } from '@/context/drawerContext';
+import { SchedulerLink } from '@/components/Scheduler';
+import { Expo, gsap, Power3 } from 'gsap';
+import styles from './styles.module.scss';
 
 function Drawer() {
   const { open, closeDrawer, fastClose } = useContext(DrawerContext);
@@ -18,14 +18,13 @@ function Drawer() {
   useEffect(() => {
     if (open === true) {
       timeline
-        .to("#drawer", {
-          display: "block",
-          width: "100%",
+        .to('#drawer', {
+          width: '100%',
           duration: 0.75,
           ease: Expo.easeInOut,
         })
         .to(
-          "#drawer img, button",
+          '#drawer img, button',
           {
             y: 0,
             opacity: 1,
@@ -35,7 +34,7 @@ function Drawer() {
           0.5
         )
         .to(
-          "#drawer li",
+          '#drawer li',
           {
             opacity: 1,
             x: 0,
@@ -49,21 +48,21 @@ function Drawer() {
   }, [open]);
 
   return (
-    <div className={`${styles.root} ${open ? styles.open : ""}`} id="drawer">
+    <div className={`${styles.root} ${open ? styles.open : ''}`} id='drawer'>
       <img
-        src="https://images.prismic.io/thewebagency/3fbe043f-332e-4849-b707-8c03c2b2b119_TWA+logo3.png?auto=compress,format"
-        alt=""
+        src='https://images.prismic.io/thewebagency/3fbe043f-332e-4849-b707-8c03c2b2b119_TWA+logo3.png?auto=compress,format'
+        alt=''
         className={styles.logo}
       />
 
       <button onClick={() => closeDrawer(timeline)} className={styles.closeBtn}>
         x
       </button>
-      <div className="h-2/3 flex items-center justify-center">
+      <div className='h-2/3 flex items-center justify-center'>
         <ul className={styles.navLinks}>
-          <li onClick={() => execLinkPush("/about")}>About</li>
-          <li onClick={() => execLinkPush("/work")}>Work</li>
-          <li onClick={() => execLinkPush("/contact")}>Contact</li>
+          <li onClick={() => execLinkPush('/about')}>About</li>
+          <li onClick={() => execLinkPush('/work')}>Work</li>
+          <li onClick={() => execLinkPush('/contact')}>Contact</li>
         </ul>
       </div>
     </div>
