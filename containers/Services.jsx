@@ -1,43 +1,8 @@
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 import { H2, H3, Para } from "@/components/Text";
 import { MouseContext } from "@/context/mouseContext";
-import { gsap, Expo } from "gsap";
-import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-
-if (typeof window !== null) {
-  gsap.registerPlugin(ScrollTrigger);
-}
 
 function Services() {
-  const scrollAnimation = (id) => {
-    const timeline = gsap.timeline({ paused: true });
-    timeline.to(id, {
-      duration: 0.5,
-      backgroundColor: "#111",
-      color: "white",
-      ease: Expo.easeInOut,
-    });
-    ScrollTrigger.create({
-      trigger: id,
-      start: "center center",
-      end: "top 10%",
-      onEnterBack: () => timeline.play(),
-      onEnter: () => timeline.play(),
-      onLeave: () => timeline.reverse(),
-      onLeaveBack: () => timeline.reverse(),
-    });
-  };
-
-  useEffect(() => {
-    const screeSize = window.innerWidth;
-    if (screeSize < 1024) {
-      scrollAnimation("#webDev");
-      scrollAnimation("#eCom");
-      scrollAnimation("#proDes");
-      scrollAnimation("#digiMarket");
-    }
-  }, []);
-
   const { setHoverCursor, setNormalCursor } = useContext(MouseContext);
   return (
     <section className="xs:py-8 lg:py-20">
@@ -50,7 +15,6 @@ function Services() {
             className="xs:col-span-2 md:col-span-1 shadow-md xs:py-4 lg:py-14 xs:px-6 lg:px-14 cursor-none service-card"
             onMouseEnter={setHoverCursor}
             onMouseLeave={setNormalCursor}
-            id="webDev"
           >
             <H3>Web Applications/Sites</H3>
             <Para className="my-4">
@@ -63,7 +27,6 @@ function Services() {
             className="xs:col-span-2 md:col-span-1 shadow-md xs:py-4 lg:py-14 xs:px-6 lg:px-14 cursor-none service-card"
             onMouseEnter={setHoverCursor}
             onMouseLeave={setNormalCursor}
-            id="eCom"
           >
             <H3>Custom E-Commerce</H3>
             <Para className="my-4">
@@ -76,7 +39,6 @@ function Services() {
             className="xs:col-span-2 md:col-span-1 shadow-md xs:py-4 lg:py-14 xs:px-6 lg:px-14 cursor-none service-card"
             onMouseEnter={setHoverCursor}
             onMouseLeave={setNormalCursor}
-            id="proDes"
           >
             <H3>Product Design</H3>
             <Para className="my-4">
@@ -89,7 +51,6 @@ function Services() {
             className="xs:col-span-2 md:col-span-1 shadow-md xs:py-4 lg:py-14 xs:px-6 lg:px-14 cursor-none service-card"
             onMouseEnter={setHoverCursor}
             onMouseLeave={setNormalCursor}
-            id="digiMarket"
           >
             <H3>Digital Marketing</H3>
             <Para className="my-4">

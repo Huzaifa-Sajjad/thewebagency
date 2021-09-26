@@ -1,4 +1,5 @@
 import Router from "next/router";
+import "overlayscrollbars/css/OverlayScrollbars.css";
 import NProgress from "nprogress";
 import MouseContextProvider from "@/context/mouseContext";
 import DrawerContextProvider from "@/context/drawerContext";
