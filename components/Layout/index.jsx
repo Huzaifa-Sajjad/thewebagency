@@ -20,6 +20,7 @@ function Layout({
     <Fragment>
       <SEO title={title} description={description} image={image} />
       <Drawer />
+      <Loader bg={layoutBg} />
       <div id='main'>
         <Cursor />
         <Header />
