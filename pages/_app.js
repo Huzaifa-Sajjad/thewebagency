@@ -1,19 +1,19 @@
-import Router from "next/router";
-import "overlayscrollbars/css/OverlayScrollbars.css";
-import NProgress from "nprogress";
-import MouseContextProvider from "@/context/mouseContext";
-import DrawerContextProvider from "@/context/drawerContext";
-import "nprogress/nprogress.css";
-import "../styles/global.scss";
+import Router from 'next/router';
+import NProgress from 'nprogress';
+import MouseContextProvider from '@/context/mouseContext';
+import DrawerContextProvider from '@/context/drawerContext';
+import 'nprogress/nprogress.css';
+import 'overlayscrollbars/css/OverlayScrollbars.css';
+import '../styles/global.scss';
 
 NProgress.configure({ showSpinner: false });
 
 function MyApp({ Component, pageProps }) {
-  Router.events.on("routeChangeStart", () => {
+  Router.events.on('routeChangeStart', () => {
     NProgress.start();
   });
 
-  Router.events.on("routeChangeComplete", () => {
+  Router.events.on('routeChangeComplete', () => {
     NProgress.done();
   });
 

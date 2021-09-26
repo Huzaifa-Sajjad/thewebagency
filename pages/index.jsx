@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import router from 'next/router';
 import { useEffect } from 'react';
 import Prismic from '@prismicio/client';
 import { Client } from '../prismic-config';
@@ -90,9 +90,12 @@ export default function Home({ featuredProjects, reviews }) {
               We are the best at work <Stars /> 12 reviews.
             </div>
             <article className='btnWrapper'>
-              <Link href='/contact' passHref>
-                <ButtonOutline className='mt-8'>Let's Talk</ButtonOutline>
-              </Link>
+              <ButtonOutline
+                className='mt-8'
+                handleClick={() => router.push('/contact')}
+              >
+                Let's Talk
+              </ButtonOutline>
             </article>
           </div>
         </Wrapper>

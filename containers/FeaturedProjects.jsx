@@ -1,13 +1,9 @@
+import router from 'next/router';
 import Card from '@/components/Card';
 import { ButtonOutline, ButtonPrimary } from '@/components/Button';
-import router from 'next/router';
 import { OverlayScrollbarsComponent } from 'overlayscrollbars-react';
 
 function FeaturedProjects({ projects }) {
-  const handleLinkClick = () => {
-    router.push('/work');
-  };
-
   return (
     <div className='lg:container lg:mx-auto spacing'>
       <OverlayScrollbarsComponent>
@@ -35,7 +31,7 @@ function FeaturedProjects({ projects }) {
 
         <ButtonOutline
           className='xs:w-full md:w-auto xs:ml-0 md:ml-4 xs:mt-4 md:mt-0'
-          handleClick={handleLinkClick}
+          handleClick={() => router.push('/work')}
         >
           View All
         </ButtonOutline>

@@ -75,12 +75,14 @@ function CaseStudy({ post }) {
           <ul className='casestudy-list'>
             {post.points.map((point) => (
               <li key={point.label[0].text}>
-                <h5 className='text-lightGray xs:text-12 md:text-14 font-medium'>
-                  {point.label[0].text}
-                </h5>
-                <p className='xs:text-16 md:text-18 lg:text-20 font-regular'>
-                  {point.field[0].text}
-                </p>
+                <div>
+                  <h5 className='text-lightGray xs:text-12 md:text-14 font-medium'>
+                    {point.label[0].text}
+                  </h5>
+                  <p className='xs:text-16 md:text-18 lg:text-20 font-regular'>
+                    {point.field[0].text}
+                  </p>
+                </div>
               </li>
             ))}
           </ul>
