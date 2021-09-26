@@ -20,21 +20,6 @@ export default function Home({ featuredProjects, reviews }) {
     const header = document.getElementById('header');
     gsap.to(main, { visibility: 'visible' });
     timeline
-      .to('#app-loader > img', {
-        opacity: 0,
-        duration: 0.75,
-        ease: Power3.easeInOut,
-      })
-      .to(
-        '#app-loader',
-        {
-          height: 0,
-          ease: Power3.easeInOut,
-          duration: 1.5,
-          pointerEvents: 'none',
-        },
-        0.6
-      )
       .from(
         header,
         {

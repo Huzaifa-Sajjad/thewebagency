@@ -1,11 +1,11 @@
-import { Fragment } from "react";
-import Cursor from "../Cursor";
-import Drawer from "../Drawer";
-import Loader from "../Loader";
-import Header from "../Navigation/Header";
-import Footer from "../Navigation/Footer";
-import SEO from "../SEO";
-import CTA from "../CTA";
+import { Fragment } from 'react';
+import Cursor from '../Cursor';
+import Drawer from '../Drawer';
+import Loader from '../Loader';
+import Header from '../Navigation/Header';
+import Footer from '../Navigation/Footer';
+import SEO from '../SEO';
+import CTA from '../CTA';
 
 function Layout({
   hasCTA,
@@ -20,8 +20,7 @@ function Layout({
     <Fragment>
       <SEO title={title} description={description} image={image} />
       <Drawer />
-      <Loader bg={layoutBg} />
-      <div id="main">
+      <div id='main'>
         <Cursor />
         <Header />
         {children}
