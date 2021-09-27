@@ -15,13 +15,13 @@ function Features({ features, bg }) {
             src={`https://cdn.lordicon.com/${feature.icon[0].text}.json`}
             trigger='loop'
             colors={`primary:#111111,secondary:${bg}`}
-            style={{ width: 'auto', height: '64px' }}
+            style={{ width: '64px', height: '64px' }}
           />
           <H2>{feature.heading[0].text}</H2>
           <p className='xs:text-14 md:text-16 lg:text-18 xl:text-20 font-light mt-4 max-w-65 mb-4 leading-relaxed'>
             {feature.text[0].text}
           </p>
-
+          0
           {feature.gallery.length > 0 ? (
             <div className='mb-20'>
               <OverlayScrollbarsComponent>

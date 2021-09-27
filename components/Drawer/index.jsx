@@ -53,6 +53,7 @@ function Drawer() {
         src='https://images.prismic.io/thewebagency/3fbe043f-332e-4849-b707-8c03c2b2b119_TWA+logo3.png?auto=compress,format'
         alt=''
         className={styles.logo}
+        loading='lazy'
       />
 
       <button onClick={() => closeDrawer(timeline)} className={styles.closeBtn}>

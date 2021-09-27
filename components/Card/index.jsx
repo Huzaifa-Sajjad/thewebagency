@@ -72,6 +72,7 @@ function Card({ uid, logo, bg, cover, name, statement, workPage }) {
               src={logo.url}
               alt=''
               className='xs:h-12 lg:h-14 w-auto drop-shadow-xl mb-4'
+              loading='lazy'
             />
             <h2 className='text-white text-18 font-medium uppercase mb-2'>
               {name}
