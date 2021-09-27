@@ -1,7 +1,7 @@
 import { useContext, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import { DrawerContext } from '@/context/drawerContext';
-import { SchedulerLink } from '@/components/Scheduler';
+import { Img } from 'react-image';
 import { Expo, gsap, Power3 } from 'gsap';
 import styles from './styles.module.scss';
 
@@ -49,7 +49,7 @@ function Drawer() {
 
   return (
     <div className={`${styles.root} ${open ? styles.open : ''}`} id='drawer'>
-      <img
+      <Img
         src='https://images.prismic.io/thewebagency/3fbe043f-332e-4849-b707-8c03c2b2b119_TWA+logo3.png?auto=compress,format'
         alt=''
         className={styles.logo}

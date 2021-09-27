@@ -1,7 +1,8 @@
-import { useRef, useState, useEffect } from "react";
-import { useRouter } from "next/router";
-import { gsap, Power3 } from "gsap";
-import { CardButton } from "@/components/Button";
+import { useRef, useState, useEffect } from 'react';
+import { useRouter } from 'next/router';
+import { gsap, Power3 } from 'gsap';
+import { CardButton } from '@/components/Button';
+import { Img } from 'react-image';
 
 function Card({ uid, logo, bg, cover, name, statement, workPage }) {
   const router = useRouter();
@@ -37,7 +38,7 @@ function Card({ uid, logo, bg, cover, name, statement, workPage }) {
     hex
       .replace(
         /^#?([a-f\d])([a-f\d])([a-f\d])$/i,
-        (m, r, g, b) => "#" + r + r + g + g + b + b
+        (m, r, g, b) => '#' + r + r + g + g + b + b
       )
       .substring(1)
       .match(/.{2}/g)
@@ -46,7 +47,7 @@ function Card({ uid, logo, bg, cover, name, statement, workPage }) {
   return (
     <div
       className={`py-20 px-10 mr-4 relative overflow-hidden bg-cover bg-center rounded ${
-        workPage ? "work-card" : "sm-card"
+        workPage ? 'work-card' : 'sm-card'
       }`}
       style={{
         backgroundImage: `url(${cover.url})`,
@@ -56,7 +57,7 @@ function Card({ uid, logo, bg, cover, name, statement, workPage }) {
       onMouseLeave={handleMouseLeave}
     >
       <div
-        className="absolute top-0 left-0 h-full w-full flex flex-col justify-end items-start card-content py-6 px-8"
+        className='absolute top-0 left-0 h-full w-full flex flex-col justify-end items-start card-content py-6 px-8'
         style={{
           backgroundImage: `linear-gradient(rgba(${hexToRgb(
             bg
@@ -65,17 +66,17 @@ function Card({ uid, logo, bg, cover, name, statement, workPage }) {
           )},0.75)75%,  rgba(${hexToRgb(bg)},1)100% )`,
         }}
       >
-        <div ref={(el) => (container = el)} className="content-wrapper">
+        <div ref={(el) => (container = el)} className='content-wrapper'>
           <div>
-            <img
+            <Img
               src={logo.url}
-              alt=""
-              className="xs:h-12 lg:h-14 w-auto drop-shadow-xl mb-4"
+              alt=''
+              className='xs:h-12 lg:h-14 w-auto drop-shadow-xl mb-4'
             />
-            <h2 className="text-white text-18 font-medium uppercase mb-2">
+            <h2 className='text-white text-18 font-medium uppercase mb-2'>
               {name}
             </h2>
-            <p className="text-16 text-white mb-5">{statement}</p>
+            <p className='text-16 text-white mb-5'>{statement}</p>
           </div>
           <CardButton handleClick={() => router.push(`/work/${uid}`)}>
             View Case

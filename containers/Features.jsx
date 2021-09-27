@@ -1,5 +1,6 @@
 import { H2 } from '@/components/Text';
 import { OverlayScrollbarsComponent } from 'overlayscrollbars-react';
+import { Img } from 'react-image';
 
 function Features({ features, bg }) {
   return (
@@ -40,7 +41,7 @@ function Features({ features, bg }) {
               </OverlayScrollbarsComponent>
             </div>
           ) : (
-            <img
+            <Img
               src={feature.image.url}
               alt=''
               className={`max-h-${

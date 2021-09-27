@@ -2,6 +2,7 @@ import Layout from '@/components/Layout';
 import { useEffect } from 'react';
 import { Power3, gsap, Expo } from 'gsap';
 import { Title, H2, H4, H6, Para } from '@/components/Text';
+import { Img } from 'react-image';
 
 function About() {
   // On Page Load Animations
@@ -81,7 +82,7 @@ function About() {
           </div>
           <div className='image-container'>
             <div className='image-mask'></div>
-            <img
+            <Img
               src='https://images.prismic.io/thewebagency/71f7a74a-0ede-48d2-834c-b981b6f47b4c_hero.jpg?auto=compress,format'
               alt='About TWA'
             />

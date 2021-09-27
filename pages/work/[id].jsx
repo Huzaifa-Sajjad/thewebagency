@@ -6,6 +6,7 @@ import { Title } from '@/components/Text';
 import Wrapper from '@/components/Wrapper';
 import { Client } from '../../prismic-config';
 import Features from '@/containers/Features';
+import { Img } from 'react-image';
 
 function CaseStudy({ post }) {
   // On Page Load Animations
@@ -93,7 +94,7 @@ function CaseStudy({ post }) {
           <p className='sm:text-20 lg:text-24 font-medium text-center max-w-55 mx-auto'>
             {post.lead[0].text}
           </p>
-          <img
+          <Img
             src={post.cover.url}
             alt=''
             className='max-h-120 mx-auto drop-shadow-lg mt-10'
