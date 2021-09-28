@@ -194,7 +194,7 @@ function Footer() {
                   </g>
                 </svg>
                 <span className='text-white xs:text-14 md:text-16 lg:text-18'>
-                  Hesse, Germany
+                  Tallinn, Estonia
                 </span>
               </div>
             </div>

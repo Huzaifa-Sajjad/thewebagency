@@ -3,7 +3,6 @@ import { useRouter } from 'next/router';
 import { DrawerContext } from '@/context/drawerContext';
 import { HeaderButton } from '@/components/Button';
 import NavLink from '@/components/NavLink';
-import { Img } from 'react-image';
 
 function Header() {
   const router = useRouter();
@@ -20,9 +19,7 @@ function Header() {
     >
       <div className='flex items-center justify-between'>
         <div className='text-16 text-primary font-medium letterspacing'>
-          <NavLink target='/'>
-            <Img src='/logo.png' className='h-3' />
-          </NavLink>
+          <NavLink target='/'>The Web Agency</NavLink>
         </div>
         <div className='xs:hidden lg:block'>
           <ul className='flex items-center navList'>

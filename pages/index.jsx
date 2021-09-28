@@ -87,7 +87,7 @@ export default function Home({ featuredProjects, reviews }) {
               id='socialProof'
               className='xs:text-14 md:text-16 lg:text-16 xl:text-18 font-light max-w-55 flex items-center text-gray mt-8'
             >
-              We are the best at work <Stars /> 12 reviews.
+              We are the best at work <Stars /> 15+ Websites developed.
             </div>
             <article className='btnWrapper'>
               <ButtonOutline

@@ -2,7 +2,6 @@ import { useState, useContext } from 'react';
 import { gsap, Expo, Power3 } from 'gsap';
 import { MouseContext } from '@/context/mouseContext';
 import { H3 } from '@/components/Text';
-import { Img } from 'react-image';
 
 function Review({ reviews }) {
   const { setHoverCursor, setNormalCursor } = useContext(MouseContext);
@@ -64,9 +63,10 @@ function Review({ reviews }) {
     <div id='review-container'>
       <div className='grid grid-cols-12 md:gap-6 lg:gap-10 items-center'>
         <div className='xs:col-span-12 md:col-span-4 lg:col-span-3'>
-          <Img
+          <img
             src={reviews[reviewCounter].data.cover.url}
-            className='w-full xs:h-80  md:h-full xs:object-contain lg:object-cover'
+            loading='lazy'
+            className='w-full xs:h-80 md:h-full xs:object-contain lg:object-cover'
           />
         </div>
         <div className='xs:col-span-12 md:col-span-8 lg:col-span-9 h-full xs:mt-4 md:mt-0'>
