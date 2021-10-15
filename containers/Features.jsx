@@ -21,7 +21,6 @@ function Features({ features, bg }) {
           <p className='xs:text-14 md:text-16 lg:text-18 xl:text-20 font-light mt-4 max-w-65 mb-4 leading-relaxed'>
             {feature.text[0].text}
           </p>
-          0
           {feature.gallery.length > 0 ? (
             <div className='mb-20'>
               <OverlayScrollbarsComponent>
